@@ -1,0 +1,61 @@
+{
+  "sectionTag": "DRIVEN BY SCIENCE",
+  "sectionTitle": "Meet The Brilliant Minds Behind IM8",
+  "sectionSubtitle": "An unparalleled collaboration between academia, medicine, and space science.",
+  "experts": [
+    {
+      "id": "prof-suzanne-devkota",
+      "name": "Prof. Suzanne Devkota",
+      "title": "Director of Cedars-Sinai Human Microbiome Research Institute",
+      "image": "https://randomuser.me/api/portraits/women/68.jpg"
+    },
+    {
+      "id": "dr-james-green",
+      "name": "Dr. James L. Green",
+      "title": "Former Chief Scientist of NASA",
+      "image": "https://randomuser.me/api/portraits/men/52.jpg"
+    },
+    {
+      "id": "dr-dawn-mussallem",
+      "name": "Dr. Dawn Mussallem",
+      "title": "CMO of Fountain Life & Integrative Oncologist at Mayo Clinic",
+      "image": "https://randomuser.me/api/portraits/women/45.jpg"
+    },
+    {
+      "id": "dr-james-dinicolantonio",
+      "name": "Dr. James DiNicolantonio",
+      "title": "Cardiovascular Research Scientist and Doctor of Pharmacy",
+      "image": "https://randomuser.me/api/portraits/men/46.jpg"
+    },
+    {
+      "id": "dr-jeremy-london",
+      "name": "Dr. Jeremy London",
+      "title": "Board Certified Cardiovascular Surgeon",
+      "image": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      "id": "dr-amy-shah",
+      "name": "Dr. Amy Shah",
+      "title": "Double-Board Certified Physician & Host of Podcast 'Save Yourself'",
+      "image": "https://randomuser.me/api/portraits/women/33.jpg"
+    },
+    {
+      "id": "dr-ara-suppiah",
+      "name": "Dr. Ara Suppiah",
+      "title": "Performance Strategist, Sports Physician, Creator of Functional Sports Medicine",
+      "image": "https://randomuser.me/api/portraits/men/22.jpg"
+    },
+    {
+      "id": "dr-darshan-shah",
+      "name": "Dr. Darshan Shah",
+      "title": "Board Certified Surgeon & Physician, CEO and Founder of Next Health",
+      "image": "https://randomuser.me/api/portraits/men/62.jpg"
+    },
+    {
+      "id": "simon-hill",
+      "name": "Simon Hill",
+      "title": "MSc, BSc, Nutritionist, Physiologist, Author and Podcast Host",
+      "image": "https://randomuser.me/api/portraits/men/75.jpg"
+    }
+  ]
+}

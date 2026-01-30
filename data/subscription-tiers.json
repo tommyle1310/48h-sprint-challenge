@@ -1,0 +1,51 @@
+{
+  "subscriptions": [
+    {
+      "id": "90-day",
+      "name": "90-Day Supply",
+      "discount": "Save 30%",
+      "price": 78,
+      "originalPrice": 112,
+      "billing": "Billed $235.00 USD every 12 weeks",
+      "perServing": {
+        "jar": 2.61,
+        "sachets": 2.91
+      },
+      "badges": ["NEW YEAR OFFER", "BEST VALUE"],
+      "benefits": [
+        "🎓 Exclusive Access to 90 Day IM8 Transformation Program",
+        "💰 Maximum savings - lowest price per serving",
+        "👨‍👩‍👧‍👦 Share with family and friends",
+        "🎁 Free Daily Ultimate Mixer (US$18)",
+        "🚚 Free Shipping to US, UK, CA, and most of EU and APAC",
+        "⏸️ Cancel or pause anytime",
+        "🎁 Free Welcome Kit: Signature Red Cup + 5 Travel Sachets (US$18)"
+      ],
+      "default": true
+    },
+    {
+      "id": "30-day",
+      "name": "30-Day Supply",
+      "discount": "Save 20%",
+      "price": 89,
+      "originalPrice": 112,
+      "billing": "Billed $89.00 USD every 4 weeks",
+      "perServing": {
+        "jar": 2.97,
+        "sachets": 3.27
+      },
+      "badges": [],
+      "benefits": [
+        "✅ 30-day money back guarantee",
+        "⏸️ Cancel or pause anytime",
+        "🚚 Free Shipping to US, UK, CA, and most of EU and APAC",
+        "🎁 Free Welcome Kit: Signature Red Cup + 5 Travel Sachets (US$18)"
+      ],
+      "default": false
+    }
+  ],
+  "oneTimePurchase": {
+    "price": 112,
+    "label": "One Time Purchase"
+  }
+}

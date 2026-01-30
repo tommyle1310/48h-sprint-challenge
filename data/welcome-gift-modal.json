@@ -1,0 +1,14 @@
+{
+  "badge": "🎁 FREE WELCOME GIFT",
+  "title": "Claim Your Free Gift",
+  "value": "(Valued at US $54)",
+  "emailPlaceholder": "Enter your email address",
+  "prompt": "To claim this offer, tell us what you would like to improve first?",
+  "goals": [
+    { "id": "energy", "label": "MORE ENERGY" },
+    { "id": "gut", "label": "A HEALTHIER GUT" },
+    { "id": "sleep", "label": "SLEEP BETTER" },
+    { "id": "performance", "label": "PERFORM SHARPER" }
+  ],
+  "dismissText": "No thanks, I'll pass"
+}

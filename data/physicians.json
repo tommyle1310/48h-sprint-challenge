@@ -1,0 +1,44 @@
+{
+  "physicians": [
+    {
+      "id": "drjamesdinic",
+      "handle": "@drjamesdinic",
+      "name": "Dr. James DiNicolantonio",
+      "followers": "3.2M",
+      "thumbnail": "https://randomuser.me/api/portraits/men/32.jpg",
+      "specialty": "Cardiovascular Research Scientist"
+    },
+    {
+      "id": "dramyshah",
+      "handle": "@dramyshah",
+      "name": "Dr. Amy Shah",
+      "followers": "1.4M",
+      "thumbnail": "https://randomuser.me/api/portraits/women/44.jpg",
+      "specialty": "Double Board Certified MD"
+    },
+    {
+      "id": "monasharma",
+      "handle": "@monasharma",
+      "name": "Dr. Mona Sharma",
+      "followers": "183K",
+      "thumbnail": "https://randomuser.me/api/portraits/women/28.jpg",
+      "specialty": "Integrative Medicine Physician"
+    },
+    {
+      "id": "elissagoodman",
+      "handle": "@elissagoodman",
+      "name": "Elissa Goodman",
+      "followers": "189K",
+      "thumbnail": "https://randomuser.me/api/portraits/women/55.jpg",
+      "specialty": "Holistic Nutritionist"
+    },
+    {
+      "id": "drberthabaum",
+      "handle": "@drberthabaum",
+      "name": "Dr. Bertha Baum",
+      "followers": "229K",
+      "thumbnail": "https://randomuser.me/api/portraits/women/62.jpg",
+      "specialty": "Naturopathic Doctor"
+    }
+  ]
+}

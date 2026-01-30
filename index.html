@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Georgia&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <title>Daily Ultimate Essentials: All-in-One Supplement | IM8 Health</title>
+    <link rel="stylesheet" href="./output.css" />
+</head>
+
+<body class="bg-white font-sans text-text-primary">
+    
+    <!-- ============================================
+         WELCOME GIFT MODAL
+         ============================================ -->
+    <div id="welcome-gift-modal" class="welcome-gift-modal hidden">
+        <!-- Rendered by JS -->
+    </div>
+    
+    <!-- ============================================
+         PRODUCT TAB SWITCHER
+         ============================================ -->
+    <div class="product-tab-switcher bg-brand-cream border-b border-gray-200 py-4 px-4">
+        <div class="tab-container flex justify-center items-center gap-4">
+            <div class="inline-flex bg-white rounded-full p-1 shadow-card border border-gray-200">
+                <button class="product-tab active px-6 py-3 rounded-full text-sm font-medium transition-all" data-product="daily-ultimate-essentials">
+                    Daily Ultimate Essentials
+                </button>
+                <button class="product-tab px-6 py-3 rounded-full text-sm font-medium transition-all" data-product="daily-ultimate-longevity">
+                    Daily Ultimate Longevity
+                </button>
+            </div>
+            <!-- Free Gift Trigger Button -->
+            <button id="open-welcome-gift-modal" class="hidden md:flex items-center gap-2 bg-brand-burgundy text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-colors">
+                <span>🎁</span>
+                <span>Claim Free Gift</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- ============================================
+         HERO SECTION - Sticky Scroll Layout
+         ============================================ -->
+    <section class="hero-sticky-section px-4 md:px-8 lg:px-16 py-8">
+        <div class="sticky-container max-w-7xl mx-auto flex flex-col md:flex-row gap-8 lg:gap-12">
+            
+            <!-- LEFT COLUMN: Sticky Product Gallery -->
+            <div class="sticky-sidebar w-full md:w-[45%] md:max-w-[500px] md:sticky md:top-[20px] md:self-start">
+                
+                <!-- Product Images Slider Container -->
+                <div id="product-images-slider" class="relative">
+                    <!-- Rendered by JS -->
+                </div>
+                
+                <!-- Certification Badges -->
+                <div class="hidden md:flex gap-4 mt-4 justify-center">
+                    <div class="flex items-center gap-2 px-3 py-2 border border-gray-200 rounded-lg">
+                        <img src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/nsf-certified.png" alt="NSF Certified" class="h-8 w-auto" />
+                        <span class="text-xs text-gray-600">NSF Certified</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-3 py-2 border border-gray-200 rounded-lg">
+                        <img src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/certified-sport.png" alt="Certified Sport" class="h-8 w-auto" />
+                        <span class="text-xs text-gray-600">Certified Sport</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RIGHT COLUMN: Scrollable Product Details -->
+            <div class="scrollable-content flex-1 min-w-0 flex flex-col gap-6">
+                
+                <!-- Product Header -->
+                <div class="product-header">
+                    <!-- Star Rating -->
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="flex text-brand-burgundy">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">10,000+ 5 Star Reviews</span>
+                    </div>
+                    
+                    <!-- Product Title -->
+                    <h1 class="font-serif text-3xl md:text-4xl font-normal leading-tight mb-2">
+                        Daily Ultimate Essentials: All-in-One Supplement
+                    </h1>
+                    
+                    <!-- Product Subtitle -->
+                    <p class="text-lg text-gray-700 mb-4">
+                        The complete daily nutrition solution for optimal health and wellness
+                    </p>
+                    
+                    <!-- Product Description -->
+                    <p class="text-base text-gray-600 leading-relaxed">
+                        Support your body's natural processes with our scientifically-formulated blend of 
+                        essential vitamins, minerals, and adaptogens. Designed for modern life.
+                    </p>
+                </div>
+                
+                <!-- Clinically Proven Results Card -->
+                <div class="clinical-results bg-brand-cream rounded-xl p-5 border border-gray-100">
+                    <h3 class="text-xs font-semibold text-brand-burgundy uppercase tracking-wider mb-4">
+                        Clinically Proven Results
+                    </h3>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-brand-burgundy">94%</p>
+                            <p class="text-xs text-gray-600">More Energy</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-brand-burgundy">89%</p>
+                            <p class="text-xs text-gray-600">Better Sleep</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-brand-burgundy">91%</p>
+                            <p class="text-xs text-gray-600">Improved Focus</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FORMAT SELECTION -->
+                <div id="format-selection" class="format-selection">
+                    <!-- Rendered by JS -->
+                </div>
+                
+                <!-- SUBSCRIPTION TIER SELECTION -->
+                <div id="subscription-selection" class="subscription-selection">
+                    <!-- Rendered by JS -->
+                </div>
+                
+                <!-- Add to Cart Button -->
+                <button id="main-add-to-cart" class="w-full bg-brand-burgundy hover:bg-opacity-90 text-white font-semibold py-4 px-6 rounded-lg text-lg transition-all duration-200 shadow-card hover:shadow-card-hover">
+                    ADD TO CART - <span id="main-cart-price">$78.33</span> USD/MO
+                </button>
+                
+                <!-- Guarantee Banner -->
+                <div class="guarantee-banner flex items-center gap-3 bg-green-50 border border-green-200 rounded-lg p-4">
+                    <div class="flex-shrink-0">
+                        <i class="fa-solid fa-circle-check text-green-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-green-800">New Year discount automatically applied</p>
+                        <p class="text-xs text-green-600">30-Day 100% Money Back Guarantee</p>
+                    </div>
+                </div>
+                
+                <!-- HSA/FSA Badge -->
+                <div class="hsa-fsa-badge flex items-center gap-3 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <img src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/hsa-fsa-badge.png" alt="HSA/FSA Eligible" class="h-10 w-auto" />
+                    <div>
+                        <p class="text-sm font-medium">HSA/FSA Eligible</p>
+                        <a href="#" class="text-xs text-brand-burgundy underline">Learn more</a>
+                    </div>
+                </div>
+                
+                <!-- 90-Day Transformation Program -->
+                <div class="transformation-program bg-brand-burgundy text-white rounded-xl p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-white/20 text-xs font-semibold px-2 py-1 rounded uppercase">90-DAY MEMBERS ONLY</span>
+                    </div>
+                    <h3 class="font-serif text-xl mb-2">90-Day IM8 Transformation Program</h3>
+                    <p class="text-sm text-white/80 mb-4">
+                        Get exclusive access to our comprehensive wellness program, featuring personalized 
+                        guidance from world-class experts.
+                    </p>
+                    <div id="transformation-experts" class="flex gap-3 mb-4">
+                        <!-- Rendered by JS -->
+                    </div>
+                    <a href="#" class="inline-flex items-center text-sm font-medium text-white underline">
+                        Learn More <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- PRODUCT ACCORDIONS -->
+                <div id="product-accordions" class="product-accordions divide-y divide-gray-200 border-t border-b border-gray-200">
+                    <!-- Rendered by JS -->
+                </div>
+                
+                <!-- Ambassador Stories -->
+                <div class="ambassador-stories">
+                    <h3 class="font-serif text-xl mb-4">What our IM8 Ambassadors are saying</h3>
+                    <div id="ambassador-avatars" class="flex gap-3 overflow-x-auto pb-2">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         9 MAJOR ORGAN SYSTEMS SECTION
+         ============================================ -->
+    <section id="organ-systems" class="organ-systems-section bg-gradient-to-b from-brand-cream to-gray-50 py-16 px-4 md:px-8 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-10">
+                <span class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4">
+                    Comprehensive Body Support
+                </span>
+                <h2 class="font-serif text-3xl md:text-4xl mb-3">Supporting 9 Major Organ Systems</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    With Over 80+ Clinically Dosed Ingredients
+                </p>
+            </div>
+            
+            <!-- Grid and Detail Panel -->
+            <div class="organ-systems-wrapper flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+                <!-- 3x3 Grid -->
+                <div id="organ-systems-grid" class="organ-systems-grid grid grid-cols-3 gap-3 md:gap-4 w-full lg:w-auto lg:flex-shrink-0">
+                    <!-- Rendered by JS -->
+                </div>
+                
+                <!-- Detail Panel -->
+                <div id="organ-system-detail" class="organ-system-detail flex-1 bg-white rounded-2xl p-6 md:p-8 shadow-card">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         5 PILLARS OF TOTAL HEALTH SECTION
+         ============================================ -->
+    <section id="pillars" class="pillars-section bg-white py-16 px-4 md:px-8 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-10">
+                <span class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4">
+                    The IM8 Formulation
+                </span>
+                <h2 class="font-serif text-3xl md:text-4xl mb-3">5 Pillars of Total Health</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Explore what makes IM8 the most comprehensive nutritional solution
+                </p>
+            </div>
+            
+            <!-- Pillars Accordion -->
+            <div id="pillars-accordion" class="pillars-accordion max-w-3xl mx-auto">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         INGREDIENT FEATURE CARDS SECTION
+         ============================================ -->
+    <section class="ingredient-features bg-gradient-to-b from-gray-50 to-brand-cream py-16 px-4 md:px-8 lg:px-16">
+        <div class="max-w-5xl mx-auto">
+            <div id="ingredient-features-grid" class="features-grid grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         TRUSTED BY PHYSICIANS SECTION
+         ============================================ -->
+    <section id="physicians" class="physicians-section bg-brand-cream py-16 px-4 md:px-8 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-10">
+                <span class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4">
+                    Social Proof
+                </span>
+                <h2 class="font-serif text-3xl md:text-4xl mb-3">Trusted by Physicians and Nutrition Experts</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Doctors, dietitians, and wellness leaders choose IM8 for their own health
+                </p>
+            </div>
+            
+            <!-- Physicians Carousel -->
+            <div class="physicians-carousel relative">
+                <div id="physicians-track" class="physicians-track flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide">
+                    <!-- Rendered by JS -->
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="physicians-prev" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
+                    <i class="fa-solid fa-chevron-left text-gray-600"></i>
+                </button>
+                <button id="physicians-next" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
+                    <i class="fa-solid fa-chevron-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         WELCOME KIT SECTION
+         ============================================ -->
+    <section id="welcome-kit" class="welcome-kit-section bg-white py-16 px-4 md:px-8 lg:px-16">
+        <div class="max-w-6xl mx-auto">
+            <div id="welcome-kit-content" class="welcome-kit-grid grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         AMBASSADOR STORIES CAROUSEL SECTION
+         ============================================ -->
+    <section id="ambassadors" class="ambassadors-section bg-gradient-to-b from-brand-cream to-white py-16 px-4 md:px-8 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-10">
+                <span class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4">
+                    Feel The Difference
+                </span>
+                <h2 class="font-serif text-3xl md:text-4xl mb-3">What Our IM8 Ambassadors Are Saying</h2>
+            </div>
+            
+            <!-- Ambassadors Carousel -->
+            <div class="ambassadors-carousel relative">
+                <div id="ambassadors-track" class="ambassadors-track flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide">
+                    <!-- Rendered by JS -->
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="ambassadors-prev" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
+                    <i class="fa-solid fa-chevron-left text-gray-600"></i>
+                </button>
+                <button id="ambassadors-next" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
+                    <i class="fa-solid fa-chevron-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         REVIEWS CAROUSEL SECTION
+         (Outside sticky container - boundary marker)
+         ============================================ -->
+    <section class="reviews-section bg-brand-cream py-16 px-4 md:px-8 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-10">
+                <div class="flex items-center justify-center gap-2 mb-3">
+                    <div class="flex text-brand-burgundy">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <h2 class="font-serif text-3xl md:text-4xl mb-3">10,000+ 5 Star Reviews</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Join thousands of satisfied customers who have transformed their daily wellness routine
+                </p>
+            </div>
+            
+            <!-- Reviews Carousel -->
+            <div id="reviews-carousel" class="reviews-carousel relative">
+                <div id="reviews-track" class="reviews-track flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide">
+                    <!-- Rendered by JS -->
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button id="reviews-prev" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
+                    <i class="fa-solid fa-chevron-left text-gray-600"></i>
+                </button>
+                <button id="reviews-next" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
+                    <i class="fa-solid fa-chevron-right text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         BRILLIANT MINDS SECTION
+         ============================================ -->
+    <section id="brilliant-minds" class="brilliant-minds-section py-16 px-4 md:px-8 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div id="brilliant-minds-header" class="text-center mb-10">
+                <!-- Rendered by JS -->
+            </div>
+            
+            <!-- Experts Grid -->
+            <div id="brilliant-minds-grid" class="experts-grid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         PREMIUM PRODUCTS SECTION
+         ============================================ -->
+    <section id="premium-products" class="premium-products-section py-16 px-4 md:px-8 lg:px-16">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-8">
+                <h2 class="font-serif text-3xl md:text-4xl mb-6">Premium Core Nutrition</h2>
+                
+                <!-- Trust Badges -->
+                <div id="premium-trust-badges" class="trust-badges-row">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+            
+            <!-- Products Grid -->
+            <div id="premium-products-grid" class="premium-products-grid">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         FAQ SECTION
+         ============================================ -->
+    <section id="faq" class="faq-section">
+        <div class="faq-grid">
+            <!-- Left Column: FAQ Content -->
+            <div class="faq-content">
+                <h2 id="faq-title" class="faq-section-title">FAQs</h2>
+                <div id="faq-accordion" class="faq-accordion">
+                    <!-- Rendered by JS -->
+                </div>
+                <button id="faq-explore-btn" class="faq-explore-btn">
+                    EXPLORE ALL FAQS
+                </button>
+            </div>
+            
+            <!-- Right Column: Lifestyle Image -->
+            <div id="faq-lifestyle-image" class="faq-image-column">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+         SITE FOOTER
+         ============================================ -->
+    <footer class="site-footer">
+        <div class="max-w-7xl mx-auto">
+            <!-- Footer Columns & Newsletter -->
+            <div id="site-footer-content">
+                <!-- Rendered by JS -->
+            </div>
+            
+            <!-- Logo Section -->
+            <div id="footer-logo-section" class="footer-logo-section">
+                <!-- Rendered by JS -->
+            </div>
+            
+            <!-- Disclaimers -->
+            <div id="footer-disclaimers" class="footer-disclaimers">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ============================================
+         STICKY FOOTER CTA BAR
+         ============================================ -->
+    <div id="sticky-footer-cta" class="sticky-footer-cta fixed bottom-0 left-0 right-0 z-50 bg-white shadow-footer transform translate-y-full transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between gap-4">
+                
+                <!-- Left: Product Info (Hidden on mobile) -->
+                <div class="hidden md:flex items-center gap-3">
+                    <!-- Exclusive Badge -->
+                    <div id="exclusive-badge" class="flex items-center gap-1 bg-brand-burgundy text-white text-xs font-semibold px-3 py-1 rounded">
+                        <span>EXCLUSIVE SAVINGS</span>
+                        <button id="close-exclusive-badge" class="ml-1 hover:opacity-70">×</button>
+                    </div>
+                    <img src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-product-thumb.jpg" alt="Product" class="w-12 h-12 object-cover rounded" />
+                    <div>
+                        <p class="text-sm font-semibold">Daily Ultimate Essentials</p>
+                        <p id="footer-format-display" class="text-xs text-gray-500">(Forever Jar)</p>
+                    </div>
+                </div>
+                
+                <!-- Center: Plan Selector -->
+                <div class="flex items-center gap-3">
+                    <select id="footer-plan-dropdown" class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-burgundy">
+                        <option value="90-day">90-Day Supply (Save 30%)</option>
+                        <option value="30-day">30-Day Supply (Save 20%)</option>
+                    </select>
+                    <span id="footer-per-serving" class="hidden md:block text-xs text-gray-500">$2.61 USD / serving</span>
+                </div>
+                
+                <!-- Right: CTA Button -->
+                <button id="footer-add-to-cart" class="bg-brand-burgundy hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg text-sm md:text-base transition-colors whitespace-nowrap">
+                    ADD TO CART - <span id="footer-cart-price">$78.33</span> USD/MO
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript Files -->
+    <script src="./main.js"></script>
+    <script src="./components/product-images-slider.js"></script>
+    <script src="./components/format-selection.js"></script>
+    <script src="./components/subscription-selection.js"></script>
+    <script src="./components/product-accordions.js"></script>
+    <script src="./components/reviews-carousel.js"></script>
+    <script src="./components/sticky-footer-cta.js"></script>
+    <script src="./components/organ-systems-grid.js"></script>
+    <script src="./components/pillars-accordion.js"></script>
+    <script src="./components/physicians-carousel.js"></script>
+    <script src="./components/welcome-kit.js"></script>
+    <script src="./components/ambassadors-carousel.js"></script>
+    <script src="./components/ingredient-features.js"></script>
+    <script src="./components/product-tab-switcher.js"></script>
+    <script src="./components/brilliant-minds.js"></script>
+    <script src="./components/premium-products.js"></script>
+    <script src="./components/faq-accordion.js"></script>
+    <script src="./components/site-footer.js"></script>
+    <script src="./components/welcome-gift-modal.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "ingredientFeatures": [
+    {
+      "id": "superior-forms",
+      "icon": "fa-solid fa-atom",
+      "title": "Superior Ingredient Forms",
+      "description": "Highly bioavailable forms for maximum absorption and effectiveness"
+    },
+    {
+      "id": "clean-formulation",
+      "icon": "fa-solid fa-leaf",
+      "title": "Clean Formulation",
+      "description": "Free from artificial colors, flavors, and common allergens"
+    },
+    {
+      "id": "branded-ingredients",
+      "icon": "fa-solid fa-award",
+      "title": "Branded Ingredients",
+      "description": "Clinically studied, patented ingredients from trusted suppliers"
+    }
+  ]
+}

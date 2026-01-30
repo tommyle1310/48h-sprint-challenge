@@ -1,0 +1,37 @@
+{
+  "sectionTitle": "FAQs",
+  "exploreButtonText": "EXPLORE ALL FAQS",
+  "lifestyleImage": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=1200&fit=crop",
+  "faqs": [
+    {
+      "id": "what-is-im8",
+      "question": "What is IM8?",
+      "answer": "IM8 is the pinnacle of premium core nutrition, born from a collaboration between Prenetics (NASDAQ:PRE), David Beckham as a co-founding partner, and an elite team of scientists spanning space exploration, medical professionals, and academic excellence.\n\nCombining cutting-edge science with nature's most potent ingredients, IM8 delivers a holistic, science-backed approach to health, empowering you to live your most vibrant life."
+    },
+    {
+      "id": "beckham-involvement",
+      "question": "What is David Beckham's involvement in IM8?",
+      "answer": "David Beckham is a co-founding partner of IM8, bringing his lifelong commitment to health and wellness to the brand. He has been actively involved in product development and testing, ensuring that IM8 meets the highest standards of quality and effectiveness that he demands for his own daily routine."
+    },
+    {
+      "id": "advisory-board",
+      "question": "Who is on the IM8 Scientific Advisory Board?",
+      "answer": "Our advisory board includes leading scientists and medical professionals from prestigious institutions including NASA, Mayo Clinic, Cedars-Sinai, and more. These experts bring decades of combined experience in nutrition science, longevity research, and functional medicine to ensure our formulations are backed by the latest scientific evidence."
+    },
+    {
+      "id": "main-benefits",
+      "question": "What are the main benefits of IM8 Daily Essentials + Hydration?",
+      "answer": "IM8 Daily Essentials provides comprehensive nutritional support including enhanced energy and focus, improved gut health and digestion, immune system support, better nutrient absorption, and overall vitality. With 92 carefully selected ingredients, it's designed to fill nutritional gaps in your daily diet."
+    },
+    {
+      "id": "taste",
+      "question": "What does IM8 Daily Ultimate Essentials taste like?",
+      "answer": "IM8 features a delicious berry blend flavor that's refreshing and easy to drink. Unlike many green supplements that taste bitter or earthy, we've worked extensively to create a formula that tastes great while delivering maximum nutritional benefits. Most customers describe it as one of the best-tasting supplements they've tried."
+    },
+    {
+      "id": "shipping",
+      "question": "What countries do you currently ship to?",
+      "answer": "We currently ship to the United States, United Kingdom, Canada, and most EU and APAC countries. Shipping is free for all subscription orders. Delivery times vary by location, with most US orders arriving within 3-5 business days."
+    }
+  ]
+}

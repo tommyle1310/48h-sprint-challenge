@@ -1,0 +1,16 @@
+{
+  "name": "im8-health-landing-page",
+  "version": "1.0.0",
+  "description": "IM8 Health Landing Page Clone - Pixel Perfect Implementation",
+  "main": "main.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./input.css -o ./output.css --watch",
+    "build": "npx tailwindcss -i ./input.css -o ./output.css --minify"
+  },
+  "keywords": ["tailwindcss", "landing-page", "im8-health"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

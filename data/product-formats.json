@@ -1,0 +1,22 @@
+{
+  "formats": [
+    {
+      "id": "jar",
+      "name": "Forever Jar",
+      "weight": "354g",
+      "pricePerServing": 2.61,
+      "badge": "MOST POPULAR",
+      "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-jar-product.jpg",
+      "default": true
+    },
+    {
+      "id": "sachets",
+      "name": "Single-Serve Sachets",
+      "weight": "354g",
+      "pricePerServing": 2.91,
+      "badge": null,
+      "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-sachets-product.jpg",
+      "default": false
+    }
+  ]
+}

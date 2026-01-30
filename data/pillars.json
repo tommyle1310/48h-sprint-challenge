@@ -1,0 +1,74 @@
+{
+  "pillars": [
+    {
+      "id": "nutritional-foundation",
+      "number": "01",
+      "name": "Comprehensive Nutritional Foundation",
+      "subtitle": "Complete Vitamin & Mineral Profile",
+      "icon": "fa-solid fa-layer-group",
+      "keyIngredients": [
+        "All essential vitamins (A, C, D, E, K1, K2, B-complex)",
+        "Full mineral spectrum (12 essential minerals)",
+        "Methylated B-vitamins for optimal absorption",
+        "Chelated minerals for superior bioavailability"
+      ],
+      "description": "The foundation of IM8 provides complete vitamin and mineral coverage to fill nutritional gaps in your daily diet."
+    },
+    {
+      "id": "digestive-support",
+      "number": "02",
+      "name": "Superior Digestive Health Support",
+      "subtitle": "4-Tier Digestive System",
+      "icon": "fa-solid fa-leaf",
+      "keyIngredients": [
+        "10 Billion CFU Probiotics (8 strains)",
+        "Prebiotic fiber blend",
+        "Postbiotic compounds",
+        "Digestive enzyme complex"
+      ],
+      "description": "A complete digestive ecosystem supporting gut health, nutrient absorption, and microbiome balance."
+    },
+    {
+      "id": "superfood-complex",
+      "number": "03",
+      "name": "Powerful Superfood & Antioxidant Complex",
+      "subtitle": "4,100mg Raw Superfoods Blend",
+      "icon": "fa-solid fa-seedling",
+      "keyIngredients": [
+        "Organic greens blend (spirulina, chlorella, wheatgrass)",
+        "Berry antioxidant complex",
+        "Turmeric with black pepper extract",
+        "Green tea extract (EGCG)"
+      ],
+      "description": "A potent blend of organic superfoods and antioxidants to fight oxidative stress and support cellular health."
+    },
+    {
+      "id": "health-complexes",
+      "number": "04",
+      "name": "Specialized Health Complexes",
+      "subtitle": "Targeted Support for Performance",
+      "icon": "fa-solid fa-dna",
+      "keyIngredients": [
+        "CoQ10 for cellular energy",
+        "Collagen peptides for skin & joints",
+        "Omega-3 fatty acids (EPA/DHA)",
+        "Liver support complex"
+      ],
+      "description": "Targeted nutritional complexes addressing specific health needs from energy production to joint support."
+    },
+    {
+      "id": "adaptogenic-support",
+      "number": "05",
+      "name": "Adaptogenic Stress Support",
+      "subtitle": "Stress & Energy Balance",
+      "icon": "fa-solid fa-spa",
+      "keyIngredients": [
+        "Ashwagandha KSM-66®",
+        "Rhodiola Rosea extract",
+        "Lion's Mane mushroom",
+        "Holy Basil (Tulsi)"
+      ],
+      "description": "Clinically studied adaptogens that help your body manage stress while supporting sustained energy and mental clarity."
+    }
+  ]
+}

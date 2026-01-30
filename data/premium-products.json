@@ -1,0 +1,40 @@
+{
+  "sectionTitle": "Premium Core Nutrition",
+  "trustBadges": [
+    "30-Day money back guarantee",
+    "Update or cancel anytime",
+    "Free shipping for all subscriptions"
+  ],
+  "products": [
+    {
+      "id": "daily-ultimate-essentials",
+      "tagline": "FEEL AMAZING TODAY",
+      "name": "Daily Ultimate Essentials:",
+      "subtitle": "All-in-One Supplement",
+      "description": "Core nutrition with 92 nutrient-rich ingredients in one delicious drink.",
+      "price": 89,
+      "badge": "BEST SELLER",
+      "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-essentials-product.jpg"
+    },
+    {
+      "id": "daily-ultimate-longevity",
+      "tagline": "STAY YOUNG TOMORROW",
+      "name": "Daily Ultimate Longevity:",
+      "subtitle": "Healthy Aging",
+      "description": "The World's first supplement scientifically formulated to support all 12 hallmarks of aging.",
+      "price": 119,
+      "badge": null,
+      "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-longevity-product.jpg"
+    },
+    {
+      "id": "beckham-stack",
+      "tagline": "THE ULTIMATE DAILY RITUAL",
+      "name": "The Beckham Stack:",
+      "subtitle": "Essentials + Longevity Set",
+      "description": "Daily Ultimate Essentials and Daily Ultimate Longevity.",
+      "price": 196,
+      "badge": "BEST VALUE",
+      "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-beckham-stack.jpg"
+    }
+  ]
+}

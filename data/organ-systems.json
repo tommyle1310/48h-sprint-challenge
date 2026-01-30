@@ -1,0 +1,85 @@
+{
+  "organSystems": [
+    {
+      "id": "digestive",
+      "number": "01",
+      "name": "Digestive",
+      "icon": "fa-solid fa-stomach",
+      "subtitle": "PREBIOTICS, PROBIOTICS, POSTBIOTICS, ENZYMES",
+      "description": "A complete 4-tier digestive support system featuring 10 Billion CFU of probiotics and clinically proven enzymes to optimize nutrient absorption and gut health.",
+      "badge": "Clinically Dosed Ingredients"
+    },
+    {
+      "id": "immune",
+      "number": "02",
+      "name": "Immune",
+      "icon": "fa-solid fa-shield-halved",
+      "subtitle": "VITAMIN C, D3, ZINC, ELDERBERRY",
+      "description": "Comprehensive immune support with clinically studied ingredients including Vitamin C, D3, Zinc, and Elderberry extract to strengthen your body's natural defenses.",
+      "badge": "Clinically Dosed Ingredients"
+    },
+    {
+      "id": "cardiovascular",
+      "number": "03",
+      "name": "Cardiovascular",
+      "icon": "fa-solid fa-heart-pulse",
+      "subtitle": "COQ10, OMEGA-3, RESVERATROL",
+      "description": "Heart-healthy nutrients including CoQ10, Omega-3 fatty acids, and Resveratrol to support cardiovascular function and healthy blood pressure.",
+      "badge": "Clinically Dosed Ingredients"
+    },
+    {
+      "id": "muscular",
+      "number": "04",
+      "name": "Muscular",
+      "icon": "fa-solid fa-dumbbell",
+      "subtitle": "BCAA, CREATINE, MAGNESIUM",
+      "description": "Support muscle recovery and strength with branched-chain amino acids, creatine, and magnesium for optimal physical performance.",
+      "badge": "Clinically Dosed Ingredients"
+    },
+    {
+      "id": "skeletal",
+      "number": "05",
+      "name": "Skeletal",
+      "icon": "fa-solid fa-bone",
+      "subtitle": "CALCIUM, VITAMIN D, K2",
+      "description": "Bone health support with calcium, Vitamin D3, and K2 working synergistically to maintain strong bones and healthy bone density.",
+      "badge": "Clinically Dosed Ingredients"
+    },
+    {
+      "id": "integumentary",
+      "number": "06",
+      "name": "Integumentary",
+      "icon": "fa-solid fa-hand-sparkles",
+      "subtitle": "COLLAGEN, BIOTIN, HYALURONIC ACID",
+      "description": "Skin, hair, and nail support with collagen peptides, biotin, and hyaluronic acid for a radiant, youthful appearance.",
+      "badge": "Clinically Dosed Ingredients"
+    },
+    {
+      "id": "nervous",
+      "number": "07",
+      "name": "Nervous",
+      "icon": "fa-solid fa-brain",
+      "subtitle": "LION'S MANE, GINKGO, B-VITAMINS",
+      "description": "Cognitive support with Lion's Mane mushroom, Ginkgo Biloba, and B-vitamins to enhance mental clarity, focus, and memory.",
+      "badge": "Clinically Dosed Ingredients"
+    },
+    {
+      "id": "endocrine",
+      "number": "08",
+      "name": "Endocrine",
+      "icon": "fa-solid fa-droplet",
+      "subtitle": "ASHWAGANDHA, MACA, RHODIOLA",
+      "description": "Hormone balance support with adaptogenic herbs including Ashwagandha, Maca root, and Rhodiola for stress resilience and energy.",
+      "badge": "Clinically Dosed Ingredients"
+    },
+    {
+      "id": "urinary",
+      "number": "09",
+      "name": "Urinary",
+      "icon": "fa-solid fa-droplet-slash",
+      "subtitle": "CRANBERRY, D-MANNOSE, NETTLE",
+      "description": "Urinary tract health support with cranberry extract, D-Mannose, and nettle leaf for optimal kidney and bladder function.",
+      "badge": "Clinically Dosed Ingredients"
+    }
+  ]
+}

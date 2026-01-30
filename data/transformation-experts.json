@@ -1,0 +1,22 @@
+{
+  "experts": [
+    {
+      "id": "expert-1",
+      "name": "Dr. Sarah Chen",
+      "title": "Nutrition Expert",
+      "image": "https://randomuser.me/api/portraits/women/44.jpg"
+    },
+    {
+      "id": "expert-2",
+      "name": "James Miller",
+      "title": "Fitness Coach",
+      "image": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      "id": "expert-3",
+      "name": "Dr. Emily Rose",
+      "title": "Wellness Specialist",
+      "image": "https://randomuser.me/api/portraits/women/68.jpg"
+    }
+  ]
+}

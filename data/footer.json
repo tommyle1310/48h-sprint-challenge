@@ -1,0 +1,68 @@
+{
+  "columns": [
+    {
+      "title": "SHOP",
+      "links": [
+        { "text": "Premium Core Nutrition", "url": "#" },
+        { "text": "The Beckham Stack", "url": "#" },
+        { "text": "Merchandise", "url": "#" },
+        { "text": "Shop All", "url": "#" }
+      ]
+    },
+    {
+      "title": "COMPANY",
+      "links": [
+        { "text": "About Us", "url": "#" },
+        { "text": "Science", "url": "#" },
+        { "text": "Impact", "url": "#" }
+      ]
+    },
+    {
+      "title": "LEARN",
+      "links": [
+        { "text": "Reviews", "url": "#" },
+        { "text": "Ingredients", "url": "#" },
+        { "text": "Quality and Standards", "url": "#" },
+        { "text": "IM8 Inner Circle", "url": "#" },
+        { "text": "IM8 vs AG1 Next Gen", "url": "#" },
+        { "text": "IM8 vs Live it Up Super Greens", "url": "#" },
+        { "text": "IM8 vs Bloom Greens & Superfoods", "url": "#" },
+        { "text": "IM8 vs Huel Daily Greens", "url": "#" }
+      ]
+    },
+    {
+      "title": "SUPPORT",
+      "links": [
+        { "text": "FAQs", "url": "#" },
+        { "text": "Track My Order", "url": "#" },
+        { "text": "Returns / Exchanges", "url": "#" },
+        { "text": "Contact Us", "url": "#" }
+      ]
+    },
+    {
+      "title": "IM8 COMMUNITY",
+      "links": [
+        { "text": "Instagram", "url": "#" },
+        { "text": "Facebook", "url": "#" },
+        { "text": "TikTok", "url": "#" },
+        { "text": "YouTube", "url": "#" },
+        { "text": "Pinterest", "url": "#" }
+      ]
+    }
+  ],
+  "newsletter": {
+    "title": "JOIN THE COMMUNITY FOR EXCLUSIVE WELLNESS INSIGHTS",
+    "placeholder": "EMAIL ADDRESS",
+    "button": "JOIN NOW",
+    "disclaimer": "*By joining, you'll receive our wellness insights and can unsubscribe anytime."
+  },
+  "legal": {
+    "copyright": "© 2026 IM8®",
+    "links": [
+      { "text": "Privacy Policy", "url": "#" },
+      { "text": "Terms of Service", "url": "#" }
+    ],
+    "fdaDisclaimer": "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.",
+    "welcomeKitNote": "**Free Welcome Kit available for new subscribers only."
+  }
+}

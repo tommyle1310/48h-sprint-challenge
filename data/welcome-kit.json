@@ -1,0 +1,39 @@
+{
+  "welcomeKit": {
+    "title": "GET STARTED WITH IM8",
+    "subtitle": "FOR DAILY ULTIMATE NUTRITION",
+    "mainProduct": {
+      "name": "Daily Ultimate Essentials",
+      "format": "30-Day Supply (Jar)",
+      "price": 89
+    },
+    "freeItems": [
+      {
+        "name": "Signature Red Cup",
+        "originalPrice": 28,
+        "price": "Free",
+        "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/red-cup.png"
+      },
+      {
+        "name": "Daily Ultimate Essentials Single-Serve Storage Box",
+        "originalPrice": 8,
+        "price": "Free",
+        "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/storage-box.png"
+      },
+      {
+        "name": "5x Bonus Daily Ultimate Essentials Single-Serve Sachets",
+        "originalPrice": 18,
+        "price": "Free",
+        "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/sachets.png"
+      }
+    ],
+    "total": 89,
+    "savings": 54,
+    "cta": "GET YOUR FREE IM8 WELCOME KIT NOW**",
+    "guarantees": [
+      "30-Day money back guarantee",
+      "Update or cancel anytime"
+    ],
+    "footnote": "**Free Welcome Kit included with first subscription order only"
+  }
+}

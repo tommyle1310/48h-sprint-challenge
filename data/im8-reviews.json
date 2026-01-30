@@ -1,0 +1,74 @@
+[
+  {
+    "id": "review-1",
+    "rating": 5,
+    "author": "Jennifer M.",
+    "isVerified": true,
+    "date": "01/25/2026",
+    "content": "This has been a game-changer for my morning routine. I feel more energized throughout the day and my focus has improved significantly. The taste is actually pleasant, which is rare for supplements!",
+    "avatarInitial": "J"
+  },
+  {
+    "id": "review-2",
+    "rating": 5,
+    "author": "Michael R.",
+    "isVerified": true,
+    "date": "01/22/2026",
+    "content": "After 3 months on the 90-day plan, I can honestly say this is the best investment I've made in my health. The transformation program is incredible - the expert guidance alone is worth it.",
+    "avatarInitial": "M"
+  },
+  {
+    "id": "review-3",
+    "rating": 5,
+    "author": "Sarah K.",
+    "isVerified": true,
+    "date": "01/20/2026",
+    "content": "I was skeptical at first, but the results speak for themselves. Better sleep, more energy, and I feel like my body is finally getting the nutrition it needs. Highly recommend!",
+    "avatarInitial": "S"
+  },
+  {
+    "id": "review-4",
+    "rating": 5,
+    "author": "David L.",
+    "isVerified": true,
+    "date": "01/18/2026",
+    "content": "The quality of ingredients is top-notch. As someone who researches supplements extensively, I appreciate the transparency and third-party testing. This is the real deal.",
+    "avatarInitial": "D"
+  },
+  {
+    "id": "review-5",
+    "rating": 5,
+    "author": "Amanda T.",
+    "isVerified": true,
+    "date": "01/15/2026",
+    "content": "Started with the 30-day supply and immediately upgraded to 90-day. The savings are great, and the free shipping is a nice bonus. My whole family is now using it!",
+    "avatarInitial": "A"
+  },
+  {
+    "id": "review-6",
+    "rating": 5,
+    "author": "Robert C.",
+    "isVerified": true,
+    "date": "01/12/2026",
+    "content": "Finally found an all-in-one supplement that actually works. No more juggling multiple bottles. Simple, effective, and tastes great. What more could you ask for?",
+    "avatarInitial": "R"
+  },
+  {
+    "id": "review-7",
+    "rating": 5,
+    "author": "Lisa P.",
+    "isVerified": true,
+    "date": "01/10/2026",
+    "content": "The customer service is exceptional. Had questions about ingredients and they responded within hours with detailed information. Product quality matches the service quality!",
+    "avatarInitial": "L"
+  },
+  {
+    "id": "review-8",
+    "rating": 5,
+    "author": "Kevin W.",
+    "isVerified": true,
+    "date": "01/08/2026",
+    "content": "Been taking this for 6 months now. My annual checkup showed improved vitamin levels and my doctor was impressed. This is now a permanent part of my daily routine.",
+    "avatarInitial": "K"
+  }
+]
