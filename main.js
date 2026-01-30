@@ -153,4 +153,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial price update
     setTimeout(updateAllPrices, 100);
+
+    // Scroll-triggered sticky header
+    initStickyPromoHeader();
 });
+
+/* ================= STICKY PROMO HEADER ================= */
+function initStickyPromoHeader() {
+    const stickyHeader = document.getElementById('sticky-promo-header');
+    if (!stickyHeader) return;
+
+    let lastScrollY = 0;
+    let ticking = false;
+
+    function updateStickyHeader() {
+        const scrollY = window.scrollY;
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollY / totalHeight) * 100;
+
+        // Show when scrolled past 10%, hide when below 10%
+        if (scrollPercent >= 5) {
+            stickyHeader.classList.add('visible');
+        } else {
+            stickyHeader.classList.remove('visible');
+        }
+
+        lastScrollY = scrollY;
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateStickyHeader);
+            ticking = true;
+        }
+    });
+}

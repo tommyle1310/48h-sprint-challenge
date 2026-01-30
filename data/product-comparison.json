@@ -1,0 +1,45 @@
+{
+  "products": [
+    {
+      "id": "essentials",
+      "name": "Daily Ultimate Essentials",
+      "columnTitle": "Essentials",
+      "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-product-jar.png"
+    },
+    {
+      "id": "beckham-stack",
+      "name": "The Beckham Stack",
+      "subtitle": "(Essentials + Longevity)",
+      "columnTitle": "Beckham Stack",
+      "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/beckham-stack-products.png"
+    }
+  ],
+  "categories": [
+    {
+      "name": "IMMEDIATE ESSENTIALS BENEFIT",
+      "rows": [
+        { "feature": "92 Nutrient-Rich Ingredients", "essentials": true, "beckhamStack": true },
+        { "feature": "All-Day Energy & Focus", "essentials": true, "beckhamStack": true },
+        { "feature": "Better Sleep Quality", "essentials": true, "beckhamStack": true },
+        { "feature": "Digestive Health & Gut Support", "essentials": true, "beckhamStack": true },
+        { "feature": "Immune System Protection", "essentials": true, "beckhamStack": true },
+        { "feature": "Mental Clarity & Performance", "essentials": true, "beckhamStack": true }
+      ]
+    },
+    {
+      "name": "ADVANCED LONGEVITY BENEFIT",
+      "rows": [
+        { "feature": "10 Longevity Compounds", "essentials": false, "beckhamStack": true },
+        { "feature": "Autophagy Cellular Cleanup Activation", "essentials": false, "beckhamStack": true },
+        { "feature": "NMN NAD+ Cellular Restoration", "essentials": false, "beckhamStack": true },
+        { "feature": "Targets All 12 Hallmarks of Aging", "essentials": false, "beckhamStack": true },
+        { "feature": "Triple Senolytic Zombie Cell Removal", "essentials": false, "beckhamStack": true }
+      ]
+    }
+  ],
+  "pricing": [
+    { "label": "Monthly Subscription", "essentials": "$99", "beckhamStack": "$196" },
+    { "label": "Cost per Daily Serving", "essentials": "$3", "beckhamStack": "$7" },
+    { "label": "Savings vs. Buying Separately", "essentials": "-", "beckhamStack": "$12/month" }
+  ]
+}

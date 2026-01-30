@@ -1,0 +1,58 @@
+{
+  "title": "IM8: The New Gold Standard",
+  "products": {
+    "left": {
+      "name": "Daily Ultimate Essentials",
+      "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-product-jar.png",
+      "headerBgColor": "bg-brand-burgundy"
+    },
+    "right": {
+      "name": "Leading Greens Powder",
+      "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/leading-greens-powder.png",
+      "headerBgColor": "bg-[#5C6B5A]"
+    }
+  },
+  "rows": [
+    {
+      "left": { "text": "Superfoods, Greens, Fruits, Herbs", "included": true },
+      "right": { "text": "Superfoods, Greens, Fruits, Herbs", "included": true }
+    },
+    {
+      "left": { "text": "Clinical Dosed B Vitamins", "included": true },
+      "right": { "text": "Clinical Dosed B Vitamins", "included": true }
+    },
+    {
+      "left": { "text": "30mcg Clinical Dosed Vitamin D3", "included": true },
+      "right": { "text": "No Vitamin D3", "included": false }
+    },
+    {
+      "left": { "text": "40mcg Clinical Dosed Vitamin K2", "included": true },
+      "right": { "text": "Vitamin K2 dosage not disclosed", "included": false }
+    },
+    {
+      "left": { "text": "100mg Clinical Dosed CoQ10", "included": true },
+      "right": { "text": "CoQ10 dosage not disclosed", "included": false }
+    },
+    {
+      "left": { "text": "1000mg Clinical Dosed MSM", "included": true },
+      "right": { "text": "No MSM", "included": false }
+    },
+    {
+      "left": { "text": "3g Prebiotic fiber", "subtext": "(50% more)", "included": true },
+      "right": { "text": "2g Prebiotic fiber", "included": false }
+    },
+    {
+      "left": { "text": "900mg Clinical Dosed Vitamin C", "subtext": "(114% more)", "included": true },
+      "right": { "text": "420mg Vitamin C", "included": false }
+    },
+    {
+      "left": { "text": "4.2mg Clinical Dosed Riboflavin", "subtext": "(110% more)", "included": true },
+      "right": { "text": "2mg Riboflavin", "included": false }
+    },
+    {
+      "left": { "text": "65mg Magnesium", "subtext": "(150% more)", "included": true },
+      "right": { "text": "26mg Magnesium", "included": false }
+    }
+  ],
+  "seeMoreButton": true
+}
