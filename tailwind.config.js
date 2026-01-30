@@ -18,7 +18,7 @@ module.exports = {
         'brand-burgundy-light': '#fdf8f8',
         'brand-cream': '#FAF9F6',
         'brand-green': '#16a34a',
-        'text-primary': '#1a1a1a',
+        'text-primary': '#50000b',
         'text-secondary': '#666666',
         'border-default': '#e5e5e5',
       },
@@ -35,7 +35,10 @@ module.exports = {
       },
       fontFamily: {
         'serif': ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'sans': ['Aeonik', 'Inter', 'system-ui', 'sans-serif'],
+        'architekt': ['NB Architekt', 'sans-serif'],
+        'arizona': ['ABC Arizona Flare', 'Georgia', 'serif'],
+        'aeonik': ['Aeonik', 'Inter', 'system-ui', 'sans-serif'],
       },
       spacing: {
         '18': '4.5rem',

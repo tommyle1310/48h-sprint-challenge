@@ -1,916 +1,1192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Georgia&display=swap" rel="stylesheet" />
-    
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
     <title>Daily Ultimate Essentials: All-in-One Supplement | IM8 Health</title>
     <link rel="stylesheet" href="./output.css" />
-</head>
+  </head>
 
-<body class="bg-white font-sans text-text-primary">
-    
+  <body class="bg-white font-sans text-text-primary">
     <!-- ============================================
          WELCOME GIFT MODAL
          ============================================ -->
     <div id="welcome-gift-modal" class="welcome-gift-modal hidden">
-        <!-- Rendered by JS -->
+      <!-- Rendered by JS -->
     </div>
-    
+
     <!-- ============================================
          ANNOUNCEMENT BAR
          ============================================ -->
-    <div class="announcement-bar">
-        <div class="announcement-content">
-            <span class="announcement-text">2026 STARTS NOW: 35% OFF — FEEL LIKE YOURSELF AGAIN</span>
-        </div>
-        <div class="announcement-currency">
-            <button class="currency-selector">
-                <span>USD</span>
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
+    <div class="announcement-bar font-architekt text-white">
+      <div class="announcement-content">
+        2026 STARTS NOW: 35% OFF — FEEL LIKE YOURSELF AGAIN
+      </div>
+      <div class="announcement-currency">
+        <button class="currency-selector">
+          <span>USD</span>
+          <svg
+            width="10"
+            height="6"
+            viewBox="0 0 10 6"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 1L5 5L9 1"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- ============================================
          SCROLL-TRIGGERED STICKY HEADER
          ============================================ -->
     <div class="sticky-promo-header" id="sticky-promo-header">
-        <div class="sticky-promo-container">
-            <a href="/" class="sticky-promo-logo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="21" viewBox="0 0 31 8" fill="none">
-                    <g clip-path="url(#clip0_sticky)">
-                        <path d="M26.7773 7.98239C26.2203 7.98239 25.7312 7.89122 25.301 7.71181C24.8796 7.52357 24.5525 7.25887 24.3197 6.92063C24.0869 6.58239 23.972 6.18828 23.972 5.74416C23.972 5.30004 24.1252 4.87945 24.4346 4.53534C24.7499 4.18828 25.189 3.9471 25.7518 3.81181V3.76769C25.2774 3.62357 24.912 3.40298 24.6468 3.10004C24.3904 2.7971 24.2637 2.43534 24.2637 2.01475C24.2637 1.59416 24.3639 1.33239 24.5672 1.02945C24.7705 0.72063 25.0623 0.476512 25.4453 0.294159C25.8284 0.111806 26.2704 0.0235711 26.7743 0.0235711C27.2782 0.0235711 27.7173 0.114748 28.0915 0.294159C28.4746 0.476512 28.7663 0.72063 28.9697 1.02945C29.173 1.33239 29.2732 1.65887 29.2732 2.01475C29.2732 2.37063 29.1406 2.80887 28.8783 3.11181C28.622 3.41475 28.2595 3.63239 27.7851 3.76769V3.81181C28.3568 3.9471 28.7958 4.18828 29.1023 4.53534C29.4176 4.88239 29.5767 5.28534 29.5767 5.74416C29.5767 6.20298 29.4618 6.58239 29.229 6.92063C28.9962 7.25887 28.6662 7.52357 28.2389 7.71181C27.8175 7.89416 27.3313 7.98239 26.7743 7.98239H26.7773ZM26.7773 7.21181C27.1073 7.21181 27.3961 7.1471 27.6436 7.02063C27.9 6.89122 28.0945 6.71475 28.23 6.48828C28.3715 6.26181 28.4452 6.00592 28.4452 5.72063C28.4452 5.26769 28.2919 4.90298 27.9825 4.62357C27.676 4.33828 27.2723 4.19416 26.7773 4.19416C26.2822 4.19416 26.1555 4.25887 25.8991 4.38534C25.6516 4.51475 25.4571 4.69416 25.3127 4.92945C25.1772 5.15592 25.1094 5.42063 25.1094 5.72063C25.1094 6.15887 25.2626 6.51475 25.5721 6.79416C25.8785 7.07357 26.2822 7.21181 26.7773 7.21181ZM26.7773 3.43534C27.0543 3.43534 27.2959 3.37945 27.4992 3.26475C27.7085 3.15298 27.8705 2.99416 27.9825 2.79122C28.0945 2.58828 28.1505 2.35298 28.1505 2.09122C28.1505 1.69122 28.0267 1.37357 27.7792 1.14122C27.5317 0.908865 27.1987 0.791218 26.7773 0.791218C26.3559 0.791218 26.2557 0.844159 26.0465 0.950042C25.8432 1.05592 25.687 1.20592 25.5721 1.40298C25.4601 1.60004 25.4041 1.82945 25.4041 2.09416C25.4041 2.49416 25.5279 2.81769 25.7754 3.06769C26.0229 3.31769 26.3559 3.44122 26.7773 3.44122V3.43534ZM0 7.89416C0.135551 7.6971 0.229848 7.47651 0.28289 7.22651C0.335932 6.97063 0.362452 6.62651 0.362452 6.1971V1.82357C0.362452 1.39416 0.335932 1.05004 0.28289 0.794159C0.229848 0.535336 0.135551 0.314748 0 0.126512V0.0823946H1.82405V0.126512C1.6885 0.314748 1.5942 0.538277 1.54116 0.794159C1.48812 1.05004 1.4616 1.39416 1.4616 1.82357V6.20004C1.4616 6.62945 1.48812 6.97357 1.54116 7.22945C1.5942 7.47945 1.6885 7.70004 1.82405 7.8971V7.94122H0V7.8971V7.89416ZM9.64772 1.30298V6.18828C9.64772 6.61769 9.67424 6.96475 9.72728 7.22945C9.78032 7.48534 9.87462 7.70886 10.0102 7.8971V7.94122H8.43365V7.8971C8.5751 7.70886 8.66939 7.48534 8.71654 7.22945C8.76958 6.97357 8.7961 6.62651 8.7961 6.18828V1.81181C8.7961 1.38239 8.76958 1.03828 8.71654 0.782395C8.67234 0.526512 8.57804 0.308865 8.43365 0.126512V0.0823946H10.3491L12.9628 6.57357H13.007L15.5737 0.0794534H17.4213V0.123571C17.2857 0.305924 17.1914 0.526512 17.1384 0.791218C17.0942 1.0471 17.0706 1.38828 17.0706 1.80887V6.18534C17.0706 6.62357 17.0942 6.97063 17.1384 7.22651C17.1914 7.48239 17.2857 7.70592 17.4213 7.89416V7.93828H15.609V7.89416C15.7505 7.70592 15.8448 7.48239 15.8919 7.22651C15.945 6.97063 15.9715 6.62357 15.9715 6.18534V1.31181H15.9155L13.3135 7.93828H12.3794L9.7096 1.30004H9.65361L9.64772 1.30298ZM5.57823 3.53828L5.11559 3.3471L4.65295 3.53828L4.46141 4.00004L4.65295 4.46181L5.11559 4.65298L5.57823 4.46181L5.76977 4.00004L5.57823 3.53828ZM21.2138 3.53828L20.7511 3.3471L20.2885 3.53828L20.097 4.00004L20.2885 4.46181L20.7511 4.65298L21.2138 4.46181L21.4053 4.00004L21.2138 3.53828Z" fill="white"></path>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_sticky">
-                            <rect width="31" height="8" fill="white"></rect>
-                        </clipPath>
-                    </defs>
-                </svg>
-            </a>
-            <div class="sticky-promo-text">
-                <span class="sticky-promo-bold">2026 STARTS NOW:</span>
-                <span class="sticky-promo-light">35% OFF — Feel Like Yourself Again</span>
-            </div>
-            <a href="#" class="sticky-promo-cta">GET STARTED</a>
+      <div class="sticky-promo-container">
+        <a href="/" class="sticky-promo-logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="80"
+            height="21"
+            viewBox="0 0 31 8"
+            fill="none"
+          >
+            <g clip-path="url(#clip0_sticky)">
+              <path
+                d="M26.7773 7.98239C26.2203 7.98239 25.7312 7.89122 25.301 7.71181C24.8796 7.52357 24.5525 7.25887 24.3197 6.92063C24.0869 6.58239 23.972 6.18828 23.972 5.74416C23.972 5.30004 24.1252 4.87945 24.4346 4.53534C24.7499 4.18828 25.189 3.9471 25.7518 3.81181V3.76769C25.2774 3.62357 24.912 3.40298 24.6468 3.10004C24.3904 2.7971 24.2637 2.43534 24.2637 2.01475C24.2637 1.59416 24.3639 1.33239 24.5672 1.02945C24.7705 0.72063 25.0623 0.476512 25.4453 0.294159C25.8284 0.111806 26.2704 0.0235711 26.7743 0.0235711C27.2782 0.0235711 27.7173 0.114748 28.0915 0.294159C28.4746 0.476512 28.7663 0.72063 28.9697 1.02945C29.173 1.33239 29.2732 1.65887 29.2732 2.01475C29.2732 2.37063 29.1406 2.80887 28.8783 3.11181C28.622 3.41475 28.2595 3.63239 27.7851 3.76769V3.81181C28.3568 3.9471 28.7958 4.18828 29.1023 4.53534C29.4176 4.88239 29.5767 5.28534 29.5767 5.74416C29.5767 6.20298 29.4618 6.58239 29.229 6.92063C28.9962 7.25887 28.6662 7.52357 28.2389 7.71181C27.8175 7.89416 27.3313 7.98239 26.7743 7.98239H26.7773ZM26.7773 7.21181C27.1073 7.21181 27.3961 7.1471 27.6436 7.02063C27.9 6.89122 28.0945 6.71475 28.23 6.48828C28.3715 6.26181 28.4452 6.00592 28.4452 5.72063C28.4452 5.26769 28.2919 4.90298 27.9825 4.62357C27.676 4.33828 27.2723 4.19416 26.7773 4.19416C26.2822 4.19416 26.1555 4.25887 25.8991 4.38534C25.6516 4.51475 25.4571 4.69416 25.3127 4.92945C25.1772 5.15592 25.1094 5.42063 25.1094 5.72063C25.1094 6.15887 25.2626 6.51475 25.5721 6.79416C25.8785 7.07357 26.2822 7.21181 26.7773 7.21181ZM26.7773 3.43534C27.0543 3.43534 27.2959 3.37945 27.4992 3.26475C27.7085 3.15298 27.8705 2.99416 27.9825 2.79122C28.0945 2.58828 28.1505 2.35298 28.1505 2.09122C28.1505 1.69122 28.0267 1.37357 27.7792 1.14122C27.5317 0.908865 27.1987 0.791218 26.7773 0.791218C26.3559 0.791218 26.2557 0.844159 26.0465 0.950042C25.8432 1.05592 25.687 1.20592 25.5721 1.40298C25.4601 1.60004 25.4041 1.82945 25.4041 2.09416C25.4041 2.49416 25.5279 2.81769 25.7754 3.06769C26.0229 3.31769 26.3559 3.44122 26.7773 3.44122V3.43534ZM0 7.89416C0.135551 7.6971 0.229848 7.47651 0.28289 7.22651C0.335932 6.97063 0.362452 6.62651 0.362452 6.1971V1.82357C0.362452 1.39416 0.335932 1.05004 0.28289 0.794159C0.229848 0.535336 0.135551 0.314748 0 0.126512V0.0823946H1.82405V0.126512C1.6885 0.314748 1.5942 0.538277 1.54116 0.794159C1.48812 1.05004 1.4616 1.39416 1.4616 1.82357V6.20004C1.4616 6.62945 1.48812 6.97357 1.54116 7.22945C1.5942 7.47945 1.6885 7.70004 1.82405 7.8971V7.94122H0V7.8971V7.89416ZM9.64772 1.30298V6.18828C9.64772 6.61769 9.67424 6.96475 9.72728 7.22945C9.78032 7.48534 9.87462 7.70886 10.0102 7.8971V7.94122H8.43365V7.8971C8.5751 7.70886 8.66939 7.48534 8.71654 7.22945C8.76958 6.97357 8.7961 6.62651 8.7961 6.18828V1.81181C8.7961 1.38239 8.76958 1.03828 8.71654 0.782395C8.67234 0.526512 8.57804 0.308865 8.43365 0.126512V0.0823946H10.3491L12.9628 6.57357H13.007L15.5737 0.0794534H17.4213V0.123571C17.2857 0.305924 17.1914 0.526512 17.1384 0.791218C17.0942 1.0471 17.0706 1.38828 17.0706 1.80887V6.18534C17.0706 6.62357 17.0942 6.97063 17.1384 7.22651C17.1914 7.48239 17.2857 7.70592 17.4213 7.89416V7.93828H15.609V7.89416C15.7505 7.70592 15.8448 7.48239 15.8919 7.22651C15.945 6.97063 15.9715 6.62357 15.9715 6.18534V1.31181H15.9155L13.3135 7.93828H12.3794L9.7096 1.30004H9.65361L9.64772 1.30298ZM5.57823 3.53828L5.11559 3.3471L4.65295 3.53828L4.46141 4.00004L4.65295 4.46181L5.11559 4.65298L5.57823 4.46181L5.76977 4.00004L5.57823 3.53828ZM21.2138 3.53828L20.7511 3.3471L20.2885 3.53828L20.097 4.00004L20.2885 4.46181L20.7511 4.65298L21.2138 4.46181L21.4053 4.00004L21.2138 3.53828Z"
+                fill="white"
+              ></path>
+            </g>
+            <defs>
+              <clippath id="clip0_sticky">
+                <rect width="31" height="8" fill="white"></rect>
+              </clippath>
+            </defs>
+          </svg>
+        </a>
+        <div class="sticky-promo-text">
+          <span class="sticky-promo-bold">2026 STARTS NOW:</span>
+          <span class="sticky-promo-light"
+            >35% OFF — Feel Like Yourself Again</span
+          >
         </div>
+        <a href="#" class="sticky-promo-cta">GET STARTED</a>
+      </div>
     </div>
 
     <!-- ============================================
          SITE HEADER
          ============================================ -->
     <header class="site-header">
-        <div class="header-wrapper">
-            <div class="header-container">
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" aria-label="Menu">
-                    <svg class="icon-hamburger" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 16H30" stroke="#A40011" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                        <path d="M2 7H30" stroke="#A40011" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                        <path d="M2 25H30" stroke="#A40011" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"></path>
-                    </svg>
+      <div class="header-wrapper">
+        <div class="header-container">
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <svg
+              class="icon-hamburger"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 16H30"
+                stroke="#A40011"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M2 7H30"
+                stroke="#A40011"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M2 25H30"
+                stroke="#A40011"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- Left Navigation -->
+          <nav class="header-nav header-nav-left">
+            <ul class="nav-list">
+              <li class="nav-item has-dropdown">
+                <button class="nav-link dropdown-toggle" data-dropdown="shop">
+                  <span>Shop</span>
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 4.3125L5.625 7.6875L2.25 4.3125"
+                      stroke="#50000B"
+                      stroke-width="2"
+                      stroke-linecap="square"
+                    ></path>
+                  </svg>
                 </button>
-                
-                <!-- Left Navigation -->
-                <nav class="header-nav header-nav-left">
-                    <ul class="nav-list">
-                        <li class="nav-item has-dropdown">
-                            <button class="nav-link dropdown-toggle" data-dropdown="shop">
-                                <span>Shop</span>
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 4.3125L5.625 7.6875L2.25 4.3125" stroke="#50000B" stroke-width="2" stroke-linecap="square"></path>
-                                </svg>
-                            </button>
-                            <!-- Shop Dropdown -->
-                            <div class="dropdown-menu" id="shop-dropdown">
-                                <div class="dropdown-content">
-                                    <a href="#" class="dropdown-item">
-                                        <img src="https://im8health.com/cdn/shop/files/DUE-thumb.png?v=1762223928&width=352" alt="Daily Ultimate Essentials" />
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        <img src="https://im8health.com/cdn/shop/files/DUL-thumb.png?v=1762223929&width=352" alt="Daily Ultimate Longevity" />
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        <img src="https://im8health.com/cdn/shop/files/navbar_bstack_50dfae75-582e-400b-bce4-77aa74faa198.png?v=1762223932&width=352" alt="The Beckham Stack" />
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Science</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">The Beckham Stack</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Welcome from David</a>
-                        </li>
-                    </ul>
-                </nav>
-                
-                <!-- Logo -->
-                <a href="/" class="header-logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="95" height="25" viewBox="0 0 31 8" fill="none">
-                        <g clip-path="url(#clip0_header)">
-                            <path d="M26.7773 7.98239C26.2203 7.98239 25.7312 7.89122 25.301 7.71181C24.8796 7.52357 24.5525 7.25887 24.3197 6.92063C24.0869 6.58239 23.972 6.18828 23.972 5.74416C23.972 5.30004 24.1252 4.87945 24.4346 4.53534C24.7499 4.18828 25.189 3.9471 25.7518 3.81181V3.76769C25.2774 3.62357 24.912 3.40298 24.6468 3.10004C24.3904 2.7971 24.2637 2.43534 24.2637 2.01475C24.2637 1.59416 24.3639 1.33239 24.5672 1.02945C24.7705 0.72063 25.0623 0.476512 25.4453 0.294159C25.8284 0.111806 26.2704 0.0235711 26.7743 0.0235711C27.2782 0.0235711 27.7173 0.114748 28.0915 0.294159C28.4746 0.476512 28.7663 0.72063 28.9697 1.02945C29.173 1.33239 29.2732 1.65887 29.2732 2.01475C29.2732 2.37063 29.1406 2.80887 28.8783 3.11181C28.622 3.41475 28.2595 3.63239 27.7851 3.76769V3.81181C28.3568 3.9471 28.7958 4.18828 29.1023 4.53534C29.4176 4.88239 29.5767 5.28534 29.5767 5.74416C29.5767 6.20298 29.4618 6.58239 29.229 6.92063C28.9962 7.25887 28.6662 7.52357 28.2389 7.71181C27.8175 7.89416 27.3313 7.98239 26.7743 7.98239H26.7773ZM26.7773 7.21181C27.1073 7.21181 27.3961 7.1471 27.6436 7.02063C27.9 6.89122 28.0945 6.71475 28.23 6.48828C28.3715 6.26181 28.4452 6.00592 28.4452 5.72063C28.4452 5.26769 28.2919 4.90298 27.9825 4.62357C27.676 4.33828 27.2723 4.19416 26.7773 4.19416C26.2822 4.19416 26.1555 4.25887 25.8991 4.38534C25.6516 4.51475 25.4571 4.69416 25.3127 4.92945C25.1772 5.15592 25.1094 5.42063 25.1094 5.72063C25.1094 6.15887 25.2626 6.51475 25.5721 6.79416C25.8785 7.07357 26.2822 7.21181 26.7773 7.21181ZM26.7773 3.43534C27.0543 3.43534 27.2959 3.37945 27.4992 3.26475C27.7085 3.15298 27.8705 2.99416 27.9825 2.79122C28.0945 2.58828 28.1505 2.35298 28.1505 2.09122C28.1505 1.69122 28.0267 1.37357 27.7792 1.14122C27.5317 0.908865 27.1987 0.791218 26.7773 0.791218C26.3559 0.791218 26.2557 0.844159 26.0465 0.950042C25.8432 1.05592 25.687 1.20592 25.5721 1.40298C25.4601 1.60004 25.4041 1.82945 25.4041 2.09416C25.4041 2.49416 25.5279 2.81769 25.7754 3.06769C26.0229 3.31769 26.3559 3.44122 26.7773 3.44122V3.43534ZM0 7.89416C0.135551 7.6971 0.229848 7.47651 0.28289 7.22651C0.335932 6.97063 0.362452 6.62651 0.362452 6.1971V1.82357C0.362452 1.39416 0.335932 1.05004 0.28289 0.794159C0.229848 0.535336 0.135551 0.314748 0 0.126512V0.0823946H1.82405V0.126512C1.6885 0.314748 1.5942 0.538277 1.54116 0.794159C1.48812 1.05004 1.4616 1.39416 1.4616 1.82357V6.20004C1.4616 6.62945 1.48812 6.97357 1.54116 7.22945C1.5942 7.47945 1.6885 7.70004 1.82405 7.8971V7.94122H0V7.8971V7.89416ZM9.64772 1.30298V6.18828C9.64772 6.61769 9.67424 6.96475 9.72728 7.22945C9.78032 7.48534 9.87462 7.70886 10.0102 7.8971V7.94122H8.43365V7.8971C8.5751 7.70886 8.66939 7.48534 8.71654 7.22945C8.76958 6.97357 8.7961 6.62651 8.7961 6.18828V1.81181C8.7961 1.38239 8.76958 1.03828 8.71654 0.782395C8.67234 0.526512 8.57804 0.308865 8.43365 0.126512V0.0823946H10.3491L12.9628 6.57357H13.007L15.5737 0.0794534H17.4213V0.123571C17.2857 0.305924 17.1914 0.526512 17.1384 0.791218C17.0942 1.0471 17.0706 1.38828 17.0706 1.80887V6.18534C17.0706 6.62357 17.0942 6.97063 17.1384 7.22651C17.1914 7.48239 17.2857 7.70592 17.4213 7.89416V7.93828H15.609V7.89416C15.7505 7.70592 15.8448 7.48239 15.8919 7.22651C15.945 6.97063 15.9715 6.62357 15.9715 6.18534V1.31181H15.9155L13.3135 7.93828H12.3794L9.7096 1.30004H9.65361L9.64772 1.30298ZM5.57823 3.53828L5.11559 3.3471L4.65295 3.53828L4.46141 4.00004L4.65295 4.46181L5.11559 4.65298L5.57823 4.46181L5.76977 4.00004L5.57823 3.53828ZM21.2138 3.53828L20.7511 3.3471L20.2885 3.53828L20.097 4.00004L20.2885 4.46181L20.7511 4.65298L21.2138 4.46181L21.4053 4.00004L21.2138 3.53828Z" fill="#A40011"></path>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_header">
-                                <rect width="31" height="8" fill="white"></rect>
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </a>
-                
-                <!-- Right Navigation -->
-                <nav class="header-nav header-nav-right">
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Reviews</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Ingredients</a>
-                        </li>
-                        <li class="nav-item has-dropdown">
-                            <button class="nav-link dropdown-toggle" data-dropdown="discover">
-                                <span>Discover</span>
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 4.3125L5.625 7.6875L2.25 4.3125" stroke="#50000B" stroke-width="2" stroke-linecap="square"></path>
-                                </svg>
-                            </button>
-                            <!-- Discover Dropdown -->
-                            <div class="dropdown-menu" id="discover-dropdown">
-                                <div class="dropdown-content dropdown-text-links">
-                                    <a href="#" class="dropdown-text-link">About Us</a>
-                                    <a href="#" class="dropdown-text-link">Our Impact</a>
-                                    <a href="#" class="dropdown-text-link">Quality and Standards</a>
-                                    <a href="#" class="dropdown-text-link">The Healthspan Blog</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-                
-                <!-- Header Icons -->
-                <div class="header-icons">
-                    <a href="#" class="header-icon header-icon-account">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 30C3 22.82 8.82 17 16 17C23.18 17 29 22.82 29 30" stroke="#50000B" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
-                            <path d="M16 17C20.1421 17 23.5 13.6421 23.5 9.5C23.5 5.35786 20.1421 2 16 2C11.8579 2 8.5 5.35786 8.5 9.5C8.5 13.6421 11.8579 17 16 17Z" stroke="#50000B" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
-                        </svg>
+                <!-- Shop Dropdown -->
+                <div class="dropdown-menu" id="shop-dropdown">
+                  <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                  <img src="https://im8health.com/cdn/shop/files/Frame_1171275435.png?v=1762225645&amp;width=940" alt="Daily Ultimate Essentials: All-in-One Supplement" loading="lazy">
                     </a>
-                    <a href="#" class="header-icon header-icon-cart">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.45011 5.45011L16 1.08232L26.5499 5.45011L30.9177 16L26.5499 26.5499L16 30.9177L5.45011 26.5499L1.08232 16L5.45011 5.45011Z" stroke="#50000B" stroke-width="2"></path>
-                        </svg>
-                        <span class="cart-count">0</span>
+                    <a href="#" class="dropdown-item">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-longevity-product.jpg"
+                        alt="Daily Ultimate Longevity"
+                      />
                     </a>
+                    <a href="#" class="dropdown-item">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-beckham-stack.jpg"
+                        alt="The Beckham Stack"
+                      />
+                    </a>
+                  </div>
                 </div>
-            </div>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Science</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">The Beckham Stack</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Welcome from David</a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Logo -->
+          <a href="/" class="header-logo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="95"
+              height="25"
+              viewBox="0 0 31 8"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_header)">
+                <path
+                  d="M26.7773 7.98239C26.2203 7.98239 25.7312 7.89122 25.301 7.71181C24.8796 7.52357 24.5525 7.25887 24.3197 6.92063C24.0869 6.58239 23.972 6.18828 23.972 5.74416C23.972 5.30004 24.1252 4.87945 24.4346 4.53534C24.7499 4.18828 25.189 3.9471 25.7518 3.81181V3.76769C25.2774 3.62357 24.912 3.40298 24.6468 3.10004C24.3904 2.7971 24.2637 2.43534 24.2637 2.01475C24.2637 1.59416 24.3639 1.33239 24.5672 1.02945C24.7705 0.72063 25.0623 0.476512 25.4453 0.294159C25.8284 0.111806 26.2704 0.0235711 26.7743 0.0235711C27.2782 0.0235711 27.7173 0.114748 28.0915 0.294159C28.4746 0.476512 28.7663 0.72063 28.9697 1.02945C29.173 1.33239 29.2732 1.65887 29.2732 2.01475C29.2732 2.37063 29.1406 2.80887 28.8783 3.11181C28.622 3.41475 28.2595 3.63239 27.7851 3.76769V3.81181C28.3568 3.9471 28.7958 4.18828 29.1023 4.53534C29.4176 4.88239 29.5767 5.28534 29.5767 5.74416C29.5767 6.20298 29.4618 6.58239 29.229 6.92063C28.9962 7.25887 28.6662 7.52357 28.2389 7.71181C27.8175 7.89416 27.3313 7.98239 26.7743 7.98239H26.7773ZM26.7773 7.21181C27.1073 7.21181 27.3961 7.1471 27.6436 7.02063C27.9 6.89122 28.0945 6.71475 28.23 6.48828C28.3715 6.26181 28.4452 6.00592 28.4452 5.72063C28.4452 5.26769 28.2919 4.90298 27.9825 4.62357C27.676 4.33828 27.2723 4.19416 26.7773 4.19416C26.2822 4.19416 26.1555 4.25887 25.8991 4.38534C25.6516 4.51475 25.4571 4.69416 25.3127 4.92945C25.1772 5.15592 25.1094 5.42063 25.1094 5.72063C25.1094 6.15887 25.2626 6.51475 25.5721 6.79416C25.8785 7.07357 26.2822 7.21181 26.7773 7.21181ZM26.7773 3.43534C27.0543 3.43534 27.2959 3.37945 27.4992 3.26475C27.7085 3.15298 27.8705 2.99416 27.9825 2.79122C28.0945 2.58828 28.1505 2.35298 28.1505 2.09122C28.1505 1.69122 28.0267 1.37357 27.7792 1.14122C27.5317 0.908865 27.1987 0.791218 26.7773 0.791218C26.3559 0.791218 26.2557 0.844159 26.0465 0.950042C25.8432 1.05592 25.687 1.20592 25.5721 1.40298C25.4601 1.60004 25.4041 1.82945 25.4041 2.09416C25.4041 2.49416 25.5279 2.81769 25.7754 3.06769C26.0229 3.31769 26.3559 3.44122 26.7773 3.44122V3.43534ZM0 7.89416C0.135551 7.6971 0.229848 7.47651 0.28289 7.22651C0.335932 6.97063 0.362452 6.62651 0.362452 6.1971V1.82357C0.362452 1.39416 0.335932 1.05004 0.28289 0.794159C0.229848 0.535336 0.135551 0.314748 0 0.126512V0.0823946H1.82405V0.126512C1.6885 0.314748 1.5942 0.538277 1.54116 0.794159C1.48812 1.05004 1.4616 1.39416 1.4616 1.82357V6.20004C1.4616 6.62945 1.48812 6.97357 1.54116 7.22945C1.5942 7.47945 1.6885 7.70004 1.82405 7.8971V7.94122H0V7.8971V7.89416ZM9.64772 1.30298V6.18828C9.64772 6.61769 9.67424 6.96475 9.72728 7.22945C9.78032 7.48534 9.87462 7.70886 10.0102 7.8971V7.94122H8.43365V7.8971C8.5751 7.70886 8.66939 7.48534 8.71654 7.22945C8.76958 6.97357 8.7961 6.62651 8.7961 6.18828V1.81181C8.7961 1.38239 8.76958 1.03828 8.71654 0.782395C8.67234 0.526512 8.57804 0.308865 8.43365 0.126512V0.0823946H10.3491L12.9628 6.57357H13.007L15.5737 0.0794534H17.4213V0.123571C17.2857 0.305924 17.1914 0.526512 17.1384 0.791218C17.0942 1.0471 17.0706 1.38828 17.0706 1.80887V6.18534C17.0706 6.62357 17.0942 6.97063 17.1384 7.22651C17.1914 7.48239 17.2857 7.70592 17.4213 7.89416V7.93828H15.609V7.89416C15.7505 7.70592 15.8448 7.48239 15.8919 7.22651C15.945 6.97063 15.9715 6.62357 15.9715 6.18534V1.31181H15.9155L13.3135 7.93828H12.3794L9.7096 1.30004H9.65361L9.64772 1.30298ZM5.57823 3.53828L5.11559 3.3471L4.65295 3.53828L4.46141 4.00004L4.65295 4.46181L5.11559 4.65298L5.57823 4.46181L5.76977 4.00004L5.57823 3.53828ZM21.2138 3.53828L20.7511 3.3471L20.2885 3.53828L20.097 4.00004L20.2885 4.46181L20.7511 4.65298L21.2138 4.46181L21.4053 4.00004L21.2138 3.53828Z"
+                  fill="#A40011"
+                ></path>
+              </g>
+              <defs>
+                <clippath id="clip0_header">
+                  <rect width="31" height="8" fill="white"></rect>
+                </clippath>
+              </defs>
+            </svg>
+          </a>
+
+          <!-- Right Navigation -->
+          <nav class="header-nav header-nav-right">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="#" class="nav-link">Reviews</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Ingredients</a>
+              </li>
+              <li class="nav-item has-dropdown">
+                <button
+                  class="nav-link dropdown-toggle"
+                  data-dropdown="discover"
+                >
+                  <span>Discover</span>
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 4.3125L5.625 7.6875L2.25 4.3125"
+                      stroke="#50000B"
+                      stroke-width="2"
+                      stroke-linecap="square"
+                    ></path>
+                  </svg>
+                </button>
+                <!-- Discover Dropdown -->
+                <div class="dropdown-menu" id="discover-dropdown">
+                  <div class="dropdown-content dropdown-text-links">
+                    <a href="#" class="dropdown-text-link">About Us</a>
+                    <a href="#" class="dropdown-text-link">Our Impact</a>
+                    <a href="#" class="dropdown-text-link"
+                      >Quality and Standards</a
+                    >
+                    <a href="#" class="dropdown-text-link"
+                      >The Healthspan Blog</a
+                    >
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Header Icons -->
+          <div class="header-icons">
+            <a href="#" class="header-icon header-icon-account">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 30C3 22.82 8.82 17 16 17C23.18 17 29 22.82 29 30"
+                  stroke="#50000B"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="square"
+                ></path>
+                <path
+                  d="M16 17C20.1421 17 23.5 13.6421 23.5 9.5C23.5 5.35786 20.1421 2 16 2C11.8579 2 8.5 5.35786 8.5 9.5C8.5 13.6421 11.8579 17 16 17Z"
+                  stroke="#50000B"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  stroke-linecap="square"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" class="header-icon header-icon-cart">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.45011 5.45011L16 1.08232L26.5499 5.45011L30.9177 16L26.5499 26.5499L16 30.9177L5.45011 26.5499L1.08232 16L5.45011 5.45011Z"
+                  stroke="#50000B"
+                  stroke-width="2"
+                ></path>
+              </svg>
+              <span class="cart-count">0</span>
+            </a>
+          </div>
         </div>
+      </div>
     </header>
-    
-    <!-- ============================================
-         PRODUCT TAB SWITCHER
-         ============================================ -->
-    <div class="product-tab-switcher bg-brand-cream border-b border-gray-200 py-4 px-4">
-        <div class="tab-container flex justify-center items-center gap-4">
-            <div class="inline-flex bg-white rounded-full p-1 shadow-card border border-gray-200">
-                <button class="product-tab active px-6 py-3 rounded-full text-sm font-medium transition-all" data-product="daily-ultimate-essentials">
-                    Daily Ultimate Essentials
-                </button>
-                <button class="product-tab px-6 py-3 rounded-full text-sm font-medium transition-all" data-product="daily-ultimate-longevity">
-                    Daily Ultimate Longevity
-                </button>
-            </div>
-            <!-- Free Gift Trigger Button -->
-            <button id="open-welcome-gift-modal" class="hidden md:flex items-center gap-2 bg-brand-burgundy text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-colors">
-                <span>🎁</span>
-                <span>Claim Free Gift</span>
-            </button>
-        </div>
-    </div>
-    
+
     <!-- ============================================
          HERO SECTION - Sticky Scroll Layout
          ============================================ -->
     <section class="hero-sticky-section px-4 md:px-8 lg:px-16 py-8">
-        <div class="sticky-container max-w-7xl mx-auto flex flex-col md:flex-row gap-8 lg:gap-12">
-            
-            <!-- LEFT COLUMN: Sticky Product Gallery -->
-            <div class="sticky-sidebar w-full md:w-[45%] md:max-w-[500px] md:sticky md:top-[20px] md:self-start">
-                
-                <!-- Product Images Slider Container -->
-                <div id="product-images-slider" class="relative">
-                    <!-- Rendered by JS -->
-                </div>
-                
-                <!-- Certification Badges -->
-                <div class="hidden md:flex gap-4 mt-4 justify-center">
-                    <div class="flex items-center gap-2 px-3 py-2 border border-gray-200 rounded-lg">
-                        <img src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/nsf-certified.png" alt="NSF Certified" class="h-8 w-auto" />
-                        <span class="text-xs text-gray-600">NSF Certified</span>
-                    </div>
-                    <div class="flex items-center gap-2 px-3 py-2 border border-gray-200 rounded-lg">
-                        <img src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/certified-sport.png" alt="Certified Sport" class="h-8 w-auto" />
-                        <span class="text-xs text-gray-600">Certified Sport</span>
-                    </div>
-                </div>
+      <div
+        class="sticky-container max-w-7xl mx-auto flex flex-col md:flex-row gap-8 lg:gap-12"
+      >
+        <!-- LEFT COLUMN: Sticky Product Gallery -->
+        <div
+          class="sticky-sidebar w-full md:w-[45%] md:max-w-[500px] md:sticky md:top-[20px] md:self-start"
+        >
+          <!-- Product Images Slider Container -->
+          <div id="product-images-slider" class="relative">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Certification Badges -->
+          <div class="hidden md:flex gap-4 mt-4 justify-center">
+            <div
+              class="flex items-center gap-2 px-3 py-2 border border-gray-200 rounded-lg"
+            >
+              <img
+                src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/nsf-certified.png"
+                alt="NSF Certified"
+                class="h-8 w-auto"
+              />
+              <span class="text-xs">NSF Certified</span>
             </div>
-            
-            <!-- RIGHT COLUMN: Scrollable Product Details -->
-            <div class="scrollable-content flex-1 min-w-0 flex flex-col gap-6">
-                
-                <!-- Product Header -->
-                <div class="product-header">
-                    <!-- Star Rating -->
-                    <div class="flex items-center gap-2 mb-3">
-                        <div class="flex text-brand-burgundy">
-                            <i class="fa-solid fa-star text-sm"></i>
-                            <i class="fa-solid fa-star text-sm"></i>
-                            <i class="fa-solid fa-star text-sm"></i>
-                            <i class="fa-solid fa-star text-sm"></i>
-                            <i class="fa-solid fa-star text-sm"></i>
-                        </div>
-                        <span class="text-sm text-gray-600">10,000+ 5 Star Reviews</span>
-                    </div>
-                    
-                    <!-- Product Title -->
-                    <h1 class="font-serif text-3xl md:text-4xl font-normal leading-tight mb-2">
-                        Daily Ultimate Essentials: All-in-One Supplement
-                    </h1>
-                    
-                    <!-- Product Subtitle -->
-                    <p class="text-lg text-gray-700 mb-4">
-                        The complete daily nutrition solution for optimal health and wellness
-                    </p>
-                    
-                    <!-- Product Description -->
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        Support your body's natural processes with our scientifically-formulated blend of 
-                        essential vitamins, minerals, and adaptogens. Designed for modern life.
-                    </p>
-                </div>
-                
-                <!-- Clinically Proven Results Card -->
-                <div class="clinical-results bg-brand-cream rounded-xl p-5 border border-gray-100">
-                    <h3 class="text-xs font-semibold text-brand-burgundy uppercase tracking-wider mb-4">
-                        Clinically Proven Results
-                    </h3>
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="text-center">
-                            <p class="text-2xl font-bold text-brand-burgundy">94%</p>
-                            <p class="text-xs text-gray-600">More Energy</p>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-2xl font-bold text-brand-burgundy">89%</p>
-                            <p class="text-xs text-gray-600">Better Sleep</p>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-2xl font-bold text-brand-burgundy">91%</p>
-                            <p class="text-xs text-gray-600">Improved Focus</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- FORMAT SELECTION -->
-                <div id="format-selection" class="format-selection">
-                    <!-- Rendered by JS -->
-                </div>
-                
-                <!-- SUBSCRIPTION TIER SELECTION -->
-                <div id="subscription-selection" class="subscription-selection">
-                    <!-- Rendered by JS -->
-                </div>
-                
-                <!-- Add to Cart Button -->
-                <button id="main-add-to-cart" class="w-full bg-brand-burgundy hover:bg-opacity-90 text-white font-semibold py-4 px-6 rounded-lg text-lg transition-all duration-200 shadow-card hover:shadow-card-hover">
-                    ADD TO CART - <span id="main-cart-price">$78.33</span> USD/MO
-                </button>
-                
-                <!-- Guarantee Banner -->
-                <div class="guarantee-banner flex items-center gap-3 bg-green-50 border border-green-200 rounded-lg p-4">
-                    <div class="flex-shrink-0">
-                        <i class="fa-solid fa-circle-check text-green-600 text-xl"></i>
-                    </div>
-                    <div>
-                        <p class="text-sm font-medium text-green-800">New Year discount automatically applied</p>
-                        <p class="text-xs text-green-600">30-Day 100% Money Back Guarantee</p>
-                    </div>
-                </div>
-                
-                <!-- HSA/FSA Badge -->
-                <div class="hsa-fsa-badge flex items-center gap-3 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                    <img src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/hsa-fsa-badge.png" alt="HSA/FSA Eligible" class="h-10 w-auto" />
-                    <div>
-                        <p class="text-sm font-medium">HSA/FSA Eligible</p>
-                        <a href="#" class="text-xs text-brand-burgundy underline">Learn more</a>
-                    </div>
-                </div>
-                
-                <!-- 90-Day Transformation Program -->
-                <div class="transformation-program bg-brand-burgundy text-white rounded-xl p-6">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="bg-white/20 text-xs font-semibold px-2 py-1 rounded uppercase">90-DAY MEMBERS ONLY</span>
-                    </div>
-                    <h3 class="font-serif text-xl mb-2">90-Day IM8 Transformation Program</h3>
-                    <p class="text-sm text-white/80 mb-4">
-                        Get exclusive access to our comprehensive wellness program, featuring personalized 
-                        guidance from world-class experts.
-                    </p>
-                    <div id="transformation-experts" class="flex gap-3 mb-4">
-                        <!-- Rendered by JS -->
-                    </div>
-                    <a href="#" class="inline-flex items-center text-sm font-medium text-white underline">
-                        Learn More <i class="fa-solid fa-arrow-right ml-1"></i>
-                    </a>
-                </div>
-                
-                <!-- PRODUCT ACCORDIONS -->
-                <div id="product-accordions" class="product-accordions divide-y divide-gray-200 border-t border-b border-gray-200">
-                    <!-- Rendered by JS -->
-                </div>
-                
-                <!-- Ambassador Stories -->
-                <div class="ambassador-stories">
-                    <h3 class="font-serif text-xl mb-4">What our IM8 Ambassadors are saying</h3>
-                    <div id="ambassador-avatars" class="flex gap-3 overflow-x-auto pb-2">
-                        <!-- Rendered by JS -->
-                    </div>
-                </div>
-                
+            <div
+              class="flex items-center gap-2 px-3 py-2 border border-gray-200 rounded-lg"
+            >
+              <img
+                src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/certified-sport.png"
+                alt="Certified Sport"
+                class="h-8 w-auto"
+              />
+              <span class="text-xs">Certified Sport</span>
             </div>
+          </div>
         </div>
+
+        <!-- RIGHT COLUMN: Scrollable Product Details -->
+        <div class="scrollable-content flex-1 min-w-0 flex flex-col gap-6">
+          <!-- Product Header -->
+          <div class="product-header">
+            <!-- Star Rating -->
+            <div class="flex items-center gap-2 mb-3">
+              <div class="flex text-brand-burgundy">
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+              </div>
+              <span class="text-sm">10,000+ 5 Star Reviews</span>
+            </div>
+
+            <!-- Product Title -->
+            <h1
+              class="font-arizona text-3xl md:text-4xl font-normal leading-tight mb-2"
+            >
+              Daily Ultimate Essentials: All-in-One Supplement
+            </h1>
+
+            <!-- Product Subtitle -->
+            <p class="text-lg mb-4">
+              Engineered for peak absorption, this comprehensive formula
+              replaces the need for 16 daily supplements with 92 nutrient-rich
+              ingredients in one delicious drink.*
+            </p>
+          </div>
+
+          <!-- Clinically Proven Results Card -->
+          <div
+            class="clinical-results bg-brand-cream rounded-xl p-5 border border-gray-100"
+          >
+            <h3
+              class="text-xs font-semibold text-brand-burgundy uppercase tracking-wider mb-4"
+            >
+              Clinically Proven Results
+            </h3>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="text-center">
+                <p class="text-2xl font-bold text-brand-burgundy">94%</p>
+                <p class="text-xs">More Energy</p>
+              </div>
+              <div class="text-center">
+                <p class="text-2xl font-bold text-brand-burgundy">89%</p>
+                <p class="text-xs">Better Sleep</p>
+              </div>
+              <div class="text-center">
+                <p class="text-2xl font-bold text-brand-burgundy">91%</p>
+                <p class="text-xs">Improved Focus</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FORMAT SELECTION -->
+          <div id="format-selection" class="format-selection">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- SUBSCRIPTION TIER SELECTION -->
+          <div id="subscription-selection" class="subscription-selection">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button
+            id="main-add-to-cart"
+            class="w-full bg-brand-burgundy hover:bg-opacity-90 text-white font-semibold py-4 px-6 rounded-lg text-lg transition-all duration-200 shadow-card hover:shadow-card-hover"
+          >
+            ADD TO CART - <span id="main-cart-price">$78.33</span>
+            USD/MO
+          </button>
+
+          <!-- Guarantee Banner -->
+          <div
+            class="guarantee-banner flex items-center gap-3 bg-green-50 border border-green-200 rounded-lg p-4"
+          >
+            <div class="flex-shrink-0">
+              <i class="fa-solid fa-circle-check text-green-600 text-xl"></i>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-green-800">
+                New Year discount automatically applied
+              </p>
+              <p class="text-xs text-green-600">
+                30-Day 100% Money Back Guarantee
+              </p>
+            </div>
+          </div>
+
+          <!-- HSA/FSA Badge -->
+          <div
+            class="hsa-fsa-badge flex items-center gap-3 p-4 bg-gray-50 rounded-lg border border-gray-200"
+          >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/hsa-fsa-badge.png"
+              alt="HSA/FSA Eligible"
+              class="h-10 w-auto"
+            />
+            <div>
+              <p class="text-sm font-medium">HSA/FSA Eligible</p>
+              <a href="#" class="text-xs text-brand-burgundy underline"
+                >Learn more</a
+              >
+            </div>
+          </div>
+
+          <!-- 90-Day Transformation Program -->
+          <div
+            class="transformation-program bg-brand-burgundy text-white rounded-xl p-6"
+          >
+            <div class="flex items-center gap-2 mb-3">
+              <span
+                class="bg-white/20 text-xs font-semibold px-2 py-1 rounded uppercase"
+                >90-DAY MEMBERS ONLY</span
+              >
+            </div>
+            <h3 class="font-serif text-xl mb-2">
+              90-Day IM8 Transformation Program
+            </h3>
+            <p class="text-sm text-white/80 mb-4">
+              Get exclusive access to our comprehensive wellness program,
+              featuring personalized guidance from world-class experts.
+            </p>
+            <div id="transformation-experts" class="flex gap-3 mb-4">
+              <!-- Rendered by JS -->
+            </div>
+            <a
+              href="#"
+              class="inline-flex items-center text-sm font-medium text-white underline"
+            >
+              Learn More <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <!-- PRODUCT ACCORDIONS -->
+          <div
+            id="product-accordions"
+            class="product-accordions divide-y divide-gray-200 border-t border-b border-gray-200"
+          >
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Ambassador Stories -->
+          <div class="ambassador-stories">
+            <h3 class="font-serif text-xl mb-4">
+              What our IM8 Ambassadors are saying
+            </h3>
+            <div
+              id="ambassador-avatars"
+              class="flex gap-3 overflow-x-auto pb-2"
+            >
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          CLINICALLY PROVEN SECTION
          ============================================ -->
     <section id="clinically-proven" class="clinically-proven-section">
-        <div class="clinically-proven-container">
-            <!-- Left Side: Stats -->
-            <div class="clinically-proven-stats">
-                <p class="stats-label">Daily Ultimate Essentials</p>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-value">95%</span>
-                        <span class="stat-description">Participants felt a noticeable boost in daily energy levels.</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">85%</span>
-                        <span class="stat-description">Felt less bloated and had improved digestion.</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">80%</span>
-                        <span class="stat-description">Participants reported getting better sleep.</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">70%</span>
-                        <span class="stat-description">Participants noticed sharper focus and improved mental clarity.</span>
-                    </div>
-                </div>
-                <p class="stats-footnote">Conducted by the San Francisco Research Institute. Please Click Here for <a href="#" class="underline">FULL</a> Details of the National Library of Medicine Trial.</p>
+      <div class="clinically-proven-container">
+        <!-- Left Side: Stats -->
+        <div class="clinically-proven-stats">
+          <p class="stats-label">Daily Ultimate Essentials</p>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-value">95%</span>
+              <span class="stat-description"
+                >Participants felt a noticeable boost in daily energy
+                levels.</span
+              >
             </div>
-            
-            <!-- Right Side: Content -->
-            <div class="clinically-proven-content">
-                <h2 class="proven-title">Clinically Proven.<br>More Energy.<br>A Healthier Gut.<sup>*</sup></h2>
-                
-                <!-- NSF Certification Badge -->
-                <div class="nsf-badge-card">
-                    <div class="nsf-left">
-                        <div class="nsf-icon">🏆</div>
-                        <div class="nsf-info">
-                            <span class="nsf-label">NSF CERTIFIED FOR SPORT</span>
-                            <span class="nsf-sub">280+ Substances Tested</span>
-                        </div>
-                    </div>
-                    <div class="nsf-right">
-                        <span class="nsf-trusted">Trusted by Aryna Sabalenka</span>
-                        <span class="nsf-title">World No. 1 Tennis Player</span>
-                        <img src="https://im8health.com/cdn/shop/files/aryna-avatar.jpg?v=1700000000&width=50" alt="Aryna Sabalenka" class="nsf-avatar" />
-                    </div>
-                </div>
-                
-                <p class="proven-description">
-                    Every ingredient is third-party tested and NSF Certified for Sport, ensuring it's free from over 280 banned substances, heavy metals and contaminants. Trusted by athletes and sports leagues, including WADA, NFL, MLB, NHL, and PGA.
-                </p>
-                
-                <div class="proven-buttons">
-                    <a href="#" class="btn-primary-outline">VIEW THIRD-PARTY TESTING RESULTS</a>
-                    <a href="#" class="btn-secondary-cream">LEARN MORE</a>
-                </div>
+            <div class="stat-item">
+              <span class="stat-value">85%</span>
+              <span class="stat-description"
+                >Felt less bloated and had improved digestion.</span
+              >
             </div>
+            <div class="stat-item">
+              <span class="stat-value">80%</span>
+              <span class="stat-description"
+                >Participants reported getting better sleep.</span
+              >
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">70%</span>
+              <span class="stat-description"
+                >Participants noticed sharper focus and improved mental
+                clarity.</span
+              >
+            </div>
+          </div>
+          <p class="stats-footnote">
+            Conducted by the San Francisco Research Institute. Please Click Here
+            for <a href="#" class="underline">FULL</a> Details of the National
+            Library of Medicine Trial.
+          </p>
         </div>
+
+        <!-- Right Side: Content -->
+        <div class="clinically-proven-content">
+          <h2 class="proven-title">
+            Clinically Proven.<br />More Energy.<br />A Healthier Gut.<sup
+              >*</sup
+            >
+          </h2>
+
+          <!-- NSF Certification Badge -->
+          <div class="nsf-badge-card">
+            <div class="nsf-left">
+              <div class="nsf-icon">🏆</div>
+              <div class="nsf-info">
+                <span class="nsf-label">NSF CERTIFIED FOR SPORT</span>
+                <span class="nsf-sub">280+ Substances Tested</span>
+              </div>
+            </div>
+            <div class="nsf-right">
+              <span class="nsf-trusted">Trusted by Aryna Sabalenka</span>
+              <span class="nsf-title">World No. 1 Tennis Player</span>
+              <img
+                src="https://im8health.com/cdn/shop/files/aryna-avatar.jpg?v=1700000000&width=50"
+                alt="Aryna Sabalenka"
+                class="nsf-avatar"
+              />
+            </div>
+          </div>
+
+          <p class="proven-description">
+            Every ingredient is third-party tested and NSF Certified for Sport,
+            ensuring it's free from over 280 banned substances, heavy metals and
+            contaminants. Trusted by athletes and sports leagues, including
+            WADA, NFL, MLB, NHL, and PGA.
+          </p>
+
+          <div class="proven-buttons">
+            <a href="#" class="btn-primary-outline"
+              >VIEW THIRD-PARTY TESTING RESULTS</a
+            >
+            <a href="#" class="btn-secondary-cream">LEARN MORE</a>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          REVIEWS CAROUSEL SECTION
          ============================================ -->
-    <section id="reviews-section" class="reviews-section bg-brand-cream py-16 px-4 md:px-8 lg:px-16">
-        <div class="max-w-7xl mx-auto">
-            <!-- Section Header -->
-            <div class="text-center mb-10">
-                <div class="flex items-center justify-center gap-2 mb-3">
-                    <div class="flex text-brand-burgundy">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-                <h2 class="font-serif text-3xl md:text-4xl mb-3">10,000+ 5 Star Reviews</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Join thousands of satisfied customers who have transformed their daily wellness routine
-                </p>
+    <section
+      id="reviews-section"
+      class="reviews-section full-bleed bg-brand-cream py-16 px-4 md:px-8 lg:px-16"
+    >
+      <div class="mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-10">
+          <div class="flex items-center justify-center gap-2 mb-3">
+            <div class="flex text-brand-burgundy">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
             </div>
-            
-            <!-- Reviews Carousel -->
-            <div id="reviews-carousel" class="reviews-carousel relative">
-                <div id="reviews-track" class="reviews-track flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide">
-                    <!-- Rendered by JS -->
-                </div>
-                
-                <!-- Navigation Arrows -->
-                <button id="reviews-prev" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
-                    <i class="fa-solid fa-chevron-left text-gray-600"></i>
-                </button>
-                <button id="reviews-next" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
-                    <i class="fa-solid fa-chevron-right text-gray-600"></i>
-                </button>
-            </div>
+          </div>
+          <h2 class="font-serif text-3xl md:text-4xl mb-3">
+            10,000+ 5 Star Reviews
+          </h2>
+          <p class="max-w-2xl mx-auto">
+            Join thousands of satisfied customers who have transformed their
+            daily wellness routine
+          </p>
         </div>
+
+        <!-- Reviews Carousel -->
+        <div id="reviews-carousel" class="reviews-carousel relative">
+          <div
+            id="reviews-track"
+            class="reviews-track flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
+          >
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Navigation Arrows -->
+          <button
+            id="reviews-prev"
+            class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button
+            id="reviews-next"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          9 MAJOR ORGAN SYSTEMS SECTION
          ============================================ -->
-    <section id="organ-systems" class="organ-systems-section bg-gradient-to-b from-brand-cream to-gray-50 py-16 px-4 md:px-8 lg:px-16">
-        <div class="max-w-7xl mx-auto">
-            <!-- Section Header -->
-            <div class="text-center mb-10">
-                <span class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4">
-                    Comprehensive Body Support
-                </span>
-                <h2 class="font-serif text-3xl md:text-4xl mb-3">Supporting 9 Major Organ Systems</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    With Over 80+ Clinically Dosed Ingredients
-                </p>
-            </div>
-            
-            <!-- Grid and Detail Panel -->
-            <div class="organ-systems-wrapper flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-                <!-- 3x3 Grid -->
-                <div id="organ-systems-grid" class="organ-systems-grid grid grid-cols-3 gap-3 md:gap-4 w-full lg:w-auto lg:flex-shrink-0">
-                    <!-- Rendered by JS -->
-                </div>
-                
-                <!-- Detail Panel -->
-                <div id="organ-system-detail" class="organ-system-detail flex-1 bg-white rounded-2xl p-6 md:p-8 shadow-card">
-                    <!-- Rendered by JS -->
-                </div>
-            </div>
+    <section
+      id="organ-systems"
+      class="organ-systems-section bg-gradient-to-b from-brand-cream to-gray-50 py-16 px-4 md:px-8 lg:px-16"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-10">
+          <span
+            class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4"
+          >
+            Comprehensive Body Support
+          </span>
+          <h2 class="font-serif text-3xl md:text-4xl mb-3">
+            Supporting 9 Major Organ Systems
+          </h2>
+          <p class="max-w-2xl mx-auto">
+            With Over 80+ Clinically Dosed Ingredients
+          </p>
         </div>
+
+        <!-- Grid and Detail Panel -->
+        <div
+          class="organ-systems-wrapper flex flex-col lg:flex-row gap-8 lg:gap-12 items-start"
+        >
+          <!-- 3x3 Grid -->
+          <div
+            id="organ-systems-grid"
+            class="organ-systems-grid grid grid-cols-3 gap-3 md:gap-4 w-full lg:w-auto lg:flex-shrink-0"
+          >
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Detail Panel -->
+          <div
+            id="organ-system-detail"
+            class="organ-system-detail flex-1 bg-white rounded-2xl p-6 md:p-8 shadow-card"
+          >
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============================================
          MONTHLY BREAKDOWN / REPLACES 16 SUPPLEMENTS SECTION
          ============================================ -->
     <section id="monthly-breakdown" class="monthly-breakdown-section">
-        <div class="breakdown-container">
-            <!-- Background Image (Pills) -->
-            <div class="breakdown-pills-bg">
-                <img src="https://im8health.com/cdn/shop/files/desktop_comparison-pill_2x_0da77b74-6605-4244-8e13-4c0e828ceb71.png?v=1730719244&width=1296" alt="Supplement pills" class="desktop-pills">
-                <img src="https://im8health.com/cdn/shop/files/mobile_comparison-pill_2x_6cee01aa-3c78-4fa8-89f6-0c9d6ed725cb.png?v=1730719345&width=750" alt="Supplement pills" class="mobile-pills">
-            </div>
-            
-            <div class="breakdown-content">
-                <!-- Left Side - Title & CTA -->
-                <div class="breakdown-left">
-                    <h2 class="breakdown-title">
-                        <span class="desktop-title">Replaces 16 Supplements.<br>Saving You Money.</span>
-                        <span class="mobile-title">Replaces<br>16 Supplements, Saving You Money.</span>
-                    </h2>
-                    <a href="#" class="breakdown-cta">SHOP NOW</a>
-                </div>
-                
-                <!-- Center - Product Box with Savings Badge -->
-                <div class="breakdown-center">
-                    <div class="savings-badge">
-                        <div class="savings-badge-title">ANNUAL SAVINGS</div>
-                        <div class="savings-badge-amount">$2,532 - $3,000</div>
-                        <div class="savings-badge-per">per year</div>
-                        <div class="savings-badge-footnote">
-                            <span class="footnote-desktop">when switching to IM8</span>
-                            <span class="footnote-mobile">when switching<br>to IM8</span>
-                        </div>
-                    </div>
-                    <img src="https://im8health.com/cdn/shop/files/sachet-box.png?v=1761040602&width=838" alt="IM8 Product Box" class="product-box-img">
-                </div>
-                
-                <!-- Right Side - Monthly Breakdown List -->
-                <div class="breakdown-right">
-                    <h3 class="breakdown-list-title">Monthly Breakdown</h3>
-                    
-                    <div class="breakdown-list">
-                        <div class="breakdown-item">
-                            <span class="item-name">Multivitamins, Minerals & Antioxidants</span>
-                            <span class="item-price"><s>$35</s></span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="item-name">Superfoods, Greens & Fruits</span>
-                            <span class="item-price"><s>$50</s></span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="item-name">Immunity</span>
-                            <span class="item-price"><s>$20</s></span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="item-name">Electrolytes</span>
-                            <span class="item-price"><s>$40</s></span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="item-name">Adaptogens & Super Mushrooms</span>
-                            <span class="item-price"><s>$30</s></span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="item-name">Prebiotics, Probiotics & Postbiotics</span>
-                            <span class="item-price"><s>$40</s></span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="item-name">CoQ10 (Heart Vitality)</span>
-                            <span class="item-price"><s>$30</s></span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="item-name">MSM (Joint & Muscle Vitality)</span>
-                            <span class="item-price"><s>$25</s></span>
-                        </div>
-                        <div class="breakdown-item">
-                            <span class="item-name">Essential Amino Acids</span>
-                            <span class="item-price"><s>$20</s></span>
-                        </div>
-                    </div>
-                    
-                    <!-- Comparison Summary -->
-                    <div class="breakdown-summary">
-                        <div class="summary-row traditional">
-                            <span class="summary-label">Your Traditional Supplements</span>
-                            <span class="summary-price"><s>$290</s></span>
-                        </div>
-                        <div class="summary-row im8">
-                            <span class="summary-label">IM8 Daily Ultimate Essentials</span>
-                            <span class="summary-price">$89</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="breakdown-container">
+        <!-- Background Image (Pills) -->
+        <div class="breakdown-pills-bg">
+          <img
+            src="https://im8health.com/cdn/shop/files/desktop_comparison-pill_2x_0da77b74-6605-4244-8e13-4c0e828ceb71.png?v=1730719244&width=1296"
+            alt="Supplement pills"
+            class="desktop-pills"
+          />
+          <img
+            src="https://im8health.com/cdn/shop/files/mobile_comparison-pill_2x_6cee01aa-3c78-4fa8-89f6-0c9d6ed725cb.png?v=1730719345&width=750"
+            alt="Supplement pills"
+            class="mobile-pills"
+          />
         </div>
+
+        <div class="breakdown-content">
+          <!-- Left Side - Title & CTA -->
+          <div class="breakdown-left">
+            <h2 class="breakdown-title">
+              <span class="desktop-title"
+                >Replaces 16 Supplements.<br />Saving You Money.</span
+              >
+              <span class="mobile-title"
+                >Replaces<br />16 Supplements, Saving You Money.</span
+              >
+            </h2>
+            <a href="#" class="breakdown-cta">SHOP NOW</a>
+          </div>
+
+          <!-- Center - Product Box with Savings Badge -->
+          <div class="breakdown-center">
+            <div class="savings-badge">
+              <div class="savings-badge-title">ANNUAL SAVINGS</div>
+              <div class="savings-badge-amount">$2,532 - $3,000</div>
+              <div class="savings-badge-per">per year</div>
+              <div class="savings-badge-footnote">
+                <span class="footnote-desktop">when switching to IM8</span>
+                <span class="footnote-mobile">when switching<br />to IM8</span>
+              </div>
+            </div>
+            <img
+              src="https://im8health.com/cdn/shop/files/sachet-box.png?v=1761040602&width=838"
+              alt="IM8 Product Box"
+              class="product-box-img"
+            />
+          </div>
+
+          <!-- Right Side - Monthly Breakdown List -->
+          <div class="breakdown-right">
+            <h3 class="breakdown-list-title">Monthly Breakdown</h3>
+
+            <div class="breakdown-list">
+              <div class="breakdown-item">
+                <span class="item-name"
+                  >Multivitamins, Minerals & Antioxidants</span
+                >
+                <span class="item-price"><s>$35</s></span>
+              </div>
+              <div class="breakdown-item">
+                <span class="item-name">Superfoods, Greens & Fruits</span>
+                <span class="item-price"><s>$50</s></span>
+              </div>
+              <div class="breakdown-item">
+                <span class="item-name">Immunity</span>
+                <span class="item-price"><s>$20</s></span>
+              </div>
+              <div class="breakdown-item">
+                <span class="item-name">Electrolytes</span>
+                <span class="item-price"><s>$40</s></span>
+              </div>
+              <div class="breakdown-item">
+                <span class="item-name">Adaptogens & Super Mushrooms</span>
+                <span class="item-price"><s>$30</s></span>
+              </div>
+              <div class="breakdown-item">
+                <span class="item-name"
+                  >Prebiotics, Probiotics & Postbiotics</span
+                >
+                <span class="item-price"><s>$40</s></span>
+              </div>
+              <div class="breakdown-item">
+                <span class="item-name">CoQ10 (Heart Vitality)</span>
+                <span class="item-price"><s>$30</s></span>
+              </div>
+              <div class="breakdown-item">
+                <span class="item-name">MSM (Joint & Muscle Vitality)</span>
+                <span class="item-price"><s>$25</s></span>
+              </div>
+              <div class="breakdown-item">
+                <span class="item-name">Essential Amino Acids</span>
+                <span class="item-price"><s>$20</s></span>
+              </div>
+            </div>
+
+            <!-- Comparison Summary -->
+            <div class="breakdown-summary">
+              <div class="summary-row traditional">
+                <span class="summary-label">Your Traditional Supplements</span>
+                <span class="summary-price"><s>$290</s></span>
+              </div>
+              <div class="summary-row im8">
+                <span class="summary-label">IM8 Daily Ultimate Essentials</span>
+                <span class="summary-price">$89</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          GOLD STANDARD COMPARISON SECTION
          ============================================ -->
     <section id="gold-standard-section" class="gold-standard-section">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="section-title">IM8: The New Gold Standard</h2>
-            <div id="gold-standard-comparison">
-                <!-- Rendered by JS -->
-            </div>
+      <div class="max-w-7xl mx-auto">
+        <h2 class="section-title">IM8: The New Gold Standard</h2>
+        <div id="gold-standard-comparison">
+          <!-- Rendered by JS -->
         </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          5 PILLARS OF TOTAL HEALTH SECTION
          ============================================ -->
-    <section id="pillars" class="pillars-section bg-white py-16 px-4 md:px-8 lg:px-16">
-        <div class="max-w-7xl mx-auto">
-            <!-- Section Header -->
-            <div class="text-center mb-10">
-                <span class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4">
-                    The IM8 Formulation
-                </span>
-                <h2 class="font-serif text-3xl md:text-4xl mb-3">5 Pillars of Total Health</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Explore what makes IM8 the most comprehensive nutritional solution
-                </p>
-            </div>
-            
-            <!-- Pillars Accordion -->
-            <div id="pillars-accordion" class="pillars-accordion max-w-3xl mx-auto">
-                <!-- Rendered by JS -->
-            </div>
+    <section
+      id="pillars"
+      class="pillars-section bg-white py-16 px-4 md:px-8 lg:px-16"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header (Rendered by JS with tab switcher) -->
+        <div class="text-center mb-10">
+          <!-- Tab switcher, badge, title, subtitle rendered by JS -->
         </div>
+
+        <!-- Pillars Interactive (Sidebar + Panel) -->
+        <div id="pillars-accordion" class="pillars-interactive-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          TRUSTED BY PHYSICIANS SECTION
          ============================================ -->
-    <section id="physicians" class="physicians-section bg-brand-cream py-16 px-4 md:px-8 lg:px-16">
-        <div class="max-w-7xl mx-auto">
-            <!-- Section Header -->
-            <div class="text-center mb-10">
-                <span class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4">
-                    Social Proof
-                </span>
-                <h2 class="font-serif text-3xl md:text-4xl mb-3">Trusted by Physicians and Nutrition Experts</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Doctors, dietitians, and wellness leaders choose IM8 for their own health
-                </p>
-            </div>
-            
-            <!-- Physicians Carousel -->
-            <div class="physicians-carousel relative">
-                <div id="physicians-track" class="physicians-track flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide">
-                    <!-- Rendered by JS -->
-                </div>
-                
-                <!-- Navigation Arrows -->
-                <button id="physicians-prev" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
-                    <i class="fa-solid fa-chevron-left text-gray-600"></i>
-                </button>
-                <button id="physicians-next" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
-                    <i class="fa-solid fa-chevron-right text-gray-600"></i>
-                </button>
-            </div>
+    <section
+      id="physicians"
+      class="physicians-section full-bleed bg-brand-cream py-16 px-4 md:px-8 lg:px-16"
+    >
+      <div class="mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-10">
+          <span
+            class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4"
+          >
+            Social Proof
+          </span>
+          <h2 class="font-serif text-3xl md:text-4xl mb-3">
+            Trusted by Physicians and Nutrition Experts
+          </h2>
+          <p class="max-w-2xl mx-auto">
+            Doctors, dietitians, and wellness leaders choose IM8 for their own
+            health
+          </p>
         </div>
+
+        <!-- Physicians Carousel -->
+        <div class="physicians-carousel relative">
+          <div
+            id="physicians-track"
+            class="physicians-track flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
+          >
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Navigation Arrows -->
+          <button
+            id="physicians-prev"
+            class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button
+            id="physicians-next"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          WHAT'S INSIDE SECTION
          ============================================ -->
-    <section id="whats-inside" class="whats-inside-section">
-        <div class="whats-inside-container">
-            <h2 class="whats-inside-title">What's Inside</h2>
-            
-            <div class="whats-inside-grid">
-                <!-- Top Row -->
-                <div class="inside-item item-refill-pouch">
-                    <div class="inside-label inside-label-left">
-                        <span>DAILY ULTIMATE ESSENTIALS</span>
-                        <span>REFILL POUCH</span>
-                    </div>
-                    <img src="https://im8health.com/cdn/shop/files/refill-pouch.png?v=1700000000&width=200" alt="Daily Ultimate Essentials Refill Pouch" />
-                </div>
-                
-                <div class="inside-item item-bottle">
-                    <img src="https://im8health.com/cdn/shop/files/red-bottle.png?v=1700000000&width=180" alt="Signature Red Cup" />
-                </div>
-                
-                <div class="inside-item item-sachets">
-                    <div class="inside-label inside-label-right">
-                        <span>5 X BONUS</span>
-                        <span>SINGLE-SERVE ESSENTIALS</span>
-                        <span>SACHET PACKS</span>
-                    </div>
-                    <img src="https://im8health.com/cdn/shop/files/sachets.png?v=1700000000&width=220" alt="Single-Serve Essentials Sachet Packs" />
-                    <div class="inside-sublabel">SIGNATURE RED CUP</div>
-                </div>
-                
-                <!-- Bottom Row -->
-                <div class="inside-item item-spoon">
-                    <div class="inside-label inside-label-left">
-                        <span>STAINLESS STEEL GOLD SPOON</span>
-                    </div>
-                </div>
-                
-                <div class="inside-item item-deck">
-                    <div class="inside-label inside-label-left">
-                        <span>DAVID BECKHAM</span>
-                        <span>WELCOME DECK</span>
-                    </div>
-                    <img src="https://im8health.com/cdn/shop/files/welcome-deck.png?v=1700000000&width=220" alt="David Beckham Welcome Deck" />
-                    <img src="https://im8health.com/cdn/shop/files/gold-spoon.png?v=1700000000&width=100" alt="Stainless Steel Gold Spoon" class="spoon-img" />
-                </div>
-                
-                <div class="inside-item item-jar">
-                    <div class="inside-label inside-label-right">
-                        <span>DAILY ULTIMATE ESSENTIALS</span>
-                        <span>REFILLABLE JAR</span>
-                    </div>
-                    <img src="https://im8health.com/cdn/shop/files/red-jar.png?v=1700000000&width=200" alt="Daily Ultimate Essentials Refillable Jar" />
-                </div>
-            </div>
-        </div>
+    <section
+      id="whats-inside"
+      class="whats-inside-section full-bleed w-full aspect-video"
+    >
+      <img
+      src="https://im8health.com/cdn/shop/files/desktop_insidebanner_yes-sub_essential-std_f8477d9e-55d0-4e10-9af1-0ac759a41216.jpg?v=1760348439&width=2048"
+        alt="What's Inside Daily Ultimate Essentials"
+        class="whats-inside-container w-full h-full bg-center object-contain"
+      />
     </section>
-    
+
     <!-- ============================================
          HOW TO ENJOY SECTION
          ============================================ -->
     <section id="how-to-enjoy" class="how-to-enjoy-section">
-        <div class="how-to-enjoy-container">
-            <h2 class="how-to-enjoy-title">How to Enjoy</h2>
-            
-            <div class="how-to-enjoy-steps">
-                <div class="enjoy-step">
-                    <div class="step-image">
-                        <img src="https://im8health.com/cdn/shop/files/step1-scoop.jpg?v=1700000000&width=400" alt="Step 1: Scoop" />
-                    </div>
-                    <p class="step-text"><span class="step-highlight">Step 1:</span> Scoop out one serving of Daily Ultimate Essentials</p>
-                </div>
-                
-                <div class="enjoy-step">
-                    <div class="step-image">
-                        <img src="https://im8health.com/cdn/shop/files/step2-water.jpg?v=1700000000&width=400" alt="Step 2: Add Water" />
-                    </div>
-                    <p class="step-text"><span class="step-highlight">Step 2:</span> Add 8 to 12oz of Water or Your Favorite Smoothie</p>
-                </div>
-                
-                <div class="enjoy-step">
-                    <div class="step-image">
-                        <img src="https://im8health.com/cdn/shop/files/step3-stir.jpg?v=1700000000&width=400" alt="Step 3: Stir" />
-                    </div>
-                    <p class="step-text"><span class="step-highlight">Step 3:</span> Stir Well and Enjoy Daily</p>
-                </div>
+      <div class="how-to-enjoy-container">
+        <h2 class="how-to-enjoy-title">How to Enjoy</h2>
+
+        <div class="how-to-enjoy-steps">
+          <div class="enjoy-step">
+            <div class="step-image">
+              <video
+                autoplay
+                loop
+                muted
+                playsinline
+                poster="https://im8health.com/cdn/shop/files/step1-scoop.jpg?v=1700000000&width=400"
+              >
+                <source src="https://im8health.com/cdn/shop/videos/c/vp/ce78e2bd331f47f79ac745c7ae51f01f/ce78e2bd331f47f79ac745c7ae51f01f.SD-480p-1.2Mbps-37195721.mp4?v=0" type="video/mp4" />
+              </video>
             </div>
+            <p class="step-text">
+              <span class="step-highlight">Step 1:</span> Scoop out one serving
+              of Daily Ultimate Essentials
+            </p>
+          </div>
+
+          <div class="enjoy-step">
+            <div class="step-image">
+              <video
+                autoplay
+                loop
+                muted
+                playsinline
+                poster="https://im8health.com/cdn/shop/files/step2-water.jpg?v=1700000000&width=400"
+              >
+                <source src="https://im8health.com/cdn/shop/videos/c/vp/c204aec03aad4763993ff1eda15f0501/c204aec03aad4763993ff1eda15f0501.SD-480p-1.2Mbps-37195734.mp4?v=0" type="video/mp4" />
+              </video>
+            </div>
+            <p class="step-text">
+              <span class="step-highlight">Step 2:</span> Add 8 to 12oz of Water
+              or Your Favorite Smoothie
+            </p>
+          </div>
+
+          <div class="enjoy-step">
+            <div class="step-image">
+              <video
+                autoplay
+                loop
+                muted
+                playsinline
+                poster="https://im8health.com/cdn/shop/files/step3-stir.jpg?v=1700000000&width=400"
+              >
+                <source src="https://im8health.com/cdn/shop/videos/c/vp/1f885d4f9245483d97e7efcfffb8a6be/1f885d4f9245483d97e7efcfffb8a6be.SD-480p-1.2Mbps-37107501.mp4?v=0" type="video/mp4" />
+              </video>
+            </div>
+            <p class="step-text">
+              <span class="step-highlight">Step 3:</span> Stir Well and Enjoy
+              Daily
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          WELCOME KIT SECTION
          ============================================ -->
-    <section id="welcome-kit" class="welcome-kit-section bg-white py-16 px-4 md:px-8 lg:px-16">
-        <div class="max-w-6xl mx-auto">
-            <div id="welcome-kit-content" class="welcome-kit-grid grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                <!-- Rendered by JS -->
-            </div>
+    <section
+      id="welcome-kit"
+      class="welcome-kit-section bg-white py-16 px-4 md:px-8 lg:px-16"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div
+          id="welcome-kit-content"
+          class="welcome-kit-grid grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+        >
+          <!-- Rendered by JS -->
         </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          AMBASSADOR STORIES CAROUSEL SECTION
          ============================================ -->
-    <section id="ambassadors" class="ambassadors-section bg-gradient-to-b from-brand-cream to-white py-16 px-4 md:px-8 lg:px-16">
-        <div class="max-w-7xl mx-auto">
-            <!-- Section Header -->
-            <div class="text-center mb-10">
-                <span class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4">
-                    Feel The Difference
-                </span>
-                <h2 class="font-serif text-3xl md:text-4xl mb-3">What Our IM8 Ambassadors Are Saying</h2>
-            </div>
-            
-            <!-- Ambassadors Carousel -->
-            <div class="ambassadors-carousel relative">
-                <div id="ambassadors-track" class="ambassadors-track flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide">
-                    <!-- Rendered by JS -->
-                </div>
-                
-                <!-- Navigation Arrows -->
-                <button id="ambassadors-prev" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
-                    <i class="fa-solid fa-chevron-left text-gray-600"></i>
-                </button>
-                <button id="ambassadors-next" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
-                    <i class="fa-solid fa-chevron-right text-gray-600"></i>
-                </button>
-            </div>
+    <section
+      id="ambassadors"
+      class="ambassadors-section full-bleed bg-gradient-to-b from-brand-cream to-white py-16 px-4 md:px-8 lg:px-16"
+    >
+      <div class="mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-10">
+          <span
+            class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4"
+          >
+            Feel The Difference
+          </span>
+          <h2 class="font-serif text-3xl md:text-4xl mb-3">
+            What Our IM8 Ambassadors Are Saying
+          </h2>
         </div>
+
+        <!-- Ambassadors Carousel -->
+        <div class="ambassadors-carousel relative">
+          <div
+            id="ambassadors-track"
+            class="ambassadors-track flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
+          >
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Navigation Arrows -->
+          <button
+            id="ambassadors-prev"
+            class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button
+            id="ambassadors-next"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          BRILLIANT MINDS SECTION
          ============================================ -->
-    <section id="brilliant-minds" class="brilliant-minds-section py-16 px-4 md:px-8 lg:px-16">
-        <div class="max-w-7xl mx-auto">
-            <!-- Section Header -->
-            <div id="brilliant-minds-header" class="text-center mb-10">
-                <!-- Rendered by JS -->
-            </div>
-            
-            <!-- Experts Grid -->
-            <div id="brilliant-minds-grid" class="experts-grid">
-                <!-- Rendered by JS -->
-            </div>
+    <section
+      id="brilliant-minds"
+      class="brilliant-minds-section py-16 px-4 md:px-8 lg:px-16"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div id="brilliant-minds-header" class="text-center mb-10">
+          <!-- Rendered by JS -->
         </div>
+
+        <!-- Experts Grid -->
+        <div id="brilliant-minds-grid" class="experts-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          PRODUCT COMPARISON SECTION
          ============================================ -->
     <section id="product-comparison-section" class="product-comparison-section">
-        <div class="max-w-7xl mx-auto">
-            <div id="product-comparison">
-                <!-- Rendered by JS -->
-            </div>
+      <div class="max-w-7xl mx-auto">
+        <div id="product-comparison">
+          <!-- Rendered by JS -->
         </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          PREMIUM PRODUCTS SECTION
          ============================================ -->
-    <section id="premium-products" class="premium-products-section py-16 px-4 md:px-8 lg:px-16">
-        <div class="max-w-7xl mx-auto">
-            <!-- Section Header -->
-            <div class="text-center mb-8">
-                <h2 class="font-serif text-3xl md:text-4xl mb-6">Premium Core Nutrition</h2>
-                
-                <!-- Trust Badges -->
-                <div id="premium-trust-badges" class="trust-badges-row">
-                    <!-- Rendered by JS -->
-                </div>
-            </div>
-            
-            <!-- Products Grid -->
-            <div id="premium-products-grid" class="premium-products-grid">
-                <!-- Rendered by JS -->
-            </div>
+    <section
+      id="premium-products"
+      class="premium-products-section py-16 px-4 md:px-8 lg:px-16"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-8">
+          <h2 class="font-serif text-3xl md:text-4xl mb-6">
+            Premium Core Nutrition
+          </h2>
+
+          <!-- Trust Badges -->
+          <div id="premium-trust-badges" class="trust-badges-row">
+            <!-- Rendered by JS -->
+          </div>
         </div>
+
+        <!-- Products Grid -->
+        <div id="premium-products-grid" class="premium-products-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          FAQ SECTION
          ============================================ -->
-    <section id="faq" class="faq-section">
-        <div class="faq-grid">
-            <!-- Left Column: FAQ Content -->
-            <div class="faq-content">
-                <h2 id="faq-title" class="faq-section-title">FAQs</h2>
-                <div id="faq-accordion" class="faq-accordion">
-                    <!-- Rendered by JS -->
-                </div>
-                <button id="faq-explore-btn" class="faq-explore-btn">
-                    EXPLORE ALL FAQS
-                </button>
-            </div>
-            
-            <!-- Right Column: Lifestyle Image -->
-            <div id="faq-lifestyle-image" class="faq-image-column">
-                <!-- Rendered by JS -->
-            </div>
+    <section id="faq" class="faq-section full-bleed">
+      <div class="faq-grid">
+        <!-- Left Column: FAQ Content -->
+        <div class="faq-content flex flex-col">
+          <h2 id="faq-title" class="faq-section-title w-full">FAQs</h2>
+          <div id="faq-accordion" class="faq-accordion">
+            <!-- Rendered by JS -->
+          </div>
+          <button id="faq-explore-btn" class="faq-explore-btn self-start">
+            EXPLORE ALL FAQS
+          </button>
         </div>
+
+        <!-- Right Column: Lifestyle Image -->
+        <div id="faq-lifestyle-image" class="faq-image-column">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
     </section>
-    
+
     <!-- ============================================
          SITE FOOTER
          ============================================ -->
     <footer class="site-footer">
-        <div class="max-w-7xl mx-auto">
-            <!-- Footer Columns & Newsletter -->
-            <div id="site-footer-content">
-                <!-- Rendered by JS -->
-            </div>
-            
-            <!-- Logo Section -->
-            <div id="footer-logo-section" class="footer-logo-section">
-                <!-- Rendered by JS -->
-            </div>
-            
-            <!-- Disclaimers -->
-            <div id="footer-disclaimers" class="footer-disclaimers">
-                <!-- Rendered by JS -->
-            </div>
+      <div class="max-w-7xl mx-auto">
+        <!-- Footer Columns & Newsletter -->
+        <div id="site-footer-content">
+          <!-- Rendered by JS -->
         </div>
+
+        <!-- Logo Section -->
+        <div id="footer-logo-section" class="footer-logo-section">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Disclaimers -->
+        <div id="footer-disclaimers" class="footer-disclaimers">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
     </footer>
-    
+
     <!-- ============================================
          STICKY FOOTER CTA BAR
          ============================================ -->
-    <div id="sticky-footer-cta" class="sticky-footer-cta fixed bottom-0 left-0 right-0 z-50 bg-white shadow-footer transform translate-y-full transition-transform duration-300">
-        <div class="max-w-7xl mx-auto px-4 py-3">
-            <div class="flex items-center justify-between gap-4">
-                
-                <!-- Left: Product Info (Hidden on mobile) -->
-                <div class="hidden md:flex items-center gap-3">
-                    <!-- Exclusive Badge -->
-                    <div id="exclusive-badge" class="flex items-center gap-1 bg-brand-burgundy text-white text-xs font-semibold px-3 py-1 rounded">
-                        <span>EXCLUSIVE SAVINGS</span>
-                        <button id="close-exclusive-badge" class="ml-1 hover:opacity-70">×</button>
-                    </div>
-                    <img src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-product-thumb.jpg" alt="Product" class="w-12 h-12 object-cover rounded" />
-                    <div>
-                        <p class="text-sm font-semibold">Daily Ultimate Essentials</p>
-                        <p id="footer-format-display" class="text-xs text-gray-500">(Forever Jar)</p>
-                    </div>
-                </div>
-                
-                <!-- Center: Plan Selector -->
-                <div class="flex items-center gap-3">
-                    <select id="footer-plan-dropdown" class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-burgundy">
-                        <option value="90-day">90-Day Supply (Save 30%)</option>
-                        <option value="30-day">30-Day Supply (Save 20%)</option>
-                    </select>
-                    <span id="footer-per-serving" class="hidden md:block text-xs text-gray-500">$2.61 USD / serving</span>
-                </div>
-                
-                <!-- Right: CTA Button -->
-                <button id="footer-add-to-cart" class="bg-brand-burgundy hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg text-sm md:text-base transition-colors whitespace-nowrap">
-                    ADD TO CART - <span id="footer-cart-price">$78.33</span> USD/MO
-                </button>
+    <div
+      id="sticky-footer-cta"
+      class="sticky-footer-cta fixed bottom-0 left-0 right-0 z-50 bg-white shadow-footer transform translate-y-full transition-transform duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 py-3">
+        <div class="flex items-center justify-between gap-4">
+          <!-- Left: Product Info (Hidden on mobile) -->
+          <div class="hidden md:flex items-center gap-3">
+            <!-- Exclusive Badge -->
+            <div
+              id="exclusive-badge"
+              class="flex items-center gap-1 bg-brand-burgundy text-white text-xs font-semibold px-3 py-1 rounded"
+            >
+              <span>EXCLUSIVE SAVINGS</span>
+              <button id="close-exclusive-badge" class="ml-1 hover:opacity-70">
+                ×
+              </button>
             </div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-product-thumb.jpg"
+              alt="Product"
+              class="w-12 h-12 object-cover rounded"
+            />
+            <div>
+              <p class="text-sm font-semibold">Daily Ultimate Essentials</p>
+              <p id="footer-format-display" class="text-xs">(Forever Jar)</p>
+            </div>
+          </div>
+
+          <!-- Center: Plan Selector -->
+          <div class="flex items-center gap-3">
+            <select
+              id="footer-plan-dropdown"
+              class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-burgundy"
+            >
+              <option value="90-day">90-Day Supply (Save 30%)</option>
+              <option value="30-day">30-Day Supply (Save 20%)</option>
+            </select>
+            <span id="footer-per-serving" class="hidden md:block text-xs"
+              >$2.61 USD / serving</span
+            >
+          </div>
+
+          <!-- Right: CTA Button -->
+          <button
+            id="footer-add-to-cart"
+            class="bg-brand-burgundy hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg text-sm md:text-base transition-colors whitespace-nowrap"
+          >
+            ADD TO CART - <span id="footer-cart-price">$78.33</span>
+            USD/MO
+          </button>
         </div>
+      </div>
     </div>
-    
+
     <!-- JavaScript Files -->
     <script src="./main.js"></script>
     <script src="./components/product-images-slider.js"></script>
@@ -932,6 +1208,5 @@
     <script src="./components/site-footer.js"></script>
     <script src="./components/welcome-gift-modal.js"></script>
     <script src="./components/comparison-tables.js"></script>
-    
-</body>
+  </body>
 </html>

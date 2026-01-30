@@ -1,74 +1,192 @@
 {
-  "pillars": [
-    {
-      "id": "nutritional-foundation",
-      "number": "01",
-      "name": "Comprehensive Nutritional Foundation",
-      "subtitle": "Complete Vitamin & Mineral Profile",
-      "icon": "fa-solid fa-layer-group",
-      "keyIngredients": [
-        "All essential vitamins (A, C, D, E, K1, K2, B-complex)",
-        "Full mineral spectrum (12 essential minerals)",
-        "Methylated B-vitamins for optimal absorption",
-        "Chelated minerals for superior bioavailability"
-      ],
-      "description": "The foundation of IM8 provides complete vitamin and mineral coverage to fill nutritional gaps in your daily diet."
-    },
-    {
-      "id": "digestive-support",
-      "number": "02",
-      "name": "Superior Digestive Health Support",
-      "subtitle": "4-Tier Digestive System",
-      "icon": "fa-solid fa-leaf",
-      "keyIngredients": [
-        "10 Billion CFU Probiotics (8 strains)",
-        "Prebiotic fiber blend",
-        "Postbiotic compounds",
-        "Digestive enzyme complex"
-      ],
-      "description": "A complete digestive ecosystem supporting gut health, nutrient absorption, and microbiome balance."
-    },
-    {
-      "id": "superfood-complex",
-      "number": "03",
-      "name": "Powerful Superfood & Antioxidant Complex",
-      "subtitle": "4,100mg Raw Superfoods Blend",
-      "icon": "fa-solid fa-seedling",
-      "keyIngredients": [
-        "Organic greens blend (spirulina, chlorella, wheatgrass)",
-        "Berry antioxidant complex",
-        "Turmeric with black pepper extract",
-        "Green tea extract (EGCG)"
-      ],
-      "description": "A potent blend of organic superfoods and antioxidants to fight oxidative stress and support cellular health."
-    },
-    {
-      "id": "health-complexes",
-      "number": "04",
-      "name": "Specialized Health Complexes",
-      "subtitle": "Targeted Support for Performance",
-      "icon": "fa-solid fa-dna",
-      "keyIngredients": [
-        "CoQ10 for cellular energy",
-        "Collagen peptides for skin & joints",
-        "Omega-3 fatty acids (EPA/DHA)",
-        "Liver support complex"
-      ],
-      "description": "Targeted nutritional complexes addressing specific health needs from energy production to joint support."
-    },
-    {
-      "id": "adaptogenic-support",
-      "number": "05",
-      "name": "Adaptogenic Stress Support",
-      "subtitle": "Stress & Energy Balance",
-      "icon": "fa-solid fa-spa",
-      "keyIngredients": [
-        "Ashwagandha KSM-66®",
-        "Rhodiola Rosea extract",
-        "Lion's Mane mushroom",
-        "Holy Basil (Tulsi)"
-      ],
-      "description": "Clinically studied adaptogens that help your body manage stress while supporting sustained energy and mental clarity."
-    }
-  ]
+  "daily-ultimate-essentials": {
+    "badge": "COMPREHENSIVE WELLNESS",
+    "title": "5 Pillars of Total Health",
+    "subtitle": "A holistic approach to wellness, addressing every dimension of your health with precision-formulated ingredients.",
+    "features": [
+      {
+        "icon": "fa-solid fa-flask",
+        "title": "Superior Ingredient Forms",
+        "description": "Bioactive Vitamins & Organic Minerals for maximum absorption."
+      },
+      {
+        "icon": "fa-solid fa-circle-check",
+        "title": "Clean Formulation",
+        "description": "No Stevia (Uses Reb M), Allergen-Free, Non-GMO, Vegan-Friendly."
+      },
+      {
+        "icon": "fa-solid fa-star",
+        "title": "Branded Ingredients",
+        "description": "Quatrefolic®, VegD3®, FloraSMART®, AstaPure®"
+      }
+    ],
+    "pillars": [
+      {
+        "id": "nutritional-foundation",
+        "number": "01",
+        "name": "Comprehensive Nutritional Foundation",
+        "navSubtitle": "Complete Vitamin & Mineral Profile",
+        "panelSubtitle": "Complete Vitamin & Mineral Profile",
+        "iconSvg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"8\" y=\"8\" width=\"32\" height=\"32\" rx=\"4\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M16 24H32\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M16 18H32\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M16 30H24\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>",
+        "keyBenefits": "The foundation of IM8 provides complete vitamin and mineral coverage to fill nutritional gaps in your daily diet with superior bioavailable forms.",
+        "keyIngredients": [
+          "All essential vitamins (A, C, D, E, K1, K2, B-complex)",
+          "Full mineral spectrum (12 essential)",
+          "Vitamin C: 900mg (1000% DV) - Antioxidant Support",
+          "Vitamin D3: 1200 IU - From Vegan Lichen",
+          "Vitamin B12: 24mcg - Bioactive Methylcobalamin",
+          "Bioactive Forms: Quatrefolic® & Methylcobalamin for Superior Absorption"
+        ]
+      },
+      {
+        "id": "digestive-support",
+        "number": "02",
+        "name": "Superior Digestive Health Support",
+        "navSubtitle": "4-Tier Digestive System",
+        "panelSubtitle": "4-Tier Digestive System",
+        "iconSvg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M24 8C28 8 32 12 32 18C32 24 28 26 28 32C28 36 26 40 24 40C22 40 20 36 20 32C20 26 16 24 16 18C16 12 20 8 24 8Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M20 18C20 20 22 22 24 22C26 22 28 20 28 18\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>",
+        "keyBenefits": "A complete digestive ecosystem supporting gut health, nutrient absorption, and microbiome balance through prebiotics, probiotics, and postbiotics.",
+        "keyIngredients": [
+          "10 Billion CFU Probiotics (8 strains)",
+          "Prebiotic fiber blend",
+          "Postbiotic compounds",
+          "Digestive enzyme complex"
+        ]
+      },
+      {
+        "id": "superfood-complex",
+        "number": "03",
+        "name": "Powerful Superfood & Antioxidant Complex",
+        "navSubtitle": "4,100mg Raw Superfoods Blend",
+        "panelSubtitle": "4,100mg Raw Superfoods Blend",
+        "iconSvg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M24 40V24\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M24 24C24 16 18 12 12 12\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M24 24C24 16 30 12 36 12\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M24 20C24 14 24 8 24 8\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"24\" cy=\"40\" r=\"4\" stroke=\"currentColor\" stroke-width=\"2\"/></svg>",
+        "keyBenefits": "A potent blend of organic superfoods and antioxidants to fight oxidative stress and support cellular health with nature's most powerful nutrients.",
+        "keyIngredients": [
+          "Organic greens blend (spirulina, chlorella, wheatgrass)",
+          "Berry antioxidant complex",
+          "Turmeric with black pepper extract",
+          "Green tea extract (EGCG)"
+        ]
+      },
+      {
+        "id": "health-complexes",
+        "number": "04",
+        "name": "Specialized Health Complexes",
+        "navSubtitle": "Targeted Support for Performance",
+        "panelSubtitle": "Targeted Support for Performance",
+        "iconSvg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"24\" cy=\"24\" r=\"16\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"24\" cy=\"24\" r=\"8\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"24\" cy=\"24\" r=\"2\" fill=\"currentColor\"/></svg>",
+        "keyBenefits": "Targeted nutritional complexes addressing specific health needs from energy production to joint support and cognitive function.",
+        "keyIngredients": [
+          "CoQ10 for cellular energy",
+          "Collagen peptides for skin & joints",
+          "Omega-3 fatty acids (EPA/DHA)",
+          "Liver support complex"
+        ]
+      },
+      {
+        "id": "cell-rejuvenation",
+        "number": "05",
+        "name": "Cell Rejuvenation Technology 8™",
+        "navSubtitle": "Proprietary Longevity Complex",
+        "panelSubtitle": "Proprietary Longevity Complex",
+        "iconSvg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M24 8L28 16L36 18L30 24L32 32L24 28L16 32L18 24L12 18L20 16L24 8Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+        "keyBenefits": "Clinically studied adaptogens that help your body manage stress while supporting sustained energy and mental clarity.",
+        "keyIngredients": [
+          "Ashwagandha KSM-66®",
+          "Rhodiola Rosea extract",
+          "Lion's Mane mushroom",
+          "Holy Basil (Tulsi)"
+        ]
+      }
+    ]
+  },
+  "daily-ultimate-longevity": {
+    "badge": "ADVANCED LONGEVITY SCIENCE",
+    "title": "5 Pillars of Longevity",
+    "subtitle": "Cutting-edge science meets ancient wisdom to optimize your healthspan and support graceful aging.",
+    "features": [
+      {
+        "icon": "fa-solid fa-prescription-bottle-medical",
+        "title": "Therapeutic Dosing",
+        "description": "Clinically relevant doses of key longevity ingredients like NMN and Spermidine."
+      },
+      {
+        "icon": "fa-solid fa-gears",
+        "title": "Synergistic Formulation",
+        "description": "Ingredients selected to work together to amplify cellular repair and renewal."
+      },
+      {
+        "icon": "fa-solid fa-gem",
+        "title": "Premium Purity",
+        "description": "Rigorous testing for purity and potency, free from fillers and artificial additives."
+      }
+    ],
+    "pillars": [
+      {
+        "id": "cellular-foundation",
+        "number": "01",
+        "name": "Cellular Foundation Builder",
+        "navSubtitle": "Essential Amino Acid Support",
+        "panelSubtitle": "Essential Amino Acid Support (5g)",
+        "iconSvg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M12 28L24 22L36 28L24 34L12 28Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M12 20L24 14L36 20L24 26L12 20Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M12 20V28\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path><path d=\"M36 20V28\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path><path d=\"M24 26V34\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg>",
+        "keyBenefits": "Provides therapeutic dosages of two critical longevity amino acids that naturally decline with age, supporting cellular protection and longevity pathways.",
+        "keyIngredients": [
+          "L-Glycine 3,000mg",
+          "Taurine 2,000mg"
+        ]
+      },
+      {
+        "id": "cellular-protection",
+        "number": "02",
+        "name": "Cellular Protection Activator",
+        "navSubtitle": "Senolytic Complex",
+        "panelSubtitle": "Senolytic Complex (600mg)",
+        "iconSvg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M24 8L36 14V24C36 32 30 38 24 40C18 38 12 32 12 24V14L24 8Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><circle cx=\"24\" cy=\"24\" r=\"6\" stroke=\"currentColor\" stroke-width=\"2\"></circle><circle cx=\"24\" cy=\"24\" r=\"2\" fill=\"currentColor\"></circle></svg>",
+        "keyBenefits": "Triple senolytic complex that targets cellular senescence—one of the primary hallmarks of aging—through complementary compounds that eliminate 'zombie cells'.",
+        "keyIngredients": [
+          "Trans-Resveratrol 250mg",
+          "Quercetin Phytosome 250mg",
+          "Fisetin 100mg"
+        ]
+      },
+      {
+        "id": "nmn-energy",
+        "number": "03",
+        "name": "NMN NAD+ Energy Booster",
+        "navSubtitle": "Mitochondrial Support",
+        "panelSubtitle": "Mitochondrial Support (310mg)",
+        "iconSvg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M26 8L14 26H24L22 40L34 22H24L26 8Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><circle cx=\"24\" cy=\"24\" r=\"16\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"4 4\"></circle></svg>",
+        "keyBenefits": "Combines the most direct NAD+ precursor with a mitochondrial biogenesis promoter for comprehensive cellular energy support and DNA repair.",
+        "keyIngredients": [
+          "NMN 300mg",
+          "PQQ 10mg"
+        ]
+      },
+      {
+        "id": "metabolic-activator",
+        "number": "04",
+        "name": "Metabolic AMPK/SIRT1 Activator",
+        "navSubtitle": "Metabolic Switch",
+        "panelSubtitle": "Metabolic Switch (106mg)",
+        "iconSvg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M24 8C15.163 8 8 15.163 8 24\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path><path d=\"M24 40C32.837 40 40 32.837 40 24\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path><path d=\"M8 24C8 32.837 15.163 40 24 40\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-dasharray=\"4 4\"></path><path d=\"M40 24C40 15.163 32.837 8 24 8\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-dasharray=\"4 4\"></path><path d=\"M24 4L24 12\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path><path d=\"M20 8L24 4L28 8\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M24 44L24 36\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path><path d=\"M28 40L24 44L20 40\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+        "keyBenefits": "Enhanced bioavailability and metabolic support combined with powerful antioxidant protection for optimal metabolic function and cellular stress resistance.",
+        "keyIngredients": [
+          "Dihydroberberine 100mg",
+          "Astaxanthin 6mg"
+        ]
+      },
+      {
+        "id": "cellular-renewal",
+        "number": "05",
+        "name": "Cellular Renewal Activator",
+        "navSubtitle": "Autophagy Support",
+        "panelSubtitle": "Autophagy Support (3mg)",
+        "iconSvg": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M38 24C38 31.732 31.732 38 24 38C16.268 38 10 31.732 10 24C10 16.268 16.268 10 24 10\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path><path d=\"M24 10L30 4\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path><path d=\"M24 10L30 16\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path><circle cx=\"24\" cy=\"24\" r=\"6\" stroke=\"currentColor\" stroke-width=\"2\"></circle></svg>",
+        "keyBenefits": "Promotes autophagy—the cellular 'cleaning' process essential for healthy aging—removing damaged proteins and organelles for optimal cellular function.",
+        "keyIngredients": [
+          "Spermidine 3mg"
+        ]
+      }
+    ]
+  }
 }

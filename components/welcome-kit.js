@@ -26,7 +26,7 @@ function renderWelcomeKit() {
     container.innerHTML = `
         <!-- Left: Image -->
         <div class="welcome-kit-image">
-            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=500&fit=crop" 
+            <img src="https://im8health.com/cdn/shop/files/welcome-kit-sach.png?v=1761040602&width=1200" 
                  alt="IM8 Welcome Kit contents"
                  class="w-full h-auto rounded-2xl shadow-card"
                  onerror="this.src='https://via.placeholder.com/600x500?text=Welcome+Kit'">

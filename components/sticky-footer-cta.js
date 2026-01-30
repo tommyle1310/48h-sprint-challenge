@@ -17,24 +17,8 @@ function initStickyFooter() {
 
     if (!footer) return;
 
-    // Show footer after scrolling past hero section
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                showFooter();
-            } else {
-                hideFooter();
-            }
-        });
-    }, {
-        threshold: 0,
-        rootMargin: '-100px 0px 0px 0px'
-    });
-
-    const heroSection = document.querySelector('.hero-sticky-section');
-    if (heroSection) {
-        observer.observe(heroSection);
-    }
+    // Show footer immediately on page load
+    showFooter();
 
     // Close exclusive badge
     if (closeBadgeBtn && exclusiveBadge) {

@@ -154,7 +154,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: Inter, system-ui, sans-serif;
+  font-family: Aeonik, Inter, system-ui, sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -554,6 +554,116 @@ video {
   display: none;
 }
 
+/* NB Architekt Bold - for sticky promo header */
+
+@font-face {
+  font-family: 'NB Architekt';
+
+  src: url('./fonts/nb_architekt_bold-webfont.woff') format('woff');
+
+  font-weight: 700;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+/* ABC Arizona Flare - for headings */
+
+@font-face {
+  font-family: 'ABC Arizona Flare';
+
+  src: url('./fonts/ABCArizonaFlare-Light.woff2') format('woff2'),
+         url('./fonts/ABCArizonaFlare-Light.woff') format('woff');
+
+  font-weight: 300;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Arizona Flare';
+
+  src: url('./fonts/ABCArizonaFlare-Regular.woff2') format('woff2');
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Arizona Flare';
+
+  src: url('./fonts/ABCArizonaFlare-Medium.woff2') format('woff2');
+
+  font-weight: 500;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Arizona Flare';
+
+  src: url('./fonts/ABCArizonaFlare-Bold.woff2') format('woff2');
+
+  font-weight: 700;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+/* Aeonik - for body text */
+
+@font-face {
+  font-family: 'Aeonik';
+
+  src: url('./fonts/aeonik_regular-webfont.woff2') format('woff2');
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+
+  src: url('./fonts/Aeonik-Medium.woff2') format('woff2');
+
+  font-weight: 500;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+
+  src: url('./fonts/Aeonik-Bold.woff2') format('woff2');
+
+  font-weight: 700;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+/* Default body font */
+
+body {
+  font-family: 'Aeonik', sans-serif;
+  font-weight: 400;
+}
+
 /* --- Reset & Box Model --- */
 
 *,
@@ -576,6 +686,7 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.5;
+  color: #50000B;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -584,7 +695,7 @@ body {
 /* --- Typography --- */
 
 h1, h2, h3 {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'ABC Arizona Flare', serif;
   line-height: 1.2;
 }
 
@@ -601,13 +712,13 @@ h3 {
 }
 
 p, li, span, button, input, select, textarea {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Aeonik', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
 }
 
 a {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Aeonik', sans-serif;
   text-decoration: none;
   color: inherit;
 }
@@ -860,7 +971,7 @@ input:focus,
 }
 
 .accordion-header h4 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Aeonik', sans-serif;
   font-size: 16px;
   font-weight: 600;
 }
@@ -1121,119 +1232,371 @@ input:focus,
   min-height: 200px;
 }
 
-/* --- Pillars Accordion --- */
+/* --- Pillars Interactive (Sidebar + Panel Layout) --- */
 
-.pillar-item {
-  background: white;
-  border-radius: 12px;
-  margin-bottom: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-}
-
-.pillar-item.open {
-  border-left: 4px solid #8B1E3F;
-}
-
-.pillar-header {
+.pillars-tab-switcher {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 16px 20px;
-  background: none;
+  justify-content: center;
+}
+
+.pillars-product-tab {
+  color: #666;
+  background: transparent;
   border: none;
   cursor: pointer;
-  text-align: left;
+  transition: all 0.2s ease;
 }
 
-.pillar-header-left {
+.pillars-product-tab:hover {
+  color: #333;
+}
+
+.pillars-product-tab.active {
+  background: #8B1E3F;
+  color: white;
+}
+
+/* Interactive Container - Sidebar + Panel */
+
+.pillars-interactive {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .pillars-interactive {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+/* Sidebar Navigation */
+
+.pillars-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .pillars-sidebar {
+    width: 340px;
+    flex-shrink: 0;
+  }
+}
+
+.pillars-nav-item {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 16px;
+  background: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.pillar-number {
-  font-size: 12px;
+.pillars-nav-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.pillars-nav-item--active {
+  background: linear-gradient(135deg, #8B1E3F 0%, #6B1730 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(139, 30, 63, 0.3);
+}
+
+/* Longevity theme - orange gradient */
+
+.pillars--longevity .pillars-nav-item--active {
+  background: linear-gradient(135deg, #C5752A 0%, #A85F1F 100%);
+  box-shadow: 0 4px 16px rgba(197, 117, 42, 0.3);
+}
+
+.pillars-nav-number {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 10px;
   font-weight: 600;
   color: #999;
-  min-width: 24px;
 }
 
-.pillar-icon {
-  width: 36px;
-  height: 36px;
+.pillars-nav-item--active .pillars-nav-number {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pillars-nav-icon {
+  width: 40px;
+  height: 40px;
   background: #fdf8f8;
-  border-radius: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8B1E3F;
+  flex-shrink: 0;
+}
+
+.pillars--longevity .pillars-nav-icon {
+  background: #fef6ed;
+  color: #C5752A;
+}
+
+.pillars-nav-item--active .pillars-nav-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.pillars-nav-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.pillars-nav-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.pillars-nav-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.pillars-nav-item--active .pillars-nav-label {
+  color: white;
+}
+
+.pillars-nav-preview {
+  display: block;
+  font-size: 12px;
+  color: #888;
+}
+
+.pillars-nav-item--active .pillars-nav-preview {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pillars-nav-arrow {
+  color: #ccc;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.pillars-nav-item--active .pillars-nav-arrow {
+  opacity: 1;
+  color: white;
+}
+
+.pillars-nav-line {
+  display: none;
+}
+
+/* Detail Panel */
+
+.pillars-panel {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.pillars-panel-content {
+  display: none;
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.pillars-panel-content--active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pillars-watermark {
+  position: absolute;
+  top: -20px;
+  right: 80px;
+  font-size: 120px;
+  font-weight: 700;
+  color: rgba(139, 30, 63, 0.05);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.pillars--longevity .pillars-watermark {
+  color: rgba(197, 117, 42, 0.05);
+}
+
+.pillars-panel-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.pillars-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.pillars-panel-icon {
+  width: 56px;
+  height: 56px;
+  background: #fdf8f8;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #8B1E3F;
 }
 
-.pillar-name {
-  font-size: 16px;
+.pillars--longevity .pillars-panel-icon {
+  background: #fef6ed;
+  color: #C5752A;
+}
+
+.pillars-panel-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.pillars-panel-badge {
+  background: #8B1E3F;
+  color: white;
+  font-size: 11px;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.pillars--longevity .pillars-panel-badge {
+  background: #C5752A;
+}
+
+.pillars-panel-title {
+  font-family: 'ABC Arizona Flare', Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
   color: #333;
-}
-
-.pillar-expand-icon {
-  color: #8B1E3F;
-  font-size: 14px;
-}
-
-.pillar-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-}
-
-.pillar-content-inner {
-  padding: 0 20px 20px 72px;
-}
-
-.pillar-subtitle {
-  font-size: 14px;
-  color: #8B1E3F;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
-.pillar-description {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
   margin-bottom: 16px;
+  line-height: 1.3;
 }
 
-.pillar-ingredients {
-  background: #f9f9f9;
-  border-radius: 8px;
-  padding: 16px;
+.pillars-panel-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
-.ingredients-label {
+.pillars-panel-meta-line {
+  width: 24px;
+  height: 2px;
+  background: #ddd;
+}
+
+.pillars-panel-tagline {
+  font-size: 12px;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pillars-key-benefits {
+  margin-bottom: 24px;
+}
+
+.pillars-key-benefits-title {
   font-size: 11px;
   font-weight: 700;
   color: #8B1E3F;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   margin-bottom: 12px;
 }
 
-.ingredients-list {
+.pillars--longevity .pillars-key-benefits-title {
+  color: #C5752A;
+}
+
+.pillars-panel-description {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+}
+
+.pillars-benefits {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.pillars-benefits-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #8B1E3F;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.pillars--longevity .pillars-benefits-title {
+  color: #C5752A;
+}
+
+.pillars-benefits-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.ingredients-list li {
+.pillars-benefit-item {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  font-size: 13px;
-  color: #555;
-  padding: 4px 0;
+  gap: 10px;
+  font-size: 14px;
+  color: #444;
+}
+
+.pillars-benefit-item svg {
+  flex-shrink: 0;
+  color: #8B1E3F;
+  margin-top: 1px;
+}
+
+.pillars--longevity .pillars-benefit-item svg {
+  color: #C5752A;
 }
 
 /* --- Physician Cards --- */
@@ -1424,7 +1787,7 @@ input:focus,
 }
 
 .feature-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Aeonik', sans-serif;
   font-size: 18px;
   font-weight: 600;
   color: #333;
@@ -1542,6 +1905,10 @@ input:focus,
   margin-top: 0.25rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -1587,6 +1954,10 @@ input:focus,
 
 .hidden {
   display: none;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
 }
 
 .h-10 {
@@ -1667,10 +2038,6 @@ input:focus,
 
 .max-w-2xl {
   max-width: 42rem;
-}
-
-.max-w-3xl {
-  max-width: 48rem;
 }
 
 .max-w-6xl {
@@ -1798,6 +2165,10 @@ input:focus,
 .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-divide-opacity, 1));
+}
+
+.self-start {
+  align-self: flex-start;
 }
 
 .overflow-x-auto {
@@ -1929,6 +2300,10 @@ input:focus,
   --tw-gradient-to: #fff var(--tw-gradient-to-position);
 }
 
+.bg-center {
+  background-position: center;
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -2025,8 +2400,16 @@ input:focus,
   text-align: center;
 }
 
+.font-architekt {
+  font-family: NB Architekt, sans-serif;
+}
+
+.font-arizona {
+  font-family: ABC Arizona Flare, Georgia, serif;
+}
+
 .font-sans {
-  font-family: Inter, system-ui, sans-serif;
+  font-family: Aeonik, Inter, system-ui, sans-serif;
 }
 
 .font-serif {
@@ -2139,7 +2522,7 @@ input:focus,
 
 .text-text-primary {
   --tw-text-opacity: 1;
-  color: rgb(26 26 26 / var(--tw-text-opacity, 1));
+  color: rgb(80 0 11 / var(--tw-text-opacity, 1));
 }
 
 .text-white {
@@ -2177,6 +2560,12 @@ input:focus,
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2207,6 +2596,16 @@ input:focus,
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+/* --- Full Bleed (break out of parent padding) --- */
+
+.full-bleed {
+  width: 100vw;
+  max-width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* --- Text Utilities --- */
@@ -2295,7 +2694,7 @@ input:focus,
 }
 
 .expert-name {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Aeonik', sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: #333;
@@ -2430,7 +2829,7 @@ input:focus,
 }
 
 .product-card-title {
-  font-family: Georgia, serif;
+  font-family: 'ABC Arizona Flare', serif;
   font-size: 20px;
   line-height: 1.3;
   color: #333;
@@ -2473,7 +2872,11 @@ input:focus,
 
 .faq-content {
   padding: 48px 24px;
-  background: #8B1E3F;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  background: #a40011;
 }
 
 @media (min-width: 768px) {
@@ -2483,9 +2886,9 @@ input:focus,
 }
 
 .faq-section-title {
-  font-family: Georgia, serif;
+  font-family: 'ABC Arizona Flare', serif;
   font-size: 36px;
-  color: white;
+  color: #ff9693;
   margin-bottom: 32px;
 }
 
@@ -2516,7 +2919,7 @@ input:focus,
 }
 
 .faq-question-text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Aeonik', sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: white;
@@ -2628,7 +3031,7 @@ input:focus,
 }
 
 .footer-column-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Aeonik', sans-serif;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -2736,7 +3139,7 @@ input:focus,
 }
 
 .footer-large-logo {
-  font-family: Georgia, serif;
+  font-family: 'ABC Arizona Flare', serif;
   font-size: 48px;
   font-weight: normal;
   color: #d4a5a5;
@@ -2908,7 +3311,7 @@ input:focus,
 }
 
 .welcome-gift-modal .modal-title {
-  font-family: Georgia, serif;
+  font-family: 'ABC Arizona Flare', serif;
   font-size: 36px;
   font-weight: normal;
   color: white;
@@ -3009,7 +3412,7 @@ input:focus,
 }
 
 .gold-standard-section .section-title {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'ABC Arizona Flare', serif;
   font-size: 42px;
   font-style: italic;
   text-align: center;
@@ -3384,6 +3787,83 @@ input:focus,
 }
 
 /* ============================================
+   CUSTOM FONT DECLARATIONS
+   ============================================ */
+
+/* ============================================
+   TYPOGRAPHY UTILITY CLASSES
+   ============================================ */
+
+.text-h1 {
+  font-family: 'ABC Arizona Flare', serif;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+@media (min-width: 1024px) {
+  .text-h1 {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .text-h1 {
+    font-size: 40px;
+  }
+}
+
+.text-h2 {
+  font-family: 'ABC Arizona Flare', serif;
+  font-weight: 700;
+  font-size: 35px;
+}
+
+@media (min-width: 1024px) {
+  .text-h2 {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .text-h2 {
+    font-size: 52px;
+  }
+}
+
+.text-body {
+  font-family: 'Aeonik', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .text-body {
+    font-size: 16px;
+  }
+}
+
+.text-architekt {
+  font-family: 'NB Architekt', sans-serif;
+  font-weight: 700;
+}
+
+/* ============================================
+   LAYOUT CONSTRAINTS
+   ============================================ */
+
+.section-container {
+  max-width: 150rem;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 767px) {
+  .section-container {
+    padding: 0 20px;
+  }
+}
+
+/* ============================================
    MONTHLY BREAKDOWN SECTION
    ============================================ */
 
@@ -3396,7 +3876,7 @@ input:focus,
 
 .breakdown-container {
   position: relative;
-  max-width: 1400px;
+  max-width: 150rem;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -3438,7 +3918,7 @@ input:focus,
 }
 
 .breakdown-title {
-  font-family: Georgia, serif;
+  font-family: 'ABC Arizona Flare', serif;
   font-size: 2.5rem;
   font-weight: 400;
   font-style: italic;
@@ -3539,7 +4019,7 @@ input:focus,
 }
 
 .breakdown-list-title {
-  font-family: Georgia, serif;
+  font-family: 'ABC Arizona Flare', serif;
   font-size: 2rem;
   font-weight: 400;
   color: #50000b;
@@ -3784,7 +4264,7 @@ input:focus,
    ============================================ */
 
 .announcement-bar {
-  background: #5a1018;
+  background: rgb(164 0 17);
   padding: 10px 24px;
   display: flex;
   align-items: center;
@@ -3850,7 +4330,7 @@ input:focus,
 }
 
 .sticky-promo-container {
-  max-width: 1400px;
+  max-width: 150rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -3867,6 +4347,7 @@ input:focus,
   text-align: center;
   color: white;
   font-size: 15px;
+  font-family: 'NB Architekt', sans-serif;
 }
 
 .sticky-promo-bold {
@@ -3954,7 +4435,7 @@ input:focus,
 }
 
 .header-wrapper {
-  max-width: 1400px;
+  max-width: 150rem;
   margin: 0 auto;
 }
 
@@ -4091,6 +4572,24 @@ input:focus,
   z-index: 100;
 }
 
+/* Shop dropdown with product images needs more width */
+
+#shop-dropdown {
+  min-width: 280px;
+  left: 0;
+  transform: none;
+}
+
+#shop-dropdown .dropdown-content {
+  gap: 8px;
+}
+
+#shop-dropdown .dropdown-item {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 .nav-item.has-dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
@@ -4134,9 +4633,8 @@ input:focus,
    ============================================ */
 
 .clinically-proven-section {
-  background: linear-gradient(135deg, #8B1E3F 0%, #6B1530 50%, #5A1428 100%);
-  background-image: url('https://im8health.com/cdn/shop/files/clinical-bg-pattern.png?v=1700000000');
-  background-size: cover;
+  background-image: url('https://im8health.com/cdn/shop/files/clinical-studies-min.jpg?v=1724176766&width=2048');
+  background-size: contain;
   background-position: center;
   position: relative;
   overflow: hidden;
@@ -4149,14 +4647,13 @@ input:focus,
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(139, 30, 63, 0.95) 0%, rgba(90, 20, 40, 0.9) 100%);
   z-index: 0;
 }
 
 .clinically-proven-container {
   position: relative;
   z-index: 1;
-  max-width: 1400px;
+  max-width: 150rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -4177,7 +4674,7 @@ input:focus,
 }
 
 .stats-label {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.5px;
   margin-bottom: 32px;
@@ -4197,7 +4694,7 @@ input:focus,
 }
 
 .stat-value {
-  font-family: Georgia, serif;
+  font-family: 'ABC Arizona Flare', serif;
   font-size: 64px;
   font-weight: normal;
   line-height: 1;
@@ -4234,7 +4731,7 @@ input:focus,
 }
 
 .proven-title {
-  font-family: Georgia, serif;
+  font-family: 'ABC Arizona Flare', serif;
   font-size: 36px;
   font-style: italic;
   font-weight: normal;
@@ -4384,22 +4881,22 @@ input:focus,
 
 .whats-inside-section {
   background: linear-gradient(180deg, #8B1E3F 0%, #6B1530 50%, #5A1428 100%);
-  padding: 80px 24px;
+  /* padding: 80px 24px; */
 }
 
 @media (min-width: 768px) {
   .whats-inside-section {
-    padding: 100px 48px;
+    /* padding: 100px 48px; */
   }
 }
 
-.whats-inside-container {
-  max-width: 1200px;
+/* .whats-inside-container {
+  max-width: 150rem;
   margin: 0 auto;
-}
+} */
 
 .whats-inside-title {
-  font-family: Georgia, serif;
+  font-family: 'ABC Arizona Flare', serif;
   font-size: 42px;
   font-style: italic;
   font-weight: normal;
@@ -4510,12 +5007,12 @@ input:focus,
 }
 
 .how-to-enjoy-container {
-  max-width: 1200px;
+  max-width: 150rem;
   margin: 0 auto;
 }
 
 .how-to-enjoy-title {
-  font-family: Georgia, serif;
+  font-family: 'ABC Arizona Flare', serif;
   font-size: 42px;
   font-style: italic;
   font-weight: normal;
@@ -4685,6 +5182,10 @@ input:focus,
 
   .md\:max-w-\[500px\] {
     max-width: 500px;
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:flex-row {
