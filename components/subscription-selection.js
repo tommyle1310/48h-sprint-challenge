@@ -26,57 +26,68 @@ function renderSubscriptionSelection() {
     const currentFormat = window.productState?.format || 'jar';
 
     container.innerHTML = `
-        <h3 class="text-sm font-semibold text-gray-700 mb-3">2. Subscribe & Save:</h3>
+        <h3 class="text-[16px] font-semibold text-gray-700 mb-3">2. Subscribe & Save:</h3>
         <div class="subscription-options flex flex-col gap-3">
-            ${subscriptionsData.subscriptions.map(sub => {
+            ${subscriptionsData.subscriptions.map((sub, index) => {
                 const perServing = sub.perServing[currentFormat] || sub.perServing.jar;
                 const isSelected = sub.id === currentPlan;
+                const hasBadges = sub.badges && sub.badges.length > 0;
                 
                 return `
-                <label class="subscription-card" data-plan="${sub.id}" data-selected="${isSelected}">
-                    <input type="radio" name="subscription-plan" value="${sub.id}" ${isSelected ? 'checked' : ''}>
+                <label class="subscription-card-new relative ${hasBadges ? 'mt-4' : ''}" data-plan="${sub.id}" data-selected="${isSelected}">
+                    <input type="radio" name="subscription-plan" value="${sub.id}" ${isSelected ? 'checked' : ''} class="sr-only">
                     
-                    <div class="subscription-header flex items-start justify-between gap-4">
-                        <div class="flex items-start gap-3">
-                            <!-- Radio Circle -->
-                            <div class="radio-circle mt-1">
-                                <span class="radio-circle-inner"></span>
-                            </div>
-                            
-                            <div class="flex flex-col">
-                                <!-- Badges -->
-                                ${sub.badges.length > 0 ? `
-                                    <div class="flex flex-wrap gap-1 mb-2">
-                                        ${sub.badges.map(badge => `
-                                            <span class="plan-badge ${badge === 'NEW YEAR OFFER' ? 'new-year' : 'best-value'}">${badge}</span>
-                                        `).join('')}
-                                    </div>
-                                ` : ''}
+                    <!-- Badges positioned above card -->
+                    ${hasBadges ? `
+                        <div class="absolute -top-3 left-4 flex justify-between w-[90%] mr-10 gap-2 z-10">
+                            ${sub.badges.map(badge => `
+                                <span class="plan-badge-new ${badge === 'NEW YEAR OFFER' ? 'badge-new-year' : 'badge-best-value'}">${badge}</span>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+                    
+                    <!-- Card Content -->
+                    <div class="subscription-card-inner ${isSelected ? 'selected' : ''}">
+                        <!-- Header Row -->
+                        <div class="subscription-header-row flex items-start justify-between gap-4">
+                            <!-- Left: Radio + Plan Info -->
+                            <div class="flex items-start gap-3">
+                                <!-- Custom Radio -->
+                                <div class="radio-custom mt-0.5 flex-shrink-0">
+                                    <img src="${isSelected ? 'https://im8health.com/cdn/shop/t/121/assets/radio_fill.svg' : 'https://im8health.com/cdn/shop/t/121/assets/radio_blank.svg'}" alt="" class="w-5 h-5">
+                                </div>
                                 
                                 <!-- Plan Info -->
-                                <span class="text-base font-semibold">${sub.name}</span>
-                                <span class="text-sm text-brand-burgundy font-medium">(${sub.discount})</span>
+                                <div class="flex flex-col">
+                                    <div class="flex items-baseline  gap-1 flex-wrap">
+                                        <span class="font-arizona text-lg md:text-xl font-semibold text-brand-burgundy">${sub.name}</span>
+                                        <span class="font-arizona text-base md:text-lg ${index === 0 ? 'text-[#16A34A]' : 'text-brand-burgundy'} font-medium">(${sub.discount})</span>
+                                    </div>
+                                    <span class="font-arizona text-sm text-brand-burgundy">${sub.billing}</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Right: Pricing -->
+                            <div class="flex flex-col items-end flex-shrink-0">
+                                <div class="flex items-baseline gap-1 whitespace-nowrap">
+                                    <span class="text-lg md:text-xl font-bold text-brand-burgundy">$${sub.price}</span>
+                                    <span class="text-sm text-gray-400 line-through">$${sub.originalPrice}</span>
+                                    <span class="text-sm text-gray-500">/mo</span>
+                                </div>
+                                <span class="text-sm text-gray-600 uppercase tracking-wide">$${perServing.toFixed(2)} USD / SERVING</span>
                             </div>
                         </div>
                         
-                        <!-- Pricing -->
-                        <div class="flex flex-col items-end">
-                            <div class="flex items-baseline gap-2">
-                                <span class="sale-price">$${sub.price}</span>
-                                <span class="original-price">$${sub.originalPrice}</span>
-                            </div>
-                            <span class="text-sm text-gray-500">/mo</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Expandable Details -->
-                    <div class="subscription-details mt-4">
-                        <p class="text-xs text-gray-500 mb-2">${sub.billing}</p>
-                        <p class="text-sm font-semibold text-brand-burgundy mb-3">$${perServing.toFixed(2)} USD / SERVING</p>
+                        <!-- Separator -->
+                        <div class="subscription-separator my-4 border-t border-gray-200"></div>
                         
-                        <ul class="benefits-list">
+                        <!-- Benefits List -->
+                        <ul class="benefits-list-new space-y-2">
                             ${sub.benefits.map(benefit => `
-                                <li>${benefit}</li>
+                                <li class="flex items-start gap-2 text-sm text-brand-burgundy">
+                                    <span class="flex-shrink-0">${benefit.substring(0, 2)}</span>
+                                    <span>${benefit.substring(2).trim()}</span>
+                                </li>
                             `).join('')}
                         </ul>
                     </div>
@@ -94,7 +105,7 @@ function renderSubscriptionSelection() {
     `;
 
     // Add event listeners
-    container.querySelectorAll('.subscription-card').forEach(card => {
+    container.querySelectorAll('.subscription-card-new').forEach(card => {
         card.addEventListener('click', () => {
             handleSubscriptionChange(card.dataset.plan);
         });
@@ -117,12 +128,8 @@ function handleSubscriptionChange(planId) {
         window.productState.subscription = planId;
     }
 
-    // Update UI
-    document.querySelectorAll('.subscription-card').forEach(card => {
-        card.setAttribute('data-selected', card.dataset.plan === planId);
-        const input = card.querySelector('input');
-        if (input) input.checked = card.dataset.plan === planId;
-    });
+    // Update UI - re-render to update radio images
+    renderSubscriptionSelection();
 
     // Emit event for other components
     document.dispatchEvent(new CustomEvent('subscriptionChange', {

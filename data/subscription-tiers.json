@@ -3,17 +3,17 @@
     {
       "id": "90-day",
       "name": "90-Day Supply",
-      "discount": "Save 30%",
-      "price": 78,
+      "discount": "Save 22%",
+      "price": 87,
       "originalPrice": 112,
-      "billing": "Billed $235.00 USD every 12 weeks",
+      "billing": "Billed $262.00 USD every 12 weeks",
       "perServing": {
-        "jar": 2.61,
+        "jar": 2.91,
         "sachets": 2.91
       },
       "badges": ["NEW YEAR OFFER", "BEST VALUE"],
       "benefits": [
-        "🎓 Exclusive Access to 90 Day IM8 Transformation Program",
+        "🎓 Exclusive Access to 90 Day IM8 Transformation Program (see below)",
         "💰 Maximum savings - lowest price per serving",
         "👨‍👩‍👧‍👦 Share with family and friends",
         "🎁 Free Daily Ultimate Mixer (US$18)",
@@ -26,13 +26,13 @@
     {
       "id": "30-day",
       "name": "30-Day Supply",
-      "discount": "Save 20%",
-      "price": 89,
+      "discount": "Save 12%",
+      "price": 99,
       "originalPrice": 112,
-      "billing": "Billed $89.00 USD every 4 weeks",
+      "billing": "Billed $99.00 USD every 4 weeks",
       "perServing": {
-        "jar": 2.97,
-        "sachets": 3.27
+        "jar": 3.30,
+        "sachets": 3.30
       },
       "badges": [],
       "benefits": [

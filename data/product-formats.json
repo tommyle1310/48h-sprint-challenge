@@ -6,7 +6,7 @@
       "weight": "354g",
       "pricePerServing": 2.61,
       "badge": "MOST POPULAR",
-      "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-jar-product.jpg",
+      "image": "//im8health.com/cdn/shop/files/pdp_essentials-jar_carousel01.jpg",
       "default": true
     },
     {
@@ -15,7 +15,7 @@
       "weight": "354g",
       "pricePerServing": 2.91,
       "badge": null,
-      "image": "https://cdn.shopify.com/s/files/1/0779/0673/9384/files/im8-sachets-product.jpg",
+      "image": "//im8health.com/cdn/shop/files/pdp_essentials-sachet_carousel01.jpg",
       "default": false
     }
   ]

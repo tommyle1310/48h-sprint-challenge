@@ -563,12 +563,11 @@
   padding: 10px 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
 }
 
 .announcement-content {
-  flex: 1;
   text-align: center;
 }
 
@@ -660,7 +659,7 @@
 
 .sticky-promo-cta {
   display: inline-block;
-  background: #e63946;
+  background: #a40011;
   color: white;
   padding: 12px 40px;
   border-radius: 50px;
@@ -673,7 +672,7 @@
 }
 
 .sticky-promo-cta:hover {
-  background: #d62839;
+  background: #50000b;
 }
 
 @media (max-width: 768px) {
@@ -1466,6 +1465,14 @@
     color: inherit;
   }
 
+  button {
+    background-color: #a40011;
+  }
+
+  button:hover {
+    background-color: #50000b;
+  }
+  
   /* --- Form Elements --- */
   input:focus,
   textarea:focus,
@@ -1525,8 +1532,8 @@
   }
 
   .scrollable-content {
-    flex: 1;
-    min-width: 0;
+    /* flex: 1; */
+    width: 52%
   }
 
   /* --- Format Selection Cards --- */
@@ -1608,6 +1615,60 @@
 
   .subscription-card[data-selected="true"] .subscription-details {
     max-height: 500px;
+  }
+
+  /* --- NEW Subscription Card Styles --- */
+  .subscription-card-new {
+    display: block;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .subscription-card-inner {
+    padding: 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    background: white;
+  }
+
+  .subscription-card-inner:hover {
+    border-color: #ccc;
+  }
+
+  .subscription-card-inner.selected {
+    border-color: #8B1E3F;
+    background: linear-gradient(135deg, #fdf8f8 0%, #fef6f6 100%);
+  }
+
+  .plan-badge-new {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    font-family: 'Architekt', sans-serif;
+  }
+
+  .badge-new-year {
+    background-color: #8B1E3F;
+    color: white;
+  }
+
+  .badge-best-value {
+    background-color: #333;
+    color: white;
+  }
+
+  .radio-custom img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .benefits-list-new li {
+    line-height: 1.5;
   }
 
   .plan-badge {
@@ -2260,10 +2321,10 @@
     }
   }
 
-  .sticky-footer-cta .max-w-7xl {
+  /* .sticky-footer-cta .max-w-7xl {
     max-width: 100%;
     overflow: visible;
-  }
+  } */
 
   .sticky-footer-cta .flex {
     flex-wrap: nowrap;
@@ -2345,7 +2406,100 @@
     }
   }
 
-  /* --- Ambassador Avatars --- */
+  /* --- Ambassador Video Cards Slider --- */
+  .ambassador-slider-wrapper {
+    position: relative;
+  }
+
+  .ambassador-slider {
+    scroll-behavior: smooth;
+  }
+
+  .ambassador-slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #50000B;
+    transition: all 0.2s ease;
+  }
+
+  .ambassador-slider-nav:hover {
+    background: #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .ambassador-slider-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .ambassador-slider-nav--prev {
+    left: -16px;
+  }
+
+  .ambassador-slider-nav--next {
+    right: -16px;
+  }
+
+  /* --- Ambassador Video Cards --- */
+  .ambassador-video-card {
+    flex-shrink: 0;
+    width: calc((100% - 36px) / 4); /* 4 items with 12px gaps */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .ambassador-video-card:hover {
+    transform: scale(1.02);
+  }
+
+  .ambassador-video-card__thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f5;
+  }
+
+  .ambassador-video-card__thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ambassador-video-card__play-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .ambassador-video-card__play-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .ambassador-video-card__play-btn svg {
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+
+  /* Ambassador Avatars (legacy) */
   .ambassador-avatar {
     width: 60px;
     height: 60px;
@@ -2371,11 +2525,25 @@
   /* --- Transformation Program Expert Cards --- */
   .expert-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 8px 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    text-align: center;
+  }
+
+  .expert-card__img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #BF9C74;
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.08);
+    transition: border-color 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .expert-card__img:hover {
+    border-color: #8B1E3F;
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.15);
   }
 
   .expert-avatar {
@@ -4775,9 +4943,6 @@
   .thumbnail-expand-btn {
     width: 72px;
     height: 32px;
-    border-radius: 8px;
-    border: 1px solid #e5e5e5;
-    background: white;
     cursor: pointer;
     display: flex;
     align-items: center;

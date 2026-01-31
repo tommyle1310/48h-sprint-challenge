@@ -57,6 +57,8 @@ async function loadAmbassadors() {
         const response = await fetch('./data/ambassadors.json');
         const ambassadors = await response.json();
         renderAmbassadors(ambassadors);
+        initAmbassadorSlider();
+        initAmbassadorVideoModal();
     } catch (error) {
         console.error('Error loading ambassadors:', error);
     }
@@ -67,10 +69,101 @@ function renderAmbassadors(ambassadors) {
     if (!container) return;
 
     container.innerHTML = ambassadors.map(ambassador => `
-        <div class="ambassador-avatar" title="${ambassador.name} - ${ambassador.title}">
-            <img src="${ambassador.image}" alt="${ambassador.name}" onerror="this.src='https://via.placeholder.com/60x60?text=${ambassador.name.charAt(0)}'">
+        <div class="ambassador-video-card" data-video-url="${ambassador.videoMp4}" style="flex-shrink: 0; width: calc((100% - 36px) / 4); cursor: pointer;">
+            <div class="ambassador-video-card__thumbnail" style="position: relative; width: 100%; aspect-ratio: 3/4; border-radius: 12px; overflow: hidden; background: #f5f5f5;">
+                <img src="${ambassador.thumbnailUrl}" alt="Ambassador video ${ambassador.index}" style="width: 100%; height: 100%; object-fit: cover; display: block;" onerror="this.src='https://via.placeholder.com/150x200?text=Video'">
+                <button class="ambassador-video-card__play-btn" aria-label="Play video" style="position: absolute; bottom: 8px; right: 8px; background: none; border: none; padding: 0; cursor: pointer; z-index: 2;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.4865 3.51351L12 0L3.51351 3.51351L0 12L3.51351 20.4865L12 24L20.4865 20.4865L24 12L20.4865 3.51351ZM9.75 15.8971L16.5 12L9.75 8.10289V15.8971Z" fill="white"/>
+                    </svg>
+                </button>
+            </div>
         </div>
     `).join('');
+}
+
+function initAmbassadorSlider() {
+    const slider = document.getElementById('ambassador-avatars');
+    const prevBtn = document.getElementById('ambassador-slider-prev');
+    const nextBtn = document.getElementById('ambassador-slider-next');
+    
+    if (!slider || !prevBtn || !nextBtn) return;
+
+    const updateNavButtons = () => {
+        prevBtn.disabled = slider.scrollLeft <= 0;
+        nextBtn.disabled = slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 10;
+    };
+
+    // Get the width of one card plus gap
+    const getScrollAmount = () => {
+        const card = slider.querySelector('.ambassador-video-card');
+        if (!card) return 150;
+        return card.offsetWidth + 12; // card width + gap
+    };
+
+    prevBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+
+    slider.addEventListener('scroll', updateNavButtons);
+    
+    // Initial update
+    setTimeout(updateNavButtons, 100);
+}
+
+function initAmbassadorVideoModal() {
+    const modal = document.getElementById('ambassador-video-modal');
+    const video = document.getElementById('ambassador-modal-video');
+    const closeBtn = document.getElementById('ambassador-modal-close');
+    
+    if (!modal || !video || !closeBtn) return;
+
+    // Click on video cards to open modal
+    document.querySelectorAll('.ambassador-video-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const videoUrl = card.dataset.videoUrl;
+            if (videoUrl) {
+                video.querySelector('source').src = videoUrl;
+                video.load();
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                video.play();
+            }
+        });
+    });
+
+    // Close modal
+    function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+        video.pause();
+        video.currentTime = 0;
+    }
+
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeModal();
+    });
+    
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+        }
+    });
 }
 
 /* ================= LOAD TRANSFORMATION EXPERTS ================= */
@@ -89,14 +182,10 @@ function renderTransformationExperts(experts) {
     if (!container) return;
 
     container.innerHTML = experts.map(expert => `
-        <div class="expert-card">
-            <div class="expert-avatar">
-                <img src="${expert.image}" alt="${expert.name}" onerror="this.src='https://via.placeholder.com/40x40?text=${expert.name.charAt(0)}'">
-            </div>
-            <div class="expert-info text-white">
-                <p class="name">${expert.name}</p>
-                <p class="title opacity-80">${expert.title}</p>
-            </div>
+        <div class="expert-card flex flex-col items-center text-center">
+            <img src="${expert.image}" alt="${expert.name}" class="expert-card__img" onerror="this.src='https://via.placeholder.com/300x300?text=${expert.name.charAt(0)}'">
+            <p class="text-brand-burgundy font-semibold text-xs md:text-sm leading-tight">${expert.name}</p>
+            <p class="text-brand-burgundy/70 text-[10px] md:text-xs leading-tight">${expert.role}</p>
         </div>
     `).join('');
 }

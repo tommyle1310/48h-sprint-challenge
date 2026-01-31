@@ -7,7 +7,11 @@
     "build:css": "npx tailwindcss -i ./input.css -o ./output.css --watch",
     "build": "npx tailwindcss -i ./input.css -o ./output.css --minify"
   },
-  "keywords": ["tailwindcss", "landing-page", "im8-health"],
+  "keywords": [
+    "tailwindcss",
+    "landing-page",
+    "im8-health"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {

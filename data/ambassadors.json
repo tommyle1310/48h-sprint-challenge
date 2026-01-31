@@ -1,54 +1,38 @@
-{
-  "ambassadors": [
-    {
-      "id": "thejosephabell",
-      "handle": "@thejosephabell",
-      "name": "Joseph A. Bell",
-      "followers": "2M",
-      "avatar": "https://randomuser.me/api/portraits/men/75.jpg",
-      "thumbnail": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=600&fit=crop",
-      "rating": 5,
-      "quote": "Nutrition should be as exciting as it is nourishing. IM8 redefines nutrition for me, making health delicious and effective, whether in the kitchen or in my daily routine."
-    },
-    {
-      "id": "tjdefalco",
-      "handle": "@tjdefalco",
-      "name": "TJ DeFalco",
-      "followers": "274K",
-      "avatar": "https://randomuser.me/api/portraits/men/22.jpg",
-      "thumbnail": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=600&fit=crop",
-      "rating": 5,
-      "quote": "On the court, peak performance is non-negotiable. IM8 fuels my energy and mental clarity, helping me stay sharp and push my limits every day."
-    },
-    {
-      "id": "mrbobbyrich",
-      "handle": "@mrbobbyrich",
-      "name": "Bobby Rich",
-      "followers": "105K",
-      "avatar": "https://randomuser.me/api/portraits/men/45.jpg",
-      "thumbnail": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=600&fit=crop",
-      "rating": 5,
-      "quote": "As a former athlete and trainer to high performers, including David and Victoria Beckham, it means I need to always be on the top of my game. IM8 helps me to do just that."
-    },
-    {
-      "id": "carmelrodriguezfit",
-      "handle": "@carmelrodriguezfit",
-      "name": "Carmel Rodriguez",
-      "followers": "341K",
-      "avatar": "https://randomuser.me/api/portraits/women/65.jpg",
-      "thumbnail": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=600&fit=crop",
-      "rating": 5,
-      "quote": "Body positivity and strength are at the heart of my wellness philosophy. IM8 helps me stay energized, strong, and ready to inspire others to achieve balance every day."
-    },
-    {
-      "id": "tavicastro",
-      "handle": "@tavicastro",
-      "name": "Tavi Castro",
-      "followers": "4.8M",
-      "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
-      "thumbnail": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&h=600&fit=crop",
-      "rating": 5,
-      "quote": "As a professional freediver, I'm extremely careful with what I put into my body. With IM8, I know I'm fueling my body with only the best, helping me stay resilient both in and out of the water."
-    }
-  ]
-}
+[
+  {
+    "index": 1,
+    "thumbnailUrl": "https://im8health.com/cdn/shop/files/preview_images/thm-expert_robinB2.jpg?v=1731999065",
+    "videoId": "popup_video_1",
+    "videoMp4": "https://im8health.com/cdn/shop/videos/c/vp/12eb3b01fd54404d81ef22a20d415f15/12eb3b01fd54404d81ef22a20d415f15.HD-1080p-2.5Mbps-38313438.mp4?v=0"
+  },
+  {
+    "index": 2,
+    "thumbnailUrl": "https://im8health.com/cdn/shop/files/preview_images/influe-carou_bobbyRich2.jpg?v=1731863977",
+    "videoId": "popup_video_2",
+    "videoMp4": "https://im8health.com/cdn/shop/videos/c/vp/12eb3b01fd54404d81ef22a20d415f15/12eb3b01fd54404d81ef22a20d415f15.HD-1080p-2.5Mbps-38313438.mp4?v=0"
+  },
+  {
+    "index": 3,
+    "thumbnailUrl": "https://im8health.com/cdn/shop/files/preview_images/thm-expert_amyShah2.jpg?v=1731864964",
+    "videoId": "popup_video_3",
+    "videoMp4": "https://im8health.com/cdn/shop/videos/c/vp/12eb3b01fd54404d81ef22a20d415f15/12eb3b01fd54404d81ef22a20d415f15.HD-1080p-2.5Mbps-38313438.mp4?v=0"
+  },
+  {
+    "index": 4,
+    "thumbnailUrl": "https://im8health.com/cdn/shop/files/preview_images/thm-influ_dustinPoirier.jpg?v=1731833492",
+    "videoId": "popup_video_4",
+    "videoMp4": "https://im8health.com/cdn/shop/videos/c/vp/12eb3b01fd54404d81ef22a20d415f15/12eb3b01fd54404d81ef22a20d415f15.HD-1080p-2.5Mbps-38313438.mp4?v=0"
+  },
+  {
+    "index": 5,
+    "thumbnailUrl": "https://im8health.com/cdn/shop/files/preview_images/image_54.png?v=1731863088",
+    "videoId": "popup_video_5",
+    "videoMp4": "https://im8health.com/cdn/shop/videos/c/vp/12eb3b01fd54404d81ef22a20d415f15/12eb3b01fd54404d81ef22a20d415f15.HD-1080p-2.5Mbps-38313438.mp4?v=0"
+  },
+  {
+    "index": 6,
+    "thumbnailUrl": "https://im8health.com/cdn/shop/files/preview_images/1f4b2af008104c92a29f9d78814f1aa0.thumbnail.0000000000.jpg?v=1731860287",
+    "videoId": "popup_video_6",
+    "videoMp4": "https://im8health.com/cdn/shop/videos/c/vp/12eb3b01fd54404d81ef22a20d415f15/12eb3b01fd54404d81ef22a20d415f15.HD-1080p-2.5Mbps-38313438.mp4?v=0"
+  }
+]

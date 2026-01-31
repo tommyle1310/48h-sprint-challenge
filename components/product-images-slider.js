@@ -1,15 +1,15 @@
 /**
  * Product Images Slider Component
  * Handles product image gallery with thumbnail navigation
- * Desktop: Vertical thumbnails with expand/collapse (not scrollable)
+ * Desktop: Vertical thumbnails with up/down navigation (max 6 visible)
  * Mobile: Horizontal swipeable slider with pagination dots
  */
 
 /* ================= STATE ================= */
 let productImages = [];
 let currentImageIndex = 0;
-let thumbnailsExpanded = false;
-const VISIBLE_THUMBNAILS = 4; // Number of thumbnails visible before expand
+let thumbnailStartIndex = 0; // Starting index for visible thumbnails
+const MAX_VISIBLE_THUMBNAILS = 6; // Max thumbnails visible at a time
 
 /* ================= LOAD ================= */
 async function loadProductImages() {
@@ -35,23 +35,33 @@ function renderProductImageSlider() {
     const container = document.getElementById('product-images-slider');
     if (!container) return;
 
-    const hasMoreImages = productImages.length > VISIBLE_THUMBNAILS;
+    const canScrollUp = thumbnailStartIndex > 0;
+    const canScrollDown = thumbnailStartIndex + MAX_VISIBLE_THUMBNAILS < productImages.length;
+    const visibleThumbnails = productImages.slice(thumbnailStartIndex, thumbnailStartIndex + MAX_VISIBLE_THUMBNAILS);
 
     container.innerHTML = `
         <!-- Desktop Layout: Vertical thumbnails on left -->
         <div class="product-gallery-desktop hidden md:flex gap-4">
-            <!-- Thumbnail Strip (vertical, not scrollable) -->
-            <div class="thumbnail-strip-desktop flex flex-col gap-2">
-                ${productImages.map((img, index) => `
-                    <div class="thumbnail-desktop ${index === currentImageIndex ? 'active' : ''} ${!thumbnailsExpanded && index >= VISIBLE_THUMBNAILS ? 'hidden' : ''}" data-index="${index}">
-                        <img src="${img}" alt="Product thumbnail ${index + 1}" onerror="this.src='https://via.placeholder.com/60x60?text=${index + 1}'">
+            <!-- Thumbnail Strip (vertical, with navigation) -->
+            <div class="thumbnail-strip-desktop flex flex-col gap-2 items-center">
+                <!-- Up Arrow -->
+                <button style="background:none; border:none;" class="thumbnail-nav-btn  ${canScrollUp ? '' : 'opacity-30 cursor-not-allowed'}" id="thumbnail-nav-up" ${!canScrollUp ? 'disabled' : ''}>
+                    <i class="fa-solid fa-chevron-up text-xs text-brand-burgundy"></i>
+                </button>
+                
+                <!-- Visible Thumbnails -->
+                ${visibleThumbnails.map((img, i) => {
+                    const actualIndex = thumbnailStartIndex + i;
+                    return `
+                    <div class="thumbnail-desktop ${actualIndex === currentImageIndex ? 'active' : ''}" data-index="${actualIndex}">
+                        <img src="${img}" alt="Product thumbnail ${actualIndex + 1}" onerror="this.src='https://via.placeholder.com/60x60?text=${actualIndex + 1}'">
                     </div>
-                `).join('')}
-                ${hasMoreImages ? `
-                    <button class="thumbnail-expand-btn" id="thumbnail-expand-btn">
-                        <i class="fa-solid fa-chevron-${thumbnailsExpanded ? 'up' : 'down'} text-xs"></i>
-                    </button>
-                ` : ''}
+                `}).join('')}
+                
+                <!-- Down Arrow -->
+                <button style="background:none; border:none;" class="thumbnail-nav-btn  ${canScrollDown ? '' : 'opacity-30 cursor-not-allowed'}" id="thumbnail-nav-down" ${!canScrollDown ? 'disabled' : ''}>
+                    <i class="fa-solid fa-chevron-down text-xs text-brand-burgundy"></i>
+                </button>
             </div>
             
             <!-- Main Image -->
@@ -104,12 +114,25 @@ function bindSliderEvents() {
         });
     });
 
-    // Desktop expand button
-    const expandBtn = document.getElementById('thumbnail-expand-btn');
-    if (expandBtn) {
-        expandBtn.addEventListener('click', () => {
-            thumbnailsExpanded = !thumbnailsExpanded;
-            renderProductImageSlider();
+    // Desktop thumbnail navigation buttons
+    const navUp = document.getElementById('thumbnail-nav-up');
+    const navDown = document.getElementById('thumbnail-nav-down');
+    
+    if (navUp) {
+        navUp.addEventListener('click', () => {
+            if (thumbnailStartIndex > 0) {
+                thumbnailStartIndex--;
+                renderProductImageSlider();
+            }
+        });
+    }
+    
+    if (navDown) {
+        navDown.addEventListener('click', () => {
+            if (thumbnailStartIndex + MAX_VISIBLE_THUMBNAILS < productImages.length) {
+                thumbnailStartIndex++;
+                renderProductImageSlider();
+            }
         });
     }
 
@@ -172,10 +195,20 @@ function setCurrentImage(index) {
         mainImageDesktop.src = productImages[index];
     }
 
-    // Update desktop thumbnails
-    document.querySelectorAll('.thumbnail-desktop').forEach((thumb, i) => {
-        thumb.classList.toggle('active', i === index);
+    // Update desktop thumbnails - check actual data-index
+    document.querySelectorAll('.thumbnail-desktop').forEach((thumb) => {
+        const thumbIndex = parseInt(thumb.dataset.index);
+        thumb.classList.toggle('active', thumbIndex === index);
     });
+    
+    // Auto-scroll thumbnails to show selected image
+    if (index < thumbnailStartIndex) {
+        thumbnailStartIndex = index;
+        renderProductImageSlider();
+    } else if (index >= thumbnailStartIndex + MAX_VISIBLE_THUMBNAILS) {
+        thumbnailStartIndex = index - MAX_VISIBLE_THUMBNAILS + 1;
+        renderProductImageSlider();
+    }
 
     // Update mobile slider position
     updateMobileSliderPosition();
@@ -192,6 +225,13 @@ function updateMobileSliderPosition() {
         mobileTrack.style.transform = `translateX(-${currentImageIndex * 100}%)`;
     }
 }
+
+// Expose function globally for format-selection to use
+window.setProductMainImage = function(index) {
+    if (productImages.length > 0 && index >= 0 && index < productImages.length) {
+        setCurrentImage(index);
+    }
+};
 
 /* ================= INIT ================= */
 document.addEventListener('DOMContentLoaded', () => {
