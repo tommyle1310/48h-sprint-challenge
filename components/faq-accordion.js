@@ -46,12 +46,12 @@ function renderFaqSection() {
         const isOpen = faq.id === openFaqId;
         return `
             <div class="faq-item ${isOpen ? 'open' : ''}" data-faq="${faq.id}">
-                <button class="faq-question" aria-expanded="${isOpen}">
+                <div class="faq-question " aria-expanded="${isOpen}">
                     <span class="faq-question-text">${faq.question}</span>
                     <span class="faq-icon">
                         <i class="fa-solid fa-${isOpen ? 'minus' : 'plus'}"></i>
                     </span>
-                </button>
+                </div>
                 <div class="faq-answer" style="${isOpen ? '' : 'max-height: 0;'}">
                     <div class="faq-answer-inner">
                         ${faq.answer.split('\n\n').map(p => `<p>${p}</p>`).join('')}

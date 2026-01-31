@@ -67,7 +67,30 @@ function renderDesktopFooter(container) {
     `).join('');
 
     const newsletterHtml = `
-        <div class="footer-newsletter-col">
+        <div class="footer-newsletter-col max-w-[335px] mx-auto">
+            <h4 class="footer-newsletter-title text-center lg:text-left">${footerData.newsletter.title}</h4>
+            <form class="newsletter-form-desktop" onsubmit="return false;">
+                <input type="email" placeholder="${footerData.newsletter.placeholder}" class="newsletter-input-desktop font-architekt bg-white" />
+                <button type="submit" class="newsletter-btn-desktop">${footerData.newsletter.button}</button>
+            </form>
+            <p class="newsletter-disclaimer text-center lg:text-left">${footerData.newsletter.disclaimer}</p>
+        </div>
+    `;
+
+    container.innerHTML = `
+        <div class="footer-main-grid-desktop">
+            ${newsletterHtml}
+            <div class="footer-columns-wrapper">
+                ${columnsHtml}
+            </div>
+        </div>
+    `;
+}
+
+function renderMobileFooter(container) {
+    // Render newsletter at top (full width) for mobile
+    const newsletterHtml = `
+        <div class="footer-newsletter-col mobile">
             <h4 class="footer-newsletter-title">${footerData.newsletter.title}</h4>
             <form class="newsletter-form-desktop" onsubmit="return false;">
                 <input type="email" placeholder="${footerData.newsletter.placeholder}" class="newsletter-input-desktop" />
@@ -77,17 +100,6 @@ function renderDesktopFooter(container) {
         </div>
     `;
 
-    container.innerHTML = `
-        <div class="footer-main-grid-desktop">
-            <div class="footer-columns-wrapper">
-                ${columnsHtml}
-            </div>
-            ${newsletterHtml}
-        </div>
-    `;
-}
-
-function renderMobileFooter(container) {
     // Render accordion columns for mobile
     const accordionHtml = footerData.columns.map((column, index) => `
         <div class="footer-accordion-item ${index === 0 ? 'open' : ''}" data-accordion="${index}">
@@ -107,7 +119,7 @@ function renderMobileFooter(container) {
         </div>
     `).join('');
 
-    container.innerHTML = accordionHtml;
+    container.innerHTML = newsletterHtml + accordionHtml;
 
     // Add accordion event listeners
     container.querySelectorAll('.footer-accordion-header').forEach(header => {
