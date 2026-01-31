@@ -63,10 +63,7 @@ function renderWelcomeKit() {
                     <span class="total-amount font-bold text-2xl text-brand-burgundy">$${welcomeKitData.total}</span>
                 </div>
                 
-                <!-- Savings Badge -->
-                <div class="savings-badge mt-4 bg-brand-burgundy/10 text-brand-burgundy text-center py-2 rounded-lg font-semibold">
-                    🎉 You Save $${welcomeKitData.savings}!
-                </div>
+             
             </div>
             
             <!-- CTA Button -->

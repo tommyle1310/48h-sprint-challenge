@@ -62,7 +62,7 @@ function renderOrganSystemDetail(systemId) {
             </div>
         </div>
         
-        <p class="text-gray-600 leading-relaxed mb-6">${system.description}</p>
+        <p class="text-gray-600 text-center md:text-left leading-relaxed mb-6">${system.description}</p>
         
         ${system.badge ? `
             <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 text-sm font-medium px-4 py-2 rounded-full">
