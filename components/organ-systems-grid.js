@@ -1,11 +1,13 @@
 /**
  * Organ Systems Grid Component
  * Handles 3x3 interactive grid of organ systems with detail panel
+ * Supports switching between Essentials and Longevity products
  */
 
 /* ================= STATE ================= */
 let organSystemsData = [];
 let selectedSystemId = 'digestive';
+let currentOrganProduct = 'daily-ultimate-essentials';
 
 /* ================= LOAD ================= */
 async function loadOrganSystemsData() {
@@ -13,14 +15,64 @@ async function loadOrganSystemsData() {
         const response = await fetch('./data/organ-systems.json');
         const data = await response.json();
         organSystemsData = data.organSystems;
-        renderOrganSystemsGrid();
-        renderOrganSystemDetail(selectedSystemId);
+        renderOrganSystemsSection();
     } catch (error) {
         console.error('Error loading organ systems data:', error);
     }
 }
 
 /* ================= RENDER ================= */
+function renderOrganSystemsSection() {
+    // Update section header with tabs
+    const sectionHeader = document.querySelector('#organ-systems .text-center.mb-10');
+    if (sectionHeader) {
+        const isLongevity = currentOrganProduct === 'daily-ultimate-longevity';
+        sectionHeader.innerHTML = `
+            <!-- Product Tab Switcher -->
+            <div class="organ-tab-switcher mb-8">
+                <div class="inline-flex bg-white rounded-full p-1 shadow-card border border-gray-200">
+                    <button
+                        class="organ-product-tab ${!isLongevity ? 'active' : ''} px-6 py-3 rounded-full text-sm font-medium transition-all"
+                        data-product="daily-ultimate-essentials"
+                    >
+                        Daily Ultimate Essentials
+                    </button>
+                    <button
+                        class="organ-product-tab ${isLongevity ? 'active' : ''} px-6 py-3 rounded-full text-sm font-medium transition-all"
+                        data-product="daily-ultimate-longevity"
+                    >
+                        Daily Ultimate Longevity
+                    </button>
+                </div>
+            </div>
+
+            <span class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4">
+                Comprehensive Body Support
+            </span>
+            <h2 class="font-arizona text-[24px] md:text-[46px] lg:text-[56px] mb-3">
+                9 Major Organ Systems
+            </h2>
+            <p class="max-w-2xl mx-auto">
+                One serving delivers comprehensive support for your entire body, replacing multiple supplements with a single, powerful formula.
+            </p>
+        `;
+
+        // Add tab event listeners
+        sectionHeader.querySelectorAll('.organ-product-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const product = tab.dataset.product;
+                if (product !== currentOrganProduct) {
+                    currentOrganProduct = product;
+                    renderOrganSystemsSection();
+                }
+            });
+        });
+    }
+
+    renderOrganSystemsGrid();
+    renderOrganSystemDetail(selectedSystemId);
+}
+
 function renderOrganSystemsGrid() {
     const container = document.getElementById('organ-systems-grid');
     if (!container) return;

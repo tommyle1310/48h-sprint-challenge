@@ -700,7 +700,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 3.6rem;
+  font-size: 36px;
 }
 
 h2 {
@@ -709,6 +709,7 @@ h2 {
 
 h3 {
   font-size: 2rem;
+  font-family: 'Aeonik', sans-serif;
 }
 
 p, li, span, button, input, select, textarea {
@@ -735,7 +736,7 @@ input:focus,
 
 @media (max-width: 767px) {
   h1 {
-    font-size: 2.8rem;
+    font-size: 32px;
   }
 
   h2 {
@@ -1743,6 +1744,30 @@ input:focus,
 }
 
 .pillars-product-tab.active {
+  background: #8B1E3F;
+  color: white;
+}
+
+/* --- Organ Systems Tab Switcher --- */
+
+.organ-tab-switcher {
+  display: flex;
+  justify-content: center;
+}
+
+.organ-product-tab {
+  color: #666;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.organ-product-tab:hover {
+  color: #333;
+}
+
+.organ-product-tab.active {
   background: #8B1E3F;
   color: white;
 }
@@ -2920,6 +2945,10 @@ input:focus,
   text-align: center;
 }
 
+.font-aeonik {
+  font-family: Aeonik, Inter, system-ui, sans-serif;
+}
+
 .font-architekt {
   font-family: NB Architekt, sans-serif;
 }
@@ -2942,6 +2971,26 @@ input:focus,
 
 .text-3xl {
   font-size: 30px;
+}
+
+.text-\[12px\] {
+  font-size: 12px;
+}
+
+.text-\[17px\] {
+  font-size: 17px;
+}
+
+.text-\[20px\] {
+  font-size: 20px;
+}
+
+.text-\[24px\] {
+  font-size: 24px;
+}
+
+.text-\[28px\] {
+  font-size: 28px;
 }
 
 .text-base {
@@ -5137,8 +5186,21 @@ input:focus,
   margin-bottom: 32px;
 }
 
+.breakdown-title h2 {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  color: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
 .breakdown-title .mobile-title {
   display: none;
+}
+
+.breakdown-title .desktop-title {
+  display: block;
 }
 
 .breakdown-cta {
@@ -5948,7 +6010,7 @@ input:focus,
 
 .proven-title {
   font-family: 'ABC Arizona Flare', serif;
-  font-size: 36px;
+  font-size: 35px;
   font-style: italic;
   font-weight: normal;
   line-height: 1.2;
@@ -5965,6 +6027,12 @@ input:focus,
 @media (min-width: 768px) {
   .proven-title {
     font-size: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .proven-title {
+    font-size: 52px;
   }
 }
 
@@ -6508,8 +6576,28 @@ input:focus,
     font-size: 36px;
   }
 
+  .md\:text-\[16px\] {
+    font-size: 16px;
+  }
+
+  .md\:text-\[28px\] {
+    font-size: 28px;
+  }
+
+  .md\:text-\[36px\] {
+    font-size: 36px;
+  }
+
+  .md\:text-\[46px\] {
+    font-size: 46px;
+  }
+
   .md\:text-base {
     font-size: 16px;
+  }
+
+  .md\:text-sm {
+    font-size: 14px;
   }
 
   .md\:hidden.welcome-gift-modal {
@@ -6549,5 +6637,17 @@ input:focus,
   .lg\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .lg\:text-\[16px\] {
+    font-size: 16px;
+  }
+
+  .lg\:text-\[40px\] {
+    font-size: 40px;
+  }
+
+  .lg\:text-\[56px\] {
+    font-size: 56px;
   }
 }
