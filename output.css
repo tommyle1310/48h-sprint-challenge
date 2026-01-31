@@ -2557,6 +2557,10 @@ input:focus,
   margin-top: 1rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -3219,6 +3223,10 @@ input:focus,
   font-size: 13px;
 }
 
+.text-\[14px\] {
+  font-size: 14px;
+}
+
 .text-\[16px\] {
   font-size: 16px;
 }
@@ -3289,6 +3297,14 @@ input:focus,
 
 .italic {
   font-style: italic;
+}
+
+.leading-\[1\.2\] {
+  line-height: 1.2;
+}
+
+.leading-\[1\.4\] {
+  line-height: 1.4;
 }
 
 .leading-none {
@@ -5168,7 +5184,7 @@ input:focus,
 
 .reviews-track {
   display: flex;
-  animation: marquee-reviews 40s linear infinite;
+  animation: marquee-reviews 5s linear infinite;
 }
 
 .reviews-track:hover {
@@ -5187,7 +5203,7 @@ input:focus,
 
 .reviews-track .marquee-content {
   display: flex;
-  gap: 24px;
+  gap: 15px;
   padding-right: 24px;
 }
 
@@ -5198,10 +5214,18 @@ input:focus,
   width: 350px;
   padding: 32px;
   background: white;
-  border-radius: 16px;
+  border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
+}
+
+@media (min-width: 767px) {
+  .reviews-track .marquee-content {
+    display: flex;
+    gap: 24px;
+    padding-right: 24px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -5221,24 +5245,16 @@ input:focus,
 
 .review-content {
   font-family: 'ABC Arizona Flare', Georgia, serif;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
+  color: #50000b;
   margin-bottom: 24px;
   flex-grow: 1;
-}
-
-@media (max-width: 767px) {
-  .review-content {
-    font-size: 16px;
-  }
 }
 
 .review-author {
   font-family: 'Aeonik', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #8B1E3F;
+  color: #50000b;
 }
 
 /* ============================================
@@ -7112,10 +7128,6 @@ input:focus,
   .lg\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
-  }
-
-  .lg\:text-\[16px\] {
-    font-size: 16px;
   }
 
   .lg\:text-\[40px\] {

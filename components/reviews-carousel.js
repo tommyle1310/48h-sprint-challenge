@@ -33,7 +33,7 @@ function renderReviewsCarousel() {
             </div>
             
             <!-- Review Content -->
-            <p class="review-content">
+            <p class="review-content leading-[1.4]">
                 "${review.content}"
             </p>
             
