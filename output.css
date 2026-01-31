@@ -2319,42 +2319,6 @@ input:focus,
   scroll-snap-align: start;
 }
 
-.ambassador-thumbnail {
-  position: relative;
-  aspect-ratio: 3/4;
-  overflow: hidden;
-}
-
-.ambassador-thumbnail img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.ambassador-thumbnail .play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 56px;
-  height: 56px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #8B1E3F;
-  font-size: 18px;
-  transition: all 0.2s ease;
-}
-
-.ambassador-thumbnail .play-button:hover {
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
 .ambassador-content {
   padding: 20px;
 }
@@ -2363,13 +2327,6 @@ input:focus,
   color: #8B1E3F;
   font-size: 14px;
   margin-bottom: 12px;
-}
-
-.ambassador-quote {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 16px;
 }
 
 .ambassador-handle {
@@ -2861,6 +2818,10 @@ input:focus,
 
 .justify-between {
   justify-content: space-between;
+}
+
+.\!gap-6 {
+  gap: 1.5rem !important;
 }
 
 .gap-1 {
@@ -3361,6 +3322,10 @@ input:focus,
   font-size: 12px;
 }
 
+.text-\[40px\] {
+  font-size: 40px;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -3383,6 +3348,10 @@ input:focus,
 
 .italic {
   font-style: italic;
+}
+
+.\!leading-\[1\.3\] {
+  line-height: 1.3 !important;
 }
 
 .leading-\[1\.2\] {
@@ -3411,6 +3380,10 @@ input:focus,
 
 .leading-tight {
   line-height: 1.25;
+}
+
+.\!leading-\[1\.1\] {
+  line-height: 1.1 !important;
 }
 
 .tracking-\[0\.15em\] {
@@ -3442,6 +3415,11 @@ input:focus,
 .text-\[\#75262c\] {
   --tw-text-opacity: 1;
   color: rgb(117 38 44 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#A40011\] {
+  --tw-text-opacity: 1;
+  color: rgb(164 0 17 / var(--tw-text-opacity, 1));
 }
 
 .text-\[\#ad777e\] {
@@ -5563,12 +5541,14 @@ input:focus,
   overflow: hidden;
 }
 
-.ambassadors-track {
+.ambassadors-track,
+  .ambassadors-marquee {
   display: flex;
-  animation: marquee-ambassadors 50s linear infinite;
+  animation: marquee-ambassadors 60s linear infinite;
 }
 
-.ambassadors-track:hover {
+.ambassadors-track:hover,
+  .ambassadors-marquee:hover {
   animation-play-state: paused;
 }
 
@@ -5582,13 +5562,14 @@ input:focus,
   }
 }
 
-.ambassadors-track .marquee-content {
+.ambassadors-track .marquee-content,
+  .ambassadors-marquee .marquee-content {
   display: flex;
   gap: 24px;
   padding-right: 24px;
 }
 
-/* Ambassador Card - New design matching reference */
+/* Ambassador Card - New design with video */
 
 .ambassador-card {
   flex-shrink: 0;
@@ -5597,6 +5578,11 @@ input:focus,
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.ambassador-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 767px) {
@@ -5605,56 +5591,89 @@ input:focus,
   }
 }
 
+/* Header with profile image, handle and followers */
+
 .ambassador-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 16px 20px;
+  gap: 10px;
+  padding: 12px 16px;
   background: white;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ambassador-profile-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  flex-shrink: 0;
 }
 
 .ambassador-handle {
+  font-family: 'Aeonik', sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #8B1E3F;
+  color: #333;
 }
 
 .ambassador-followers {
+  font-family: 'Aeonik', sans-serif;
   font-size: 13px;
   color: #888;
+  margin-left: -4px;
 }
 
-.ambassador-thumbnail {
+/* Thumbnail wrapper for mobile */
+
+.ambassador-thumbnail-wrapper {
   position: relative;
-  aspect-ratio: 1/1;
+  width: 100%;
+  aspect-ratio: 9/16;
   overflow: hidden;
+  background: #f5f5f5;
 }
 
-.ambassador-thumbnail img {
+.ambassador-thumbnail-img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
+/* Video wrapper for desktop */
+
+.ambassador-video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9/16;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.ambassador-video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Content section */
+
 .ambassador-content {
-  padding: 20px;
+  padding: 16px 20px 20px;
   background: white;
 }
 
 .ambassador-rating {
-  color: #8B1E3F;
-  font-size: 14px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: flex;
-  gap: 2px;
+  align-items: center;
 }
 
-.ambassador-quote {
-  font-family: 'Aeonik', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #333;
+.ambassador-rating svg {
+  display: block;
 }
 
 /* ============================================
