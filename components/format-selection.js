@@ -35,15 +35,15 @@ function renderFormatSelection() {
         <h3 class="text-[16px] font-semibold text-gray-700 mb-3">1. Select Format:</h3>
         <div class="format-options flex gap-3">
             ${formatsData.map(format => `
-                <label class="format-card-new relative flex-1 flex flex-row items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all duration-200 ${format.id === currentFormat ? 'border-brand-burgundy bg-white shadow-md' : 'border-gray-200 bg-white hover:border-gray-300'}" data-format="${format.id}" data-selected="${format.id === currentFormat}">
+                <label class="format-card-new relative flex-1 flex flex-row items-center gap-3 rounded-xl border-2 cursor-pointer transition-all duration-200 ${format.id === currentFormat ? 'border-brand-burgundy bg-white shadow-md' : 'border-gray-200 bg-white hover:border-gray-300'}" data-format="${format.id}" data-selected="${format.id === currentFormat}">
                     <input type="radio" name="product-format" value="${format.id}" ${format.id === currentFormat ? 'checked' : ''} class="sr-only">
-                    ${format.badge ? `<span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-burgundy text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap">${format.badge}</span>` : ''}
-                    <div class="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-gray-50">
-                        <img src="${format.image}" alt="${format.name}" class="w-full h-full object-contain" onerror="this.src='https://via.placeholder.com/64x64?text=Product'">
+                    ${format.badge ? `<span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-burgundy text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 font-architekt rounded-full whitespace-nowrap z-10">${format.badge}</span>` : ''}
+                    <div class="flex-shrink-0 w-[60px] h-full rounded-l-xl overflow-hidden bg-gray-50">
+                        <img src="${format.image}" alt="${format.name}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/64x64?text=Product'">
                     </div>
-                    <div class="flex flex-col items-start">
-                        <span class="text-base md:text-lg font-semibold text-brand-burgundy leading-tight">${format.name}</span>
-                        <span class="text-xs md:text-sm text-brand-burgundy">(${format.weight}) $${format.pricePerServing.toFixed(2)} USD / serving</span>
+                    <div class="flex flex-col items-start p-3">
+                        <span class="font-arizona text-[17px] md:text-[20px] font-semibold text-brand-burgundy leading-tight">${format.name}</span>
+                        <span class="text-xs md:text-sm font-aeonik font-regular text-brand-burgundy">(${format.weight}) $${format.pricePerServing.toFixed(2)} USD / serving</span>
                     </div>
                 </label>
             `).join('')}

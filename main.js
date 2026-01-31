@@ -84,35 +84,18 @@ function renderAmbassadors(ambassadors) {
 
 function initAmbassadorSlider() {
     const slider = document.getElementById('ambassador-avatars');
-    const prevBtn = document.getElementById('ambassador-slider-prev');
-    const nextBtn = document.getElementById('ambassador-slider-next');
+    if (!slider) return;
+
+    // Enable touch/drag scrolling - the overflow-x-auto class handles native scrolling
+    // Add smooth scroll-snap behavior
+    slider.style.scrollSnapType = 'x mandatory';
+    slider.style.webkitOverflowScrolling = 'touch';
     
-    if (!slider || !prevBtn || !nextBtn) return;
-
-    const updateNavButtons = () => {
-        prevBtn.disabled = slider.scrollLeft <= 0;
-        nextBtn.disabled = slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 10;
-    };
-
-    // Get the width of one card plus gap
-    const getScrollAmount = () => {
-        const card = slider.querySelector('.ambassador-video-card');
-        if (!card) return 150;
-        return card.offsetWidth + 12; // card width + gap
-    };
-
-    prevBtn.addEventListener('click', () => {
-        slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    // Make cards snap
+    const cards = slider.querySelectorAll('.ambassador-video-card');
+    cards.forEach(card => {
+        card.style.scrollSnapAlign = 'start';
     });
-
-    nextBtn.addEventListener('click', () => {
-        slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-    });
-
-    slider.addEventListener('scroll', updateNavButtons);
-    
-    // Initial update
-    setTimeout(updateNavButtons, 100);
 }
 
 function initAmbassadorVideoModal() {
@@ -184,8 +167,8 @@ function renderTransformationExperts(experts) {
     container.innerHTML = experts.map(expert => `
         <div class="expert-card flex flex-col items-center text-center">
             <img src="${expert.image}" alt="${expert.name}" class="expert-card__img" onerror="this.src='https://via.placeholder.com/300x300?text=${expert.name.charAt(0)}'">
-            <p class="text-brand-burgundy font-semibold text-xs md:text-sm leading-tight">${expert.name}</p>
-            <p class="text-brand-burgundy/70 text-[10px] md:text-xs leading-tight">${expert.role}</p>
+            <p class="text-[#50000b] font-semibold text-xs md:text-sm leading-tight">${expert.name}</p>
+            <p class="text-[#6b4c3a] text-[10px] md:text-xs leading-tight">${expert.role}</p>
         </div>
     `).join('');
 }

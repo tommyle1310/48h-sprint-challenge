@@ -3,26 +3,32 @@
     {
       "id": "ingredients",
       "title": "Ingredients",
-      "content": "<p class='mb-4'>Our carefully selected blend of premium ingredients supports your body's natural processes:</p><ul class='list-disc pl-5 space-y-2'><li><strong>Ashwagandha Extract (600mg)</strong> - Adaptogen for stress management</li><li><strong>Vitamin D3 (2000 IU)</strong> - Immune support and bone health</li><li><strong>Omega-3 Fish Oil (1000mg)</strong> - Heart and brain health</li><li><strong>Probiotics (10 Billion CFU)</strong> - Gut health and digestion</li><li><strong>B-Complex Vitamins</strong> - Energy metabolism support</li><li><strong>Magnesium Glycinate (400mg)</strong> - Muscle relaxation and sleep</li></ul>",
+      "content": "Our comprehensive formula combines 92 nutrient-rich ingredients to fuel your body with everything it needs for optimal health. Packed with essential vitamins, minerals, antioxidants, superfoods, greens, pre-pro-post-biotics and clinical dosages of CoQ10 and MSM.",
+      "noBorderTop": true,
       "link": {
         "text": "View Supplement Facts",
-        "url": "#supplement-facts"
+        "action": "openSupplementFactsModal"
       }
     },
     {
       "id": "third-party-tested",
       "title": "Third-Party Tested",
-      "content": "<p class='mb-4'>Every batch of Daily Ultimate Essentials undergoes rigorous third-party testing to ensure:</p><ul class='list-disc pl-5 space-y-2'><li><strong>Purity</strong> - Free from heavy metals, pesticides, and contaminants</li><li><strong>Potency</strong> - Verified ingredient amounts match label claims</li><li><strong>Quality</strong> - Manufactured in NSF-certified facilities</li><li><strong>Safety</strong> - Tested for allergens and microbiological contamination</li></ul><p class='mt-4 text-sm text-gray-600'>All test results are available upon request. Contact our customer service team for certificates of analysis.</p>"
+      "content": "Every ingredient and dosage in IM8 is third-party tested. This guarantees that what you see on the label is what you get, so you know exactly what you're putting into your body."
     },
     {
       "id": "how-to-enjoy",
       "title": "How to Enjoy",
-      "content": "<div class='space-y-4'><p><strong>Recommended Usage:</strong></p><p>Take 1 scoop (12g) daily mixed with 8-12 oz of cold water or your favorite beverage. For best results, take in the morning with or without food.</p><p><strong>Pro Tips:</strong></p><ul class='list-disc pl-5 space-y-2'><li>Blend with smoothies for a nutritious breakfast boost</li><li>Mix with plant-based milk for a creamier texture</li><li>Add to overnight oats for sustained energy</li><li>Shake vigorously in a bottle for quick preparation</li></ul></div>"
+      "contentType": "list",
+      "content": [
+        "Scoop out one serving (12 grams)",
+        "Add 8-12 oz of cold water, juice, smoothie, or your favorite drink (Use less liquid for a stronger taste)",
+        "Shake or blend well then enjoy"
+      ]
     },
     {
       "id": "tasting-notes",
       "title": "Tasting Notes",
-      "content": "<div class='space-y-4'><p><strong>Flavor Profile:</strong> Subtle berry blend with natural sweetness</p><p><strong>Texture:</strong> Smooth and easily mixable, no grittiness</p><p><strong>Sweetness Level:</strong> Lightly sweetened with stevia and monk fruit</p><p class='mt-4 text-sm text-gray-600'>No artificial flavors, colors, or preservatives. Naturally flavored with real fruit extracts.</p></div>"
+      "content": "Experience a delightful blend with earthy undertones, a subtle tartness, and a hint of chocolate, culminating in a smooth acai and mixed berries finish."
     }
   ]
 }

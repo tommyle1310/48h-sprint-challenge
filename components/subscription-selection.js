@@ -41,7 +41,7 @@ function renderSubscriptionSelection() {
                     ${hasBadges ? `
                         <div class="absolute -top-3 left-4 flex justify-between w-[90%] mr-10 gap-2 z-10">
                             ${sub.badges.map(badge => `
-                                <span class="plan-badge-new ${badge === 'NEW YEAR OFFER' ? 'badge-new-year' : 'badge-best-value'}">${badge}</span>
+                                <span class="plan-badge-new font-architekt ${badge === 'NEW YEAR OFFER' ? 'badge-new-year' : 'badge-best-value'}">${badge}</span>
                             `).join('')}
                         </div>
                     ` : ''}
@@ -49,32 +49,59 @@ function renderSubscriptionSelection() {
                     <!-- Card Content -->
                     <div class="subscription-card-inner ${isSelected ? 'selected' : ''}">
                         <!-- Header Row -->
-                        <div class="subscription-header-row flex items-start justify-between gap-4">
-                            <!-- Left: Radio + Plan Info -->
-                            <div class="flex items-start gap-3">
-                                <!-- Custom Radio -->
-                                <div class="radio-custom mt-0.5 flex-shrink-0">
-                                    <img src="${isSelected ? 'https://im8health.com/cdn/shop/t/121/assets/radio_fill.svg' : 'https://im8health.com/cdn/shop/t/121/assets/radio_blank.svg'}" alt="" class="w-5 h-5">
+                        <div class="subscription-header-row">
+                            <!-- Desktop Layout (>=768px): Side by side -->
+                            <div class="hidden md:flex items-start justify-between gap-4">
+                                <!-- Left: Radio + Plan Info -->
+                                <div class="flex items-start gap-3">
+                                    <!-- Custom Radio -->
+                                    <div class="radio-custom mt-0.5 flex-shrink-0">
+                                        <img src="${isSelected ? 'https://im8health.com/cdn/shop/t/121/assets/radio_fill.svg' : 'https://im8health.com/cdn/shop/t/121/assets/radio_blank.svg'}" alt="" class="w-5 h-5">
+                                    </div>
+                                    
+                                    <!-- Plan Info -->
+                                    <div class="flex flex-col">
+                                        <div class="flex items-baseline gap-1 flex-wrap">
+                                            <span class="font-arizona text-xl font-semibold text-brand-burgundy">${sub.name}</span>
+                                            <span class="font-arizona text-lg ${index === 0 ? 'text-[#16A34A]' : 'text-brand-burgundy'} font-medium">(${sub.discount})</span>
+                                        </div>
+                                        <span class="font-arizona text-sm text-brand-burgundy">${sub.billing}</span>
+                                    </div>
                                 </div>
                                 
-                                <!-- Plan Info -->
-                                <div class="flex flex-col">
-                                    <div class="flex items-baseline  gap-1 flex-wrap">
-                                        <span class="font-arizona text-lg md:text-xl font-semibold text-brand-burgundy">${sub.name}</span>
-                                        <span class="font-arizona text-base md:text-lg ${index === 0 ? 'text-[#16A34A]' : 'text-brand-burgundy'} font-medium">(${sub.discount})</span>
+                                <!-- Right: Pricing -->
+                                <div class="flex flex-col items-end flex-shrink-0">
+                                    <div class="flex items-baseline gap-1 whitespace-nowrap">
+                                        <span class="text-xl font-bold text-brand-burgundy">$${sub.price}</span>
+                                        <span class="text-sm font-semibold text-[#ad777e] line-through">$${sub.originalPrice}</span>
+                                        <span class="text-sm font-semibold text-[#75262c]">/mo</span>
                                     </div>
-                                    <span class="font-arizona text-sm text-brand-burgundy">${sub.billing}</span>
+                                    <span class="text-sm text-[#50000b] font-architekt uppercase tracking-wide">$${perServing.toFixed(2)} USD / SERVING</span>
                                 </div>
                             </div>
                             
-                            <!-- Right: Pricing -->
-                            <div class="flex flex-col items-end flex-shrink-0">
-                                <div class="flex items-baseline gap-1 whitespace-nowrap">
-                                    <span class="text-lg md:text-xl font-bold text-brand-burgundy">$${sub.price}</span>
-                                    <span class="text-sm text-gray-400 line-through">$${sub.originalPrice}</span>
-                                    <span class="text-sm text-gray-500">/mo</span>
+                            <!-- Mobile Layout (<768px): Stacked -->
+                            <div class="flex md:hidden flex-col gap-1">
+                                <!-- Row 1: Radio + Plan name + discount -->
+                                <div class="flex items-start gap-3">
+                                    <div class="radio-custom mt-0.5 flex-shrink-0">
+                                        <img src="${isSelected ? 'https://im8health.com/cdn/shop/t/121/assets/radio_fill.svg' : 'https://im8health.com/cdn/shop/t/121/assets/radio_blank.svg'}" alt="" class="w-5 h-5">
+                                    </div>
+                                    <div class="flex items-baseline gap-1 flex-wrap">
+                                        <span class="font-arizona text-lg font-semibold text-brand-burgundy">${sub.name}</span>
+                                        <span class="font-arizona text-base ${index === 0 ? 'text-[#16A34A]' : 'text-brand-burgundy'} font-medium">(${sub.discount})</span>
+                                    </div>
                                 </div>
-                                <span class="text-sm text-gray-600 uppercase tracking-wide">$${perServing.toFixed(2)} USD / SERVING</span>
+                                <!-- Row 2: Price -->
+                                <div class="flex items-baseline gap-1 pl-8">
+                                    <span class="text-lg font-bold text-brand-burgundy">$${sub.price}</span>
+                                    <span class="text-sm font-semibold text-[#ad777e] line-through">$${sub.originalPrice}</span>
+                                    <span class="text-sm font-semibold text-[#75262c]">/mo</span>
+                                </div>
+                                <!-- Row 3: Billing -->
+                                <span class="font-arizona text-sm text-brand-burgundy pl-8">${sub.billing}</span>
+                                <!-- Row 4: Per serving -->
+                                <span class="text-sm text-[#50000b] font-architekt uppercase tracking-wide pl-8">$${perServing.toFixed(2)} USD / SERVING</span>
                             </div>
                         </div>
                         
@@ -83,12 +110,26 @@ function renderSubscriptionSelection() {
                         
                         <!-- Benefits List -->
                         <ul class="benefits-list-new space-y-2">
-                            ${sub.benefits.map(benefit => `
-                                <li class="flex items-start gap-2 text-sm text-brand-burgundy">
-                                    <span class="flex-shrink-0">${benefit.substring(0, 2)}</span>
-                                    <span>${benefit.substring(2).trim()}</span>
-                                </li>
-                            `).join('')}
+                            ${sub.benefits.map(benefit => {
+                                if (index === 0) {
+                                    // First card (90-day): Keep original emojis
+                                    const emoji = benefit.match(/^[\p{Emoji}\p{Emoji_Modifier}\p{Emoji_Component}\p{Emoji_Modifier_Base}\p{Emoji_Presentation}]+/u)?.[0] || '';
+                                    const text = benefit.replace(/^[\p{Emoji}\p{Emoji_Modifier}\p{Emoji_Component}\p{Emoji_Modifier_Base}\p{Emoji_Presentation}\s]+/u, '').trim();
+                                    return `
+                                    <li class="flex items-start gap-2 text-sm text-brand-burgundy">
+                                        <span class="flex-shrink-0">${emoji}</span>
+                                        <span>${text}</span>
+                                    </li>
+                                `} else {
+                                    // Other cards: Use checkmark SVG
+                                    const text = benefit.replace(/^[\p{Emoji}\p{Emoji_Modifier}\p{Emoji_Component}\p{Emoji_Modifier_Base}\p{Emoji_Presentation}\s]+/u, '').trim();
+                                    return `
+                                    <li class="flex items-start gap-2 text-sm text-brand-burgundy">
+                                        <img src="https://im8health.com/cdn/shop/t/121/assets/sub_check.svg" alt="" class="w-4 h-4 flex-shrink-0 mt-0.5">
+                                        <span>${benefit}</span>
+                                    </li>
+                                `}
+                            }).join('')}
                         </ul>
                     </div>
                 </label>

@@ -20,12 +20,25 @@ async function loadAccordionsData() {
 }
 
 /* ================= RENDER ================= */
+function renderAccordionContent(accordion) {
+    if (accordion.contentType === 'list' && Array.isArray(accordion.content)) {
+        return `
+            <ol class="accordion-list">
+                ${accordion.content.map((item, index) => `
+                    <li><span class="list-number">${index + 1}.</span> ${item}</li>
+                `).join('')}
+            </ol>
+        `;
+    }
+    return `<p>${accordion.content}</p>`;
+}
+
 function renderAccordions() {
     const container = document.getElementById('product-accordions');
     if (!container) return;
 
     container.innerHTML = accordionsData.map(accordion => `
-        <div class="accordion-item" data-accordion-id="${accordion.id}" data-open="false">
+        <div class="accordion-item ${accordion.noBorderTop ? 'no-border-top' : ''}" data-accordion-id="${accordion.id}" data-open="false">
             <div class="accordion-header">
                 <h4>${accordion.title}</h4>
                 <svg class="accordion-icon w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -34,21 +47,35 @@ function renderAccordions() {
             </div>
             <div class="accordion-content">
                 <div class="pt-4 pb-2 text-sm text-gray-600 leading-relaxed">
-                    ${accordion.content}
+                    ${renderAccordionContent(accordion)}
                     ${accordion.link ? `
-                        <a href="${accordion.link.url}" class="block mt-3 text-brand-burgundy underline text-sm font-medium">
-                            ${accordion.link.text}
-                        </a>
+                        <div class="accordion-link-wrapper">
+                            <button type="button" class="accordion-link" data-action="${accordion.link.action || ''}">
+                                ${accordion.link.text}
+                            </button>
+                        </div>
                     ` : ''}
                 </div>
             </div>
         </div>
     `).join('');
 
-    // Add event listeners
-    container.querySelectorAll('.accordion-item').forEach(item => {
-        item.addEventListener('click', () => {
+    // Add event listeners for accordion headers
+    container.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', (e) => {
+            const item = header.closest('.accordion-item');
             toggleAccordion(item.dataset.accordionId);
+        });
+    });
+
+    // Add event listeners for accordion links
+    container.querySelectorAll('.accordion-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const action = link.dataset.action;
+            if (action === 'openSupplementFactsModal' && window.openSupplementFactsModal) {
+                window.openSupplementFactsModal();
+            }
         });
     });
 }

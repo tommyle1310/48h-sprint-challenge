@@ -129,8 +129,32 @@
     }
 
     // ===========================
-    // SUPPLEMENT FACTS MODAL
+    // SUPPLEMENT FACTS MODAL (Reusable)
     // ===========================
+    const CLOSE_ICON_SVG = `
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_close)">
+                <g filter="url(#filter0_b_close)">
+                    <path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path>
+                    <path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#50000B"></path>
+                </g>
+                <path d="M30.3633 30.3646L17.6354 17.6367" stroke="#50000B" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M30.3633 17.6367L17.6354 30.3646" stroke="#50000B" stroke-width="2" stroke-linecap="square"></path>
+            </g>
+            <defs>
+                <filter id="filter0_b_close" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur>
+                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"></feComposite>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"></feBlend>
+                </filter>
+                <clipPath id="clip0_close">
+                    <rect width="48" height="48" fill="white"></rect>
+                </clipPath>
+            </defs>
+        </svg>
+    `;
+
     function openSupplementFactsModal() {
         // Create modal if it doesn't exist
         let modal = document.getElementById('supplement-facts-modal');
@@ -142,7 +166,7 @@
                 <div class="supplement-modal-backdrop" data-close-modal></div>
                 <div class="supplement-modal-wrapper">
                     <button class="supplement-modal-close" aria-label="Close modal" data-close-modal>
-                        <i class="fa-solid fa-xmark"></i>
+                        ${CLOSE_ICON_SVG}
                     </button>
                     <div class="supplement-modal-content">
                         <img 
@@ -182,6 +206,10 @@
             document.body.style.overflow = '';
         }
     }
+
+    // Expose modal functions globally for reuse by other components
+    window.openSupplementFactsModal = openSupplementFactsModal;
+    window.closeSupplementFactsModal = closeSupplementFactsModal;
 
     // ===========================
     // PRODUCT COMPARISON TABLE
