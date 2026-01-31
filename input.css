@@ -3604,43 +3604,76 @@
     background: white;
   }
 
-  @media (max-width: 767px) {
-    #premium-products .text-center {
-      text-align: left !important;
-    }
-    
-    #premium-products .text-center h2 {
-      text-align: left;
+  .premium-products-section h2 {
+    color: #50000b;
+  }
+
+  .premium-header {
+    text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    .premium-header {
+      text-align: center;
     }
   }
 
   .trust-badges-row {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px 32px;
+    flex-direction: column;
+    gap: 8px;
     margin-bottom: 40px;
+  }
+
+  @media (min-width: 768px) {
+    .trust-badges-row {
+      flex-direction: row;
+      flex-wrap: wrap;
+      /* justify-content: center; */
+      gap: 16px 32px;
+    }
   }
 
   .trust-badge-item {
     display: flex;
     align-items: center;
-    font-size: 14px;
-    color: #555;
+    font-size: 15px;
+    color: #50000b;
+    gap: 8px;
   }
 
+  .trust-badge-item strong {
+    color: #50000b;
+    font-weight: 600;
+  }
+
+  .trust-badge-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  /* Mobile: Single column */
   .premium-products-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
   }
 
-  @media (min-width: 640px) {
+  /* Tablet (768px-1023px): 2 columns, 3rd item on left */
+  @media (min-width: 768px) and (max-width: 1023px) {
     .premium-products-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+    
+    .premium-product-card:nth-child(3) {
+      grid-column: span 1;
+      max-width: 100%;
+      margin: 0;
+    }
   }
 
+  /* Desktop (1024px+): 3 columns */
   @media (min-width: 1024px) {
     .premium-products-grid {
       grid-template-columns: repeat(3, 1fr);
@@ -3651,13 +3684,8 @@
     background: white;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.2s ease;
-  }
-
-  .premium-product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
   }
 
   .product-image-wrapper {
@@ -3665,6 +3693,7 @@
     aspect-ratio: 1;
     background: linear-gradient(180deg, #f8f4f0 0%, #f0ebe5 100%);
     overflow: hidden;
+    border-radius: 16px;
   }
 
   .product-image-wrapper img {
@@ -3673,60 +3702,164 @@
     object-fit: cover;
   }
 
+  /* Badge with SVG background */
   .product-corner-badge {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    background: #8B1E3F;
+    top: 12px;
+    right: 12px;
+    width: 60px;
+    height: 68px;
+    background-image: url('https://im8health.com/cdn/shop/t/121/assets/whole_badge.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-corner-badge span {
     color: white;
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 700;
-    padding: 6px 12px;
-    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    text-align: center;
+    line-height: 1.3;
+    padding-top: 2px;
+  }
+
+  /* Add to Cart button inside image - hidden by default, shown on hover from 768px */
+  .product-add-to-cart-btn {
+    display: none;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: #fffc;
+    color: #50000b;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: 1px solid #50000B;
+    cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .product-add-to-cart-btn:hover {
+    background: #fff;
+  }
+
+  /* Show Add to Cart button on card hover from 768px */
+  @media (min-width: 768px) {
+    .product-add-to-cart-btn {
+      display: block;
+    }
+
+    .premium-product-card:hover .product-add-to-cart-btn {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  /* Add to Cart button for mobile - shown below content */
+  .product-add-to-cart-btn-mobile {
+    display: block;
+    width: 100%;
+    background: #960010;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 16px;
+    transition: all 0.2s ease;
+  }
+
+  .product-add-to-cart-btn-mobile:hover {
+    background: #7a000d;
+  }
+
+  /* Hide mobile button on tablet and desktop */
+  @media (min-width: 768px) {
+    .product-add-to-cart-btn-mobile {
+      display: none;
+    }
   }
 
   .product-card-content {
-    padding: 20px;
+    padding: 20px 0;
   }
 
+  @media (min-width: 768px) {
+    .product-card-content {
+      padding: 20px 0;
+    }
+  }
+
+  /* Base tagline badge styles */
   .product-tagline-badge {
     display: inline-block;
-    background: rgba(139, 30, 63, 0.1);
-    color: #8B1E3F;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 4px;
+    color: white;
+    font-family: 'Architekt', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    padding: 6px 12px;
+    border-radius: 24px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     margin-bottom: 12px;
   }
 
+  /* Red background for FEEL AMAZING TODAY */
+  .product-tagline-badge--red {
+    background: #960010;
+  }
+
+  /* Gradient background for STAY YOUNG TOMORROW and THE ULTIMATE DAILY RITUAL */
+  .product-tagline-badge--gradient {
+    background: linear-gradient(90deg, #a40011, #ad020a, #b50503, #bd1105, #c51f08, #cd2d0a, #d43b0d, #dc4b0f, #e35b12, #ea6b16, #e87d22, #e78d2d);
+  }
+
   .product-card-title {
-    font-family: 'ABC Arizona Flare', serif;
+    font-family: 'ABC Arizona Flare', Georgia, serif;
     font-size: 20px;
     line-height: 1.3;
-    color: #333;
+    color: #50000b;
     margin-bottom: 8px;
+  }
+
+  @media (min-width: 768px) {
+    .product-card-title {
+      font-size: 24px;
+    }
   }
 
   .product-card-subtitle {
     font-weight: normal;
+    color: #50000b;
   }
 
   .product-card-description {
     font-size: 14px;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 16px;
+    color: #50000b;
+    line-height: 1.6;
+    margin-bottom: 12px;
   }
 
   .product-card-price {
-    font-size: 18px;
-    font-weight: 600;
-    color: #8B1E3F;
+    font-size: 14px;
+    font-weight: 700;
+    color: #50000b;
   }
 
   /* --- FAQ Section --- */
