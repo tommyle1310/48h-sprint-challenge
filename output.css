@@ -1061,15 +1061,6 @@ input:focus,
 
 /* --- Scrollbar Hide --- */
 
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
 /* --- Exclusive Badge (Fixed bottom-left) --- */
 
 .exclusive-badge-fixed {
@@ -2184,119 +2175,136 @@ input:focus,
 
 /* --- Physician Cards --- */
 
+/* Track - horizontal scroll carousel */
+
+#physicians-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 8px;
+}
+
+#physicians-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card container */
+
 .physician-card {
   flex-shrink: 0;
-  width: 200px;
+  display: flex;
+  flex-direction: column;
   scroll-snap-align: start;
 }
 
-/* Mobile Physicians Carousel */
+/* Mobile: Full width single card */
 
-@media (max-width: 767px) {
-  #physicians-track {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 0;
-  }
-
-  .physician-card-mobile {
-    flex-shrink: 0;
+@media (max-width: 1023px) {
+  .physician-card {
     width: 100%;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .video-container-mobile {
-    width: 100%;
-    aspect-ratio: 9/16;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #000;
-  }
-
-  .physician-video-mobile {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-
-  .physician-info-mobile {
-    text-align: center;
-    padding: 12px 0;
-  }
-
-  .physician-info-mobile .physician-handle {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-  }
-
-  .physician-info-mobile .physician-followers {
-    display: block;
-    font-size: 12px;
-    color: #888;
   }
 }
 
-.physician-card .video-thumbnail {
-  position: relative;
-  aspect-ratio: 3/4;
-  border-radius: 12px;
+/* Desktop 768px+: 2.8 cards visible */
+
+@media (min-width: 768px) {
+  .physician-card {
+    width: calc((100% - 32px) / 2.8);
+  }
+}
+
+/* Large Desktop 1440px+: 3.2 cards visible */
+
+@media (min-width: 1440px) {
+  .physician-card {
+    width: calc((100% - 48px) / 3.2);
+  }
+}
+
+/* Header Card - contains avatar row + video */
+
+.physician-header-card {
+  background: white;
+  border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 12px;
+  border: 1px solid rgba(80, 0, 11, 0.1);
 }
 
-.physician-card .video-thumbnail img {
+/* Top row: avatar, handle, followers */
+
+.physician-top-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #fdf6f6;
+}
+
+.physician-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  flex-shrink: 0;
+}
+
+.physician-handle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #50000b;
+}
+
+.physician-followers {
+  font-size: 13px;
+  color: #50000b;
+}
+
+/* Video container - full width */
+
+.physician-video-container {
+  width: 100%;
+  aspect-ratio: 9/16;
+  overflow: hidden;
+  background: #000;
+}
+
+.physician-video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.physician-card .play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
+/* Review Card */
+
+.physician-review-card {
+  background: #f5eaea;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 8px;
+  flex-grow: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #8B1E3F;
-  transition: all 0.2s ease;
+  flex-direction: column;
+  /* justify-content: center; */
 }
 
-.physician-card .play-button:hover {
-  transform: translate(-50%, -50%) scale(1.1);
-  background: white;
+.physician-name {
+  font-size: 15px;
+  font-weight: 400;
+  color: #50000b;
+  margin: 0 0 4px 0;
 }
 
-.physician-info {
-  text-align: center;
-}
-
-.physician-handle {
-  display: block;
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
-}
-
-.physician-followers {
-  display: block;
-  font-size: 12px;
-  color: #888;
+.physician-title {
+  font-size: 13px;
+  color: #50000b;
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* --- Ambassador Cards --- */
@@ -2494,10 +2502,6 @@ input:focus,
   right: 1rem;
 }
 
-.top-1\/2 {
-  top: 50%;
-}
-
 .top-3 {
   top: 0.75rem;
 }
@@ -2685,10 +2689,6 @@ input:focus,
   min-height: 420px;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .w-12 {
   width: 3rem;
 }
@@ -2790,21 +2790,6 @@ input:focus,
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.-translate-x-4 {
-  --tw-translate-x: -1rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-1\/2 {
-  --tw-translate-y: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-4 {
-  --tw-translate-x: 1rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .translate-y-full {
   --tw-translate-y: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2824,14 +2809,6 @@ input:focus,
 
 .resize {
   resize: both;
-}
-
-.snap-x {
-  scroll-snap-type: x var(--tw-scroll-snap-strictness);
-}
-
-.snap-mandatory {
-  --tw-scroll-snap-strictness: mandatory;
 }
 
 .grid-cols-1 {
@@ -3260,10 +3237,6 @@ input:focus,
   padding-bottom: 0.5rem;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
-}
-
 .pb-\[64px\] {
   padding-bottom: 64px;
 }
@@ -3604,12 +3577,6 @@ input:focus,
 
 .transition-opacity {
   transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-shadow {
-  transition-property: box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -7419,6 +7386,11 @@ input:focus,
 
   .lg\:text-left {
     text-align: left;
+  }
+
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .lg\:text-\[40px\] {

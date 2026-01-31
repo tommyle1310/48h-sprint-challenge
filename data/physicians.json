@@ -2,43 +2,119 @@
   "physicians": [
     {
       "id": "drjamesdinic",
-      "handle": "@drjamesdinic",
-      "name": "Dr. James DiNicolantonio",
+      "profile_image": "//im8health.com/cdn/shop/files/Ellipse_62.png?v=1727768801",
+      "social_handle": "@drjamesdinic",
       "followers": "3.2M",
-      "thumbnail": "https://randomuser.me/api/portraits/men/32.jpg",
-      "specialty": "Cardiovascular Research Scientist"
+      "video": {
+        "src": "//im8health.com/cdn/shop/videos/c/vp/18ce63f7f6154e888f2a48c2a478e480/18ce63f7f6154e888f2a48c2a478e480.HD-1080p-7.2Mbps-38131720.mp4?v=0",
+        "thumbnail": "//im8health.com/cdn/shop/files/preview_images/18ce63f7f6154e888f2a48c2a478e480.thumbnail.0000000000.jpg?v=1731647937"
+      },
+      "review": {
+        "name": "Dr. James Dinicolantonio",
+        "title": "Cardiovascular Scientist",
+        "additional_role": "Best-Selling Author on 12+ Books on Health"
+      }
     },
     {
       "id": "dramyshah",
-      "handle": "@dramyshah",
-      "name": "Dr. Amy Shah",
+      "profile_image": "//im8health.com/cdn/shop/files/influencer_drshah_profile.png?v=1730184660",
+      "social_handle": "@dramyshah",
       "followers": "1.4M",
-      "thumbnail": "https://randomuser.me/api/portraits/women/44.jpg",
-      "specialty": "Double Board Certified MD"
+      "video": {
+        "src": "//im8health.com/cdn/shop/videos/c/vp/ec95f3f8f55f4c1eb679982d43bf091d/ec95f3f8f55f4c1eb679982d43bf091d.HD-1080p-4.8Mbps-38234483.mp4?v=0",
+        "thumbnail": "//im8health.com/cdn/shop/files/preview_images/ec95f3f8f55f4c1eb679982d43bf091d.thumbnail.0000000000.jpg?v=1731865199"
+      },
+      "review": {
+        "name": "Dr. Amy Shah",
+        "title": "Double-Board Certified Physician",
+        "additional_role": "Host of Podcast \"Save Yourself\""
+      }
     },
     {
       "id": "monasharma",
-      "handle": "@monasharma",
-      "name": "Dr. Mona Sharma",
+      "profile_image": "//im8health.com/cdn/shop/files/Monasharma.png?v=1730806896",
+      "social_handle": "@monasharma",
       "followers": "183K",
-      "thumbnail": "https://randomuser.me/api/portraits/women/28.jpg",
-      "specialty": "Integrative Medicine Physician"
+      "video": {
+        "src": "//im8health.com/cdn/shop/videos/c/vp/936fe1ac73a046a98e1ff7e701676228/936fe1ac73a046a98e1ff7e701676228.HD-1080p-7.2Mbps-38131732.mp4?v=0",
+        "thumbnail": "//im8health.com/cdn/shop/files/preview_images/936fe1ac73a046a98e1ff7e701676228.thumbnail.0000000000.jpg?v=1731647963"
+      },
+      "review": {
+        "name": "Mona Sharma",
+        "title": "Celebrity Nutritionist"
+      }
     },
     {
       "id": "elissagoodman",
-      "handle": "@elissagoodman",
-      "name": "Elissa Goodman",
+      "profile_image": "//im8health.com/cdn/shop/files/Ellipse_63.png?v=1727768801",
+      "social_handle": "@elissagoodman",
       "followers": "189K",
-      "thumbnail": "https://randomuser.me/api/portraits/women/55.jpg",
-      "specialty": "Holistic Nutritionist"
+      "video": {
+        "src": "//im8health.com/cdn/shop/videos/c/vp/17fb74b0dd5d46e8ac4d1668b46b2134/17fb74b0dd5d46e8ac4d1668b46b2134.HD-1080p-7.2Mbps-38131729.mp4?v=0",
+        "thumbnail": "//im8health.com/cdn/shop/files/preview_images/17fb74b0dd5d46e8ac4d1668b46b2134.thumbnail.0000000000.jpg?v=1731647958"
+      },
+      "review": {
+        "name": "Elissa Goodman",
+        "title": "Holistic Nutritionist"
+      }
     },
     {
       "id": "drberthabaum",
-      "handle": "@drberthabaum",
-      "name": "Dr. Bertha Baum",
+      "profile_image": "//im8health.com/cdn/shop/files/bertha_baum.png?v=1730806825",
+      "social_handle": "@drberthabaum",
       "followers": "229K",
-      "thumbnail": "https://randomuser.me/api/portraits/women/62.jpg",
-      "specialty": "Naturopathic Doctor"
+      "video": {
+        "src": "//im8health.com/cdn/shop/videos/c/vp/db58a8d3630b47a597fb148aba8a1790/db58a8d3630b47a597fb148aba8a1790.HD-1080p-3.3Mbps-38232043.mp4?v=0",
+        "thumbnail": "//im8health.com/cdn/shop/files/preview_images/db58a8d3630b47a597fb148aba8a1790.thumbnail.0000000000.jpg?v=1731860106"
+      },
+      "review": {
+        "name": "Dr. Bertha Baum",
+        "title": "Board-Certified Dermatologist"
+      }
+    },
+    {
+      "id": "drjenandjuice",
+      "profile_image": "//im8health.com/cdn/shop/files/Jen.png?v=1730806923",
+      "social_handle": "@drjenandjuice",
+      "followers": "284K",
+      "video": {
+        "src": "//im8health.com/cdn/shop/videos/c/vp/9d07478703af48a2903deb8e3fbd5076/9d07478703af48a2903deb8e3fbd5076.HD-1080p-4.8Mbps-38192239.mp4?v=0",
+        "thumbnail": "//im8health.com/cdn/shop/files/preview_images/9d07478703af48a2903deb8e3fbd5076.thumbnail.0000000000.jpg?v=1731751112"
+      },
+      "review": {
+        "name": "Dr. Jennifer Tsai",
+        "title": "Board-Certified Optometrist",
+        "additional_role": "Nutrition Specialist"
+      }
+    },
+    {
+      "id": "timbiohacker",
+      "profile_image": "//im8health.com/cdn/shop/files/timbiohacker.png?v=1730889002",
+      "social_handle": "@timbiohacker",
+      "followers": "484K",
+      "video": {
+        "src": "//im8health.com/cdn/shop/videos/c/vp/1cfa80d2973d44619564e370d8fb9a5a/1cfa80d2973d44619564e370d8fb9a5a.HD-1080p-7.2Mbps-38201373.mp4?v=0",
+        "thumbnail": "//im8health.com/cdn/shop/files/preview_images/1cfa80d2973d44619564e370d8fb9a5a.thumbnail.0000000000.jpg?v=1731772919"
+      },
+      "review": {
+        "name": "Tim Biohacker",
+        "title": "UK's Leading Bio-hacker"
+      }
+    },
+    {
+      "id": "drrobinb",
+      "profile_image": "//im8health.com/cdn/shop/files/Ellipse_64.png?v=1727768801",
+      "social_handle": "@dr.robinb",
+      "followers": "1.4M",
+      "video": {
+        "src": "//im8health.com/cdn/shop/videos/c/vp/0cdc39d7dda145e29a333ee5f43ed507/0cdc39d7dda145e29a333ee5f43ed507.HD-1080p-2.5Mbps-38319373.mp4?v=0",
+        "thumbnail": "//im8health.com/cdn/shop/files/preview_images/0cdc39d7dda145e29a333ee5f43ed507.thumbnail.0000000000.jpg?v=1732006454"
+      },
+      "review": {
+        "name": "Dr. Robin Barrett",
+        "title": "Doctor of Pharmacy",
+        "additional_role": "Wellness Coach"
+      }
     }
   ]
 }
