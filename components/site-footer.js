@@ -35,7 +35,7 @@ function renderFooter() {
     if (logoContainer) {
         logoContainer.innerHTML = `
             <div class="footer-large-logo">I · M · 8<sup>®</sup></div>
-            <div class="footer-legal-links">
+            <div class="footer-legal-links ${isMobile ? '' : 'desktop'}">
                 <span>${footerData.legal.copyright}</span>
                 <span class="separator">·</span>
                 ${footerData.legal.links.map(link => `<a href="${link.url}">${link.text}</a>`).join('<span class="separator">·</span>')}
@@ -54,19 +54,7 @@ function renderFooter() {
 }
 
 function renderDesktopFooter(container) {
-    // Render newsletter at top for desktop
-    const newsletterHtml = `
-        <div class="footer-newsletter-top">
-            <h4 class="footer-newsletter-title">${footerData.newsletter.title}</h4>
-            <form class="newsletter-form-desktop" onsubmit="return false;">
-                <input type="email" placeholder="${footerData.newsletter.placeholder}" class="newsletter-input-desktop" />
-                <button type="submit" class="newsletter-btn-desktop">${footerData.newsletter.button}</button>
-            </form>
-            <p class="newsletter-disclaimer">${footerData.newsletter.disclaimer}</p>
-        </div>
-    `;
-
-    // Render link columns
+    // Render link columns on left and newsletter on right (same row)
     const columnsHtml = footerData.columns.map(column => `
         <div class="footer-column">
             <h4 class="footer-column-title">${column.title}</h4>
@@ -78,10 +66,23 @@ function renderDesktopFooter(container) {
         </div>
     `).join('');
 
+    const newsletterHtml = `
+        <div class="footer-newsletter-col">
+            <h4 class="footer-newsletter-title">${footerData.newsletter.title}</h4>
+            <form class="newsletter-form-desktop" onsubmit="return false;">
+                <input type="email" placeholder="${footerData.newsletter.placeholder}" class="newsletter-input-desktop" />
+                <button type="submit" class="newsletter-btn-desktop">${footerData.newsletter.button}</button>
+            </form>
+            <p class="newsletter-disclaimer">${footerData.newsletter.disclaimer}</p>
+        </div>
+    `;
+
     container.innerHTML = `
-        ${newsletterHtml}
-        <div class="footer-columns-grid-desktop">
-            ${columnsHtml}
+        <div class="footer-main-grid-desktop">
+            <div class="footer-columns-wrapper">
+                ${columnsHtml}
+            </div>
+            ${newsletterHtml}
         </div>
     `;
 }

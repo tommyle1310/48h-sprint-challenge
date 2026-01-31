@@ -979,7 +979,7 @@
 
 .stat-value {
   font-family: 'ABC Arizona Flare', serif;
-  font-size: 64px;
+  font-size: 56px;
   font-weight: normal;
   line-height: 1;
   color: white;
@@ -3543,12 +3543,17 @@
   .site-footer {
     background: #5a1428;
     color: white;
-    padding: 64px 24px 32px;
+  }
+
+  .footer-inner-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 64px 24px 0;
   }
 
   @media (min-width: 768px) {
-    .site-footer {
-      padding: 80px 48px 40px;
+    .footer-inner-container {
+      padding: 80px 48px 0;
     }
   }
 
@@ -3577,12 +3582,12 @@
 
   .footer-column-title {
     font-family: 'Aeonik', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: white;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
   .footer-links {
@@ -3592,17 +3597,19 @@
   }
 
   .footer-links li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   .footer-links a {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    color: #d4736e;
+    text-decoration: underline;
+    text-underline-offset: 2px;
     transition: color 0.2s ease;
   }
 
   .footer-links a:hover {
-    color: white;
+    color: #ff9693;
   }
 
   .footer-newsletter {
@@ -3671,65 +3678,75 @@
   }
 
   /* Desktop Footer Styles */
-  .footer-newsletter-top {
-    text-align: center;
+  .footer-main-grid-desktop {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
     margin-bottom: 48px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-columns-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
+
+  .footer-newsletter-col {
+    max-width: 280px;
   }
 
   .footer-newsletter-title {
     font-family: 'Aeonik', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: #ff9693;
     margin-bottom: 24px;
+    line-height: 1.5;
   }
 
   .newsletter-form-desktop {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    max-width: 400px;
-    margin: 0 auto 16px;
+    gap: 12px;
+    margin-bottom: 16px;
   }
 
   .newsletter-input-desktop {
     width: 100%;
-    padding: 16px 20px;
+    padding: 14px 20px;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 0;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
   }
 
   .newsletter-input-desktop::placeholder {
     color: rgba(255, 255, 255, 0.6);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
   }
 
   .newsletter-input-desktop:focus {
     outline: none;
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.6);
   }
 
   .newsletter-btn-desktop {
     width: 100%;
-    padding: 16px 32px;
+    padding: 14px 32px;
     background: #ff4d4d;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     border: none;
-    border-radius: 50px;
+    border-radius: 0;
     cursor: pointer;
     transition: all 0.2s ease;
   }
@@ -3806,36 +3823,61 @@
 
   /* Footer Logo Section */
   .footer-logo-section {
-    text-align: center;
+    position: relative;
     padding: 48px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .footer-large-logo {
     font-family: 'ABC Arizona Flare', serif;
-    font-size: 48px;
-    font-weight: normal;
-    color: #d4a5a5;
-    letter-spacing: 8px;
-    margin-bottom: 16px;
+    font-size: 100px;
+    font-weight: 300;
+    color: #d4736e;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    text-align: left;
+  }
+
+  .footer-large-logo sup {
+    font-size: 24px;
+    vertical-align: super;
+    margin-left: 4px;
   }
 
   @media (min-width: 768px) {
     .footer-large-logo {
-      font-size: 64px;
-      letter-spacing: 12px;
+      font-size: 160px;
+    }
+
+    .footer-large-logo sup {
+      font-size: 32px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-large-logo {
+      font-size: 200px;
+    }
+
+    .footer-large-logo sup {
+      font-size: 40px;
     }
   }
 
   .footer-legal-links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
     gap: 8px;
-    font-size: 14px;
+    font-size: 12px;
     color: rgba(255, 255, 255, 0.6);
+    margin-top: 24px;
+  }
+
+  .footer-legal-links.desktop {
+    position: absolute;
+    bottom: 48px;
+    left: 0;
+    margin-top: 0;
   }
 
   .footer-legal-links .separator {
@@ -3845,6 +3887,7 @@
   .footer-legal-links a {
     color: rgba(255, 255, 255, 0.6);
     transition: color 0.2s ease;
+    text-decoration: underline;
   }
 
   .footer-legal-links a:hover {
@@ -3853,15 +3896,22 @@
 
   /* Footer Disclaimers */
   .footer-disclaimers {
-    padding-top: 32px;
+    padding: 24px;
+    background: #3d0d1a;
     text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .footer-disclaimers {
+      padding: 24px 48px;
+    }
   }
 
   .fda-disclaimer {
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.4);
-    line-height: 1.5;
-    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    margin-bottom: 8px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -4632,5 +4682,314 @@
       font-size: 10px;
       padding: 10px 12px;
     }
+  }
+
+  /* ============================================
+     PRODUCT IMAGES SLIDER - Desktop Layout
+     ============================================ */
+  .product-gallery-desktop {
+    gap: 16px;
+  }
+
+  .thumbnail-strip-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 72px;
+    flex-shrink: 0;
+  }
+
+  .thumbnail-desktop {
+    width: 72px;
+    height: 72px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .thumbnail-desktop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .thumbnail-desktop:hover {
+    border-color: #ccc;
+  }
+
+  .thumbnail-desktop.active {
+    border-color: #8B1E3F;
+  }
+
+  .thumbnail-desktop.hidden {
+    display: none;
+  }
+
+  .thumbnail-expand-btn {
+    width: 72px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8B1E3F;
+    transition: all 0.2s ease;
+  }
+
+  .thumbnail-expand-btn:hover {
+    background: #fdf8f8;
+    border-color: #8B1E3F;
+  }
+
+  .main-image-desktop {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .main-image-desktop img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  /* ============================================
+     PRODUCT IMAGES SLIDER - Mobile Layout
+     ============================================ */
+  .product-gallery-mobile {
+    width: 100%;
+  }
+
+  .mobile-slider-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  .mobile-slider-track {
+    display: flex;
+    transition: transform 0.3s ease-out;
+  }
+
+  .mobile-slide {
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  .mobile-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .mobile-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .pagination-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d1d5db;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .pagination-dot.active {
+    background: #8B1E3F;
+    transform: scale(1.2);
+  }
+
+  .pagination-dot:hover:not(.active) {
+    background: #9ca3af;
+  }
+
+  /* ============================================
+     REVIEWS CAROUSEL - Marquee Infinite Scroll
+     ============================================ */
+  .reviews-carousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reviews-track {
+    display: flex;
+    animation: marquee-reviews 40s linear infinite;
+  }
+
+  .reviews-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-reviews {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .reviews-track .marquee-content {
+    display: flex;
+    gap: 24px;
+    padding-right: 24px;
+  }
+
+  /* Review Card - New simpler design matching reference */
+  .review-card {
+    flex-shrink: 0;
+    width: 350px;
+    padding: 32px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 767px) {
+    .review-card {
+      width: 300px;
+      padding: 24px;
+    }
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 4px;
+    color: #8B1E3F;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .review-content {
+    font-family: 'ABC Arizona Flare', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 767px) {
+    .review-content {
+      font-size: 16px;
+    }
+  }
+
+  .review-author {
+    font-family: 'Aeonik', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #8B1E3F;
+  }
+
+  /* ============================================
+     AMBASSADORS CAROUSEL - Marquee Infinite Scroll
+     ============================================ */
+  .ambassadors-carousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ambassadors-track {
+    display: flex;
+    animation: marquee-ambassadors 50s linear infinite;
+  }
+
+  .ambassadors-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-ambassadors {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .ambassadors-track .marquee-content {
+    display: flex;
+    gap: 24px;
+    padding-right: 24px;
+  }
+
+  /* Ambassador Card - New design matching reference */
+  .ambassador-card {
+    flex-shrink: 0;
+    width: 320px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  @media (max-width: 767px) {
+    .ambassador-card {
+      width: 280px;
+    }
+  }
+
+  .ambassador-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 20px;
+    background: white;
+  }
+
+  .ambassador-handle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8B1E3F;
+  }
+
+  .ambassador-followers {
+    font-size: 13px;
+    color: #888;
+  }
+
+  .ambassador-thumbnail {
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+  }
+
+  .ambassador-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ambassador-content {
+    padding: 20px;
+    background: white;
+  }
+
+  .ambassador-rating {
+    color: #8B1E3F;
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 2px;
+  }
+
+  .ambassador-quote {
+    font-family: 'Aeonik', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
   }
 }

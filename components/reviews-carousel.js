@@ -1,6 +1,6 @@
 /**
  * Reviews Carousel Component
- * Handles horizontal scrolling reviews carousel
+ * Infinite marquee scrolling reviews carousel
  */
 
 /* ================= STATE ================= */
@@ -22,87 +22,63 @@ function renderReviewsCarousel() {
     const track = document.getElementById('reviews-track');
     if (!track) return;
 
-    track.innerHTML = reviewsData.map(review => `
+    // Create the review card HTML
+    const createReviewCard = (review) => `
         <div class="review-card">
             <!-- Star Rating -->
-            <div class="flex text-brand-burgundy mb-3">
+            <div class="review-stars">
                 ${Array(5).fill('').map((_, i) => `
-                    <i class="fa-${i < review.rating ? 'solid' : 'regular'} fa-star text-sm"></i>
+                    <i class="fa-solid fa-star"></i>
                 `).join('')}
             </div>
             
             <!-- Review Content -->
-            <p class="text-sm text-gray-700 leading-relaxed mb-4 line-clamp-3">
+            <p class="review-content">
                 "${review.content}"
             </p>
             
             <!-- Author Info -->
-            <div class="flex items-center justify-between mt-auto pt-3 border-t border-gray-100">
-                <div class="flex items-center gap-2">
-                    <!-- Avatar -->
-                    <div class="w-8 h-8 rounded-full bg-brand-burgundy text-white flex items-center justify-center text-sm font-semibold">
-                        ${review.avatarInitial}
-                    </div>
-                    <div>
-                        <p class="text-sm font-semibold">${review.author}</p>
-                        <p class="text-xs text-gray-500">${review.date}</p>
-                    </div>
-                </div>
-                
-                <!-- Verified Badge -->
-                ${review.isVerified ? `
-                    <span class="verified-badge">
-                        <i class="fa-solid fa-circle-check"></i>
-                        Verified
-                    </span>
-                ` : ''}
-            </div>
+            <p class="review-author">
+                — ${review.author}${review.isVerified ? ', Verified Customer' : ''}
+            </p>
         </div>
-    `).join('');
+    `;
 
-    bindCarouselEvents();
+    // Double the reviews for seamless infinite scroll
+    const reviewsHTML = reviewsData.map(createReviewCard).join('');
+    
+    track.innerHTML = `
+        <div class="marquee-content">
+            ${reviewsHTML}
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+            ${reviewsHTML}
+        </div>
+    `;
+
+    // Start the marquee animation
+    startMarqueeAnimation(track);
 }
 
 /* ================= EVENTS ================= */
-function bindCarouselEvents() {
-    const track = document.getElementById('reviews-track');
-    const prevBtn = document.getElementById('reviews-prev');
-    const nextBtn = document.getElementById('reviews-next');
-
-    if (!track) return;
-
-    const scrollAmount = 370; // card width + gap
-
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        });
-    }
-
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        });
-    }
-
-    // Update button visibility based on scroll position
-    track.addEventListener('scroll', () => {
-        const isAtStart = track.scrollLeft <= 0;
-        const isAtEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 10;
-
-        if (prevBtn) {
-            prevBtn.style.opacity = isAtStart ? '0.5' : '1';
-            prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
-        }
-
-        if (nextBtn) {
-            nextBtn.style.opacity = isAtEnd ? '0.5' : '1';
-            nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
-        }
+function startMarqueeAnimation(track) {
+    // Pause on hover
+    track.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
     });
 
-    // Trigger initial scroll check
-    track.dispatchEvent(new Event('scroll'));
+    track.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
+    });
+
+    // Pause on touch for mobile
+    track.addEventListener('touchstart', () => {
+        track.style.animationPlayState = 'paused';
+    }, { passive: true });
+
+    track.addEventListener('touchend', () => {
+        track.style.animationPlayState = 'running';
+    }, { passive: true });
 }
 
 /* ================= INIT ================= */

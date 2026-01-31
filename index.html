@@ -544,7 +544,7 @@
          ============================================ -->
     <section
       id="reviews-section"
-      class="reviews-section full-bleed bg-brand-cream py-16 px-4 md:px-8 lg:px-16">
+      class="reviews-section full-bleed bg-brand-cream py-16 px-4 md:px-8 lg:px-16 overflow-hidden">
       <div class="mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-10">
@@ -566,25 +566,11 @@
           </p>
         </div>
 
-        <!-- Reviews Carousel -->
-        <div id="reviews-carousel" class="reviews-carousel relative">
-          <div
-            id="reviews-track"
-            class="reviews-track flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide">
+        <!-- Reviews Marquee Carousel -->
+        <div id="reviews-carousel" class="reviews-carousel">
+          <div id="reviews-track" class="reviews-track marquee-track">
             <!-- Rendered by JS -->
           </div>
-
-          <!-- Navigation Arrows -->
-          <button
-            id="reviews-prev"
-            class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button
-            id="reviews-next"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
         </div>
       </div>
     </section>
@@ -917,7 +903,7 @@
          ============================================ -->
     <section
       id="ambassadors"
-      class="ambassadors-section full-bleed bg-gradient-to-b from-brand-cream to-white py-16 px-4 md:px-8 lg:px-16">
+      class="ambassadors-section full-bleed bg-gradient-to-b from-brand-cream to-white py-16 px-4 md:px-8 lg:px-16 overflow-hidden">
       <div class="mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-10">
@@ -930,25 +916,11 @@
           </h2>
         </div>
 
-        <!-- Ambassadors Carousel -->
-        <div class="ambassadors-carousel relative">
-          <div
-            id="ambassadors-track"
-            class="ambassadors-track flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide">
+        <!-- Ambassadors Marquee Carousel -->
+        <div class="ambassadors-carousel">
+          <div id="ambassadors-track" class="ambassadors-track marquee-track">
             <!-- Rendered by JS -->
           </div>
-
-          <!-- Navigation Arrows -->
-          <button
-            id="ambassadors-prev"
-            class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button
-            id="ambassadors-next"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-card items-center justify-center hover:shadow-card-hover transition-shadow">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
         </div>
       </div>
     </section>
@@ -1036,7 +1008,7 @@
          SITE FOOTER
          ============================================ -->
     <footer class="site-footer">
-      <div class="max-w-7xl mx-auto">
+      <div class="footer-inner-container">
         <!-- Footer Columns & Newsletter -->
         <div id="site-footer-content">
           <!-- Rendered by JS -->
@@ -1046,11 +1018,11 @@
         <div id="footer-logo-section" class="footer-logo-section">
           <!-- Rendered by JS -->
         </div>
-
-        <!-- Disclaimers -->
-        <div id="footer-disclaimers" class="footer-disclaimers">
-          <!-- Rendered by JS -->
-        </div>
+      </div>
+      
+      <!-- Disclaimers (full width darker section) -->
+      <div id="footer-disclaimers" class="footer-disclaimers">
+        <!-- Rendered by JS -->
       </div>
     </footer>
 
