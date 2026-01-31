@@ -844,16 +844,20 @@
          ============================================ -->
     <section
       id="organ-systems"
+style="
+background: /* Horizontal grid lines */ repeating-linear-gradient(0deg, transparent 0px, transparent 50px, rgba(164, 0, 17, 0.06) 50px, rgba(164, 0, 17, 0.06) 51px), /* Vertical grid lines */ repeating-linear-gradient(90deg, transparent 0px, transparent 50px, rgba(164, 0, 17, 0.04) 50px, rgba(164, 0, 17, 0.04) 51px), /* Base gradient */ linear-gradient(180deg, #F5EAEA 0%, #FDF8F8 15%, #F9F1F1 40%, #F5EAEA 70%, rgba(164, 0, 17, 0.06) 100%);
+"
+
       class="organ-systems-section bg-gradient-to-b from-brand-cream to-gray-50 py-16 px-4 md:px-8 lg:px-16">
       <div class=" mx-auto">
         <!-- Section Header (Rendered by JS with tab switcher) -->
-        <div class="text-center mb-10">
+        <div class="text-center mb-10 flex flex-col gap-[48px]">
           <!-- Tab switcher, badge, title, subtitle rendered by JS -->
         </div>
 
         <!-- Grid and Detail Panel -->
         <div
-          class="organ-systems-wrapper flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+          class="organ-systems-wrapper flex flex-col lg:flex-row gap-[32px] items-start">
           <!-- 3x3 Grid -->
           <div
             id="organ-systems-grid"
@@ -864,7 +868,7 @@
           <!-- Detail Panel -->
           <div
             id="organ-system-detail"
-            class="organ-system-detail flex-1 bg-white rounded-2xl p-6 md:p-8 shadow-card">
+            class="organ-system-detail flex-1 rounded-2xl md:p-8 shadow-card">
             <!-- Rendered by JS -->
           </div>
         </div>

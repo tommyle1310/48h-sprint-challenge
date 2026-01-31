@@ -29,16 +29,16 @@ function renderOrganSystemsSection() {
         const isLongevity = currentOrganProduct === 'daily-ultimate-longevity';
         sectionHeader.innerHTML = `
             <!-- Product Tab Switcher -->
-            <div class="organ-tab-switcher mb-8">
+            <div class="organ-tab-switcher">
                 <div class="inline-flex bg-white rounded-full p-1 shadow-card border border-gray-200">
                     <button
-                        class="organ-product-tab ${!isLongevity ? 'active' : ''} px-6 py-3 rounded-full text-sm font-medium transition-all"
+                        class="organ-product-tab ${!isLongevity ? 'active' : ''} px-6 py-3 rounded-full text-[10px] font-medium transition-all"
                         data-product="daily-ultimate-essentials"
                     >
                         Daily Ultimate Essentials
                     </button>
                     <button
-                        class="organ-product-tab ${isLongevity ? 'active' : ''} px-6 py-3 rounded-full text-sm font-medium transition-all"
+                        class="organ-product-tab ${isLongevity ? 'active' : ''} px-6 py-3 rounded-full text-[10px] font-medium transition-all"
                         data-product="daily-ultimate-longevity"
                     >
                         Daily Ultimate Longevity
@@ -46,13 +46,15 @@ function renderOrganSystemsSection() {
                 </div>
             </div>
 
-            <span class="inline-block bg-brand-burgundy/10 text-brand-burgundy text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4">
+            <div
+            style="background: linear-gradient(135deg, #50000b 0%, #A40011 100%);"
+            class="inline-block text-white text-xs font-semibold px-[24px] py-[10px] rounded-full uppercase tracking-wide mb-4">
                 Comprehensive Body Support
-            </span>
+            </div>
             <h2 class="font-arizona text-[24px] md:text-[46px] lg:text-[56px] mb-3">
                 9 Major Organ Systems
             </h2>
-            <p class="max-w-2xl mx-auto">
+            <p class="max-w-2xl leading-[1.7] text-[15px] mx-auto">
                 One serving delivers comprehensive support for your entire body, replacing multiple supplements with a single, powerful formula.
             </p>
         `;
@@ -82,9 +84,9 @@ function renderOrganSystemsGrid() {
                 data-system="${system.id}">
             <span class="system-number">${system.number}</span>
             <div class="system-icon">
-                <i class="${system.icon}"></i>
+            ${system.icon}
             </div>
-            <span class="system-name">${system.name}</span>
+            <span class="system-name !text-[10px]">${system.name}</span>
         </button>
     `).join('');
 
@@ -104,24 +106,53 @@ function renderOrganSystemDetail(systemId) {
     if (!system) return;
 
     container.innerHTML = `
-        <div class="detail-header flex items-start gap-4 mb-6">
-            <div class="detail-icon w-16 h-16 bg-brand-burgundy/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <i class="${system.icon} text-2xl text-brand-burgundy"></i>
+        <div
+        style="
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 234, 234, 0.95) 50%, rgba(255, 245, 245, 0.92) 100%);
+        "
+        class="organ-detail-card relative text-[#50000b] rounded-3xl p-8 overflow-hidden min-h-[420px]">
+            <!-- Header with icon and number -->
+            <div class="flex justify-between items-start mb-6">
+                <div class="detail-icon w-20 h-20 bg-[#f5e8e8] rounded-2xl flex items-center justify-center">
+                    ${system.icon}
+                </div>
+                <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background: linear-gradient(145deg, #50000B 0%, #3A0008 100%);">
+                    ${system.number}
+                </div>
             </div>
-            <div>
-                <h3 class="font-serif text-2xl mb-1">${system.name}</h3>
-                <p class="text-xs text-brand-burgundy font-semibold uppercase tracking-wide">${system.subtitle}</p>
+            
+            <!-- Title -->
+            <h3 class="font-arizona text-[28px] text-[#50000b] mb-4">${system.name} Support</h3>
+            
+            <!-- Subtitle with line -->
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-20 h-px bg-[#50000b]"></div>
+                <p class="text-[11px] text-[#50000b] font-medium uppercase tracking-[0.15em]">${system.subtitle}</p>
+            </div>
+            
+            <!-- Description -->
+            <p class="text-[#50000b] text-[13px] leading-[1.75] mb-8">${system.description}</p>
+            
+            <!-- Badge -->
+            ${system.badge ? `
+                <div
+                style="
+                background: linear-gradient(135deg, rgba(80, 0, 11, 0.04) 0%, transparent 100%);
+                "
+                class="inline-flex items-center gap-3  border border-[#e8d8d8] text-[#50000b] px-5 py-3 rounded-full shadow-sm">
+                    <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                    <span class="text-[13px] text-[#50000b]">${system.badge}</span>
+                </div>
+            ` : ''}
+            
+            <!-- Background SVG watermark -->
+            <div class="absolute bottom-0 right-0 w-48 h-48 opacity-[0.07] pointer-events-none">
+               ${system.icon}
             </div>
         </div>
-        
-        <p class="text-gray-600 text-center md:text-left leading-relaxed mb-6">${system.description}</p>
-        
-        ${system.badge ? `
-            <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 text-sm font-medium px-4 py-2 rounded-full">
-                <i class="fa-solid fa-flask"></i>
-                ${system.badge}
-            </div>
-        ` : ''}
     `;
 }
 

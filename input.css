@@ -2686,33 +2686,60 @@
   }
 
   /* --- Organ Systems Grid --- */
+  .organ-systems-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 767px) {
+    .organ-systems-wrapper #organ-systems-grid {
+      order: 2;
+    }
+    .organ-systems-wrapper #organ-system-detail {
+      order: 1;
+    }
+  }
+
   .organ-system-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 16px 12px;
     border: 2px solid #e5e5e5;
-    border-radius: 12px;
-    background: white;
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 234, 234, 0.9) 50%, rgba(255, 240, 240, 0.85) 100%);
+    box-shadow: 0 1px 4px rgba(80, 0, 11, 0.03);
     cursor: pointer;
+    color: #949596;
     transition: all 0.2s ease;
   }
 
   .organ-system-item:hover {
-    border-color: #ccc;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    border-color: #C41523;
+    box-shadow: 0 10px 36px rgba(164, 0, 17, 0.2), 0 3px 10px rgba(80, 0, 11, 0.1);
   }
 
   .organ-system-item.selected {
     border-color: #8B1E3F;
-    background-color: #fdf8f8;
+    background: linear-gradient(145deg, #A40011 0%, #50000B 60%, #3A0008 100%);
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .organ-system-item.selected .system-number,
+  .organ-system-item.selected .system-icon,
+  .organ-system-item.selected .system-name {
+        color: rgba(255, 255, 255, 0.5);
   }
 
   .organ-system-item .system-number {
+    position: absolute;
+    top: 8px;
+    left: 10px;
     font-size: 10px;
     color: #999;
     font-weight: 600;
-    margin-bottom: 8px;
   }
 
   .organ-system-item .system-icon {
@@ -2735,6 +2762,14 @@
 
   .organ-system-detail {
     min-height: 200px;
+  }
+
+  .organ-detail-card {
+    position: relative;
+  }
+
+  .organ-detail-card .absolute {
+    transform: translate(20%, 20%);
   }
 
   /* --- Pillars Interactive (Sidebar + Panel Layout) --- */
@@ -2767,7 +2802,7 @@
   }
 
   .organ-product-tab {
-    color: #666;
+    color: #7B1E2A;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -2779,7 +2814,7 @@
   }
 
   .organ-product-tab.active {
-    background: #8B1E3F;
+    background: linear-gradient(135deg, #50000b 0%, #A40011 100%);
     color: white;
   }
 
